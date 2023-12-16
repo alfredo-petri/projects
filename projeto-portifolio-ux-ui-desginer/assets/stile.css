@@ -3,10 +3,17 @@
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
     background-color: #000;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -66,6 +73,69 @@ body {
 
     .jl-btn-contact:hover {
         background-position-y: -45px;
+    }
+
+    .jl-contact-info {
+        display: block;
+        width: 245px;
+        height: 165px;
+        padding: 25px;
+        position: fixed;
+        bottom: 115px;
+        right: 65px;
+        z-index: 200;
+    }
+
+    .jl-contact-info-inner {
+        display: table;
+        width: 100%;
+        float: right;
+    }
+
+    .jl-contact-info-inner p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .jl-social-links {
+        width: 100%;
+        height: 45px;
+        margin-top: 7px;
+        display: block;
+        position: relative;
+        left: -12px;
+    }
+
+    .jl-social {
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+    } 
+
+    .jl-social > img {
+        display: block;
+        width: 20px;
+        height: auto;
+        margin: 13px auto 0;
+    }
+
+    .jl-corner {
+        width: 25px;
+        height: 25px;
+        display: block;
+        float: right;
+        display: relative;
+    }
+
+    .jl-corner:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        bottom: -25px;
+        right: 0;
+        background: transparent url('../assets/midia/corner.svg') no-repeat;
     }
 
 }
@@ -138,7 +208,12 @@ body {
 
 }
 
-/* OOCSS Classes*/
+/* classes de padronizadas*/
+
+.jl-title {
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400;
+}
 
 .jl-text-green {
     color: #2ccb69;
