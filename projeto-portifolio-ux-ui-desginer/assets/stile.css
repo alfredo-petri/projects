@@ -71,18 +71,14 @@ p {
         transition: all 0.2s;
     }
 
-    .jl-btn-contact:hover {
-        background-position-y: -45px;
-    }
-
     .jl-contact-info {
-        display: block;
+        display: none;
         width: 245px;
         height: 165px;
         padding: 25px;
         position: fixed;
-        bottom: 115px;
-        right: 65px;
+        bottom: 118px;
+        right: 67px;
         z-index: 200;
     }
 
@@ -248,3 +244,12 @@ p {
 }
 
 
+/* CLASSES DE COMPORTAMENTO */
+
+.jl-btn-contact-info-is-on {
+    display: block;
+}
+
+.jl-change-icon {
+    background-position-y: -45px;
+}
