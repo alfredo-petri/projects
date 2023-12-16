@@ -49,6 +49,25 @@ body {
         display: none;
     }
 
+    .jl-btn-contact {
+        width: 45px;
+        height: 45px;
+        display: block;
+        background-color: #2ccb69;
+        background-image: url('/projects/projeto-portifolio-ux-ui-desginer/assets/midia/icon-contact-close.svg');
+        background-repeat: no-repeat;
+        position: fixed;
+        bottom: 45px;
+        right: 45px;
+        border-radius: 50%;
+        z-index: 200;
+        transition: all 0.2s;
+    }
+
+    .jl-btn-contact:hover {
+        background-position-y: -45px;
+    }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -118,3 +137,39 @@ body {
 @media screen and (min-width: 1600px) {
 
 }
+
+/* OOCSS Classes*/
+
+.jl-text-green {
+    color: #2ccb69;
+}
+
+.jl-text-dark {
+    color: #4d4c4c;
+}
+
+.jl-text-light {
+    color: #bcbcbc;
+}
+
+.jl-text-black {
+    color: #000;
+}
+
+.jl-bg-green {
+    background-color: #2ccb69;
+}
+
+.jl-bg-dark {
+    background-color: #4d4c4c;
+}
+
+.jl-bg-light {
+    background-color: #bcbcbc;
+}
+
+.jl-bg-black {
+    background-color: #000;
+}
+
+
