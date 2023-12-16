@@ -20,6 +20,35 @@ body {
         border: 30px solid #000;
         
     }
+
+    .jl-topbar{
+        width: 100%;
+        height: 110px;
+        display: block;
+        background-color: transparent;
+        position: fixed;
+    }
+
+    .jl-logo {
+        width: 75px;
+        height: 110px;
+        margin-left: 60px;
+        float:left;
+        background-color: #2ccb69;
+        border-radius: 0px 0px 37px 0px;
+    }
+
+    .jl-logo img {
+        display: block;
+        width: 46px;
+        height: 31px;
+        margin: 55px auto 0;
+    }
+
+    .jl-menu {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -31,6 +60,50 @@ body {
 }
 
 @media screen and (min-width: 992px) {
+
+    .jl-menu {
+        display: table;
+        float: left;
+        height: 110px;
+        margin-left: 30px;
+    }
+
+    .jl-menu a {
+        font-family: 'Open Sans';
+        font-size: 16px;
+        color: #bcbcbc;
+        text-transform: lowercase;
+        display: inline-block;
+        margin: 50px 20px 0;
+        font-weight: 400;
+        position: relative;
+    }
+
+    .jl-menu a:first-child {
+        margin-left: 0;
+    }
+
+    .jl-menu a:hover {
+        color:  #2ccb69;
+    }
+
+    .jl-menu a:before {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color:  #2ccb69;
+        display: block;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        transition: all 0.2s ease-out;
+        transform: scale(0, 1);
+        transform-origin: center left;
+    }
+
+    .jl-menu a:hover:before {
+        transform: scale(1, 1);
+    }
 
 }
 
