@@ -10,11 +10,11 @@ window.addEventListener('load', function () {
 
     setTimeout(function(){
         pagePreloader.classList.add ('jl-preloader-is-onload'); 
-    }, 1000);
+    }, 2000);
     
     setTimeout(function(){
         pagePreloader.style.display = 'none';
-    }, 3000);
+    }, 3500);
 });
 
 //função toogle on/off contact info

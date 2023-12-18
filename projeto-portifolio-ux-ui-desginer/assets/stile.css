@@ -163,6 +163,16 @@ p {
         background-position: 50% bottom;
     }
 
+    .jl-scroll-down {
+        width: 70px;
+        height: 105px;
+        border-radius: 50% 50% 0 0;
+    }
+
+    .jl-arrow-down {
+
+    }
+
 
 
 }
@@ -329,7 +339,7 @@ p {
 /* CLASSES DE COMPORTAMENTO */
 
 .jl-preloader-is-onload {
-    animation: fadeOut 2s forwards ease-in-out;
+    animation: fadeOut 3s forwards ease-in-out;
 }
 
 .jl-btn-contact-info-is-on {
