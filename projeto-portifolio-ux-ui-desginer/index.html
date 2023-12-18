@@ -8,10 +8,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./assets/bootstrap-grid.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/stile.css">
         <title>João Lemon UX/UI Designer</title>
     </head>
     <body>
+        <div class="jl-preloader">
+            <div class="jl-preloader-inner">
+                <img src="./assets/midia/lemon-loader.svg" alt="um limao verde em formato de logo">
+                <p class="jl-text-light jl-margin-top-15">Aguarde um pouquinho... estou prepando a limonada</p>
+            </div>    
+        </div>
+
         <header class="jl-topbar">
             <div class="jl-logo">
                 <img src="./assets/midia/logo.svg" alt="Logo João Lemon UI/UX Designer">        
@@ -40,16 +48,28 @@
                     </a>
                 </div>
             </div>
-            <div class="jl-corner"></div>
-            
+            <div class="jl-corner"></div> 
         </div>
 
-        <div class="jl-btn-contact">
-
-        </div>
+        <button class="jl-btn-contact"></button>
 
         <div class="jl-page-wrapper">
-         
+            <section class="jl-full-height jl-fist-section">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-sm-12 col-md-3 offset-md-2 jl-disply-text">
+                          <h1 class="jl-title jl-text-green">Olá</h1>
+                          <p class="jl-text-light">Meu nome é <span class="jl-text-green">John Lemon</span>, sou designer de <span class="jl-text-green">UI e UX</span>. Lorem ipsum dolor, sit amet consectetur adipisicing 
+                            elit. Incidunt, a delectus. Pariatur, eaque quo. Ipsum alias maiores et, dolorum error animi ipsam veniam perferendis. 
+                            Minima nostrum labore quod ipsa temporibus.
+                          </p>  
+                        </div>
+                    </div>
+               </div>   
+            </section>
+            <section class="jl-full-height">
+               
+            </section>
         </div> 
         
         <script src="./assets/script.js"></script>
