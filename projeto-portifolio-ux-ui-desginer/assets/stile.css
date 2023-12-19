@@ -157,22 +157,36 @@ p {
         margin-top: 10%;
     }
 
+    
     #jl-home-presentation {
         background-image: url('./midia/joao-lemon-designer-home.png');
         background-repeat: no-repeat;
         background-position: 50% bottom;
-    }
+    
+        /*  erro
+        position:relative;
+        */ 
+    } 
 
     .jl-scroll-down {
         width: 70px;
         height: 105px;
-        border-radius: 50% 50% 0 0;
+        border-radius: 35px 35px 0 0;
+        background-color: #2ccb69;
+        display: block;
+        position: absolute;
+        bottom: 0;    
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 100;
     }
+
+    
 
     .jl-arrow-down {
-
+        display: none;
     }
-
 
 
 }
@@ -339,7 +353,7 @@ p {
 /* CLASSES DE COMPORTAMENTO */
 
 .jl-preloader-is-onload {
-    animation: fadeOut 3s forwards ease-in-out;
+    animation: fadeOut 2.5s forwards ease-out;
 }
 
 .jl-btn-contact-info-is-on {
