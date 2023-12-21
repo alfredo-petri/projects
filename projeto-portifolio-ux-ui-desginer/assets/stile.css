@@ -22,6 +22,52 @@ p {
     }
 }
 
+@keyframes lineDown {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: top center;
+    }
+    25%{
+        transform: scale(1, 1);
+        transform-origin: top center;
+    }
+    65% {
+        transform: scale(1, 1);
+        transform-origin: top center;
+    }
+    66% {
+        transform: scale(1, 1);
+        transform-origin: bottom center;
+    }
+    85% {
+        transform: scale(1, 0);
+        transform-origin: bottom center;
+    }
+    100% {
+        transform: scale(1, 0);
+        transform-origin: bottom center;
+    }
+}
+
+@keyframes arrowDown {
+    0% {
+        opacity: 0;
+        bottom: 25px;
+    }
+    25%{
+        opacity: 100%;
+        bottom: 15px;
+    }
+    85% {
+        opacity: 100%;
+        bottom: 15px;
+    }
+    100% {
+        opacity: 0%;
+        bottom: 15px;
+    }
+}
+
 @media screen and (min-width: 320px) {
 
     .jl-page-wrapper, .jl-preloader{
@@ -162,11 +208,13 @@ p {
         background-image: url('./midia/joao-lemon-designer-home.png');
         background-repeat: no-repeat;
         background-position: 50% bottom;
-    
+       
         /*  erro
         position:relative;
         */ 
     } 
+
+/*  teste    
 
     .jl-scroll-down {
         width: 70px;
@@ -182,10 +230,56 @@ p {
         z-index: 100;
     }
 
+*/  
+    .jl-scroll-down {
+    width: 70px;
+    height: 125px;
+    border-radius: 35px 35px 0 0;
+    background-color: #2ccb69;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 100;
+    }
     
 
     .jl-arrow-down {
-        display: none;
+        width: 100%;
+        height: 75px;
+    /*    display: table;   */
+        margin-top: 30px;
+        position: relative;
+    }
+
+    .jl-arrow-down img {
+        width: 16px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        opacity: 0;
+        animation: arrowDown 2s infinite linear;
+    }
+
+    .jl-arrow-down::before {
+        content: '';
+        background-color: #000;
+        width: 3px;
+        height: 45px;
+        display: block;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        animation: lineDown 2s infinite ease;
+        transform-origin: top center;
     }
 
 
@@ -257,6 +351,13 @@ p {
 
 @media screen and (min-width: 1600px) {
 
+}
+
+/*  botoẽs  */
+
+.jl-btn {
+    display: block;
+    
 }
 
 /* classes de padronizadas*/
