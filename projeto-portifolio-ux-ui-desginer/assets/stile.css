@@ -5,15 +5,11 @@
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    font-family: 'Opens Sans', sans-serif;
 }
 
 body {
     background-color: #000;
-}
-
-p {
-    font-family: 'Open Sans', sans-serif;
 }
 
 @keyframes fadeOut {
@@ -356,8 +352,47 @@ p {
 /*  botoẽs  */
 
 .jl-btn {
-    display: block;
-    
+    display: table;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease-out;
+}
+
+.jl-btn-medium {
+    height: 38px;
+    padding: 0 27px;
+    border-radius: 19px;
+    font-size: 14px;
+}
+
+.jl-btn-large {
+    height: 45px;
+    padding: 0 35px;
+    border-radius: 23px;
+    font-size: 16px;
+}
+
+.jl-btn-green {
+    background-color: #2ccb69;
+    color: #1c1c1c;
+}
+
+.jl-btn-green:hover {
+    background-color: #068737;
+    color: #fff;
+    scale: 1.03;
+}
+
+.jl-btn-dark {
+    background-color: #151515;
+    color: #2ccb69;
+}
+
+.jl-btn-dark:hover {
+    background-color: #2f2f2f;
+    color: #fff;
+    scale: 1.03;
 }
 
 /* classes de padronizadas*/
