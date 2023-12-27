@@ -7,15 +7,17 @@ let btnContact = document.querySelector('.jl-btn-contact');
 let pagePreloader = document.querySelector('.jl-preloader');
 
 //variavel para selecionar botão de orçamento
-
 let toggleModal = document.querySelectorAll('.jl-toggle-modal')
+
+//variavel para receber btn acroll down
+let scrollDown = document.querySelector('.jl-scroll-down')
 
 
 //função page preloader
 window.addEventListener('load', function () {
 
     setTimeout(function(){
-        pagePreloader.classList.add ('jl-preloader-is-onload'); 
+        pagePreloader.classList.add ('jl-fade-out'); 
     }, 750);
     
     setTimeout(function(){
@@ -43,3 +45,11 @@ for (let i = 0; i < toggleModal.length; i++){
         }, 300);
     })
 }
+
+//animando elementos on scroll com waypoints
+var waypoint = new Waypoint({
+    element: scrollDown,
+    handler: function() {
+        scrollDown.classList.toggle('jl-fade-out'); 
+    }, offset: '75%'
+  }) 

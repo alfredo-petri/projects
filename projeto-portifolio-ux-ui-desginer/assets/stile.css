@@ -566,7 +566,7 @@ body {
 
 /* CLASSES DE COMPORTAMENTO */
 
-.jl-preloader-is-onload {
+.jl-fade-out {
     animation: fadeOut 2.5s forwards ease-out;
 }
 
