@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    background-color: #000;
+}
+
+body {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+header img {
+    height: 70px;
+    width: auto;
+}
+
+header a {
+    margin-left: 30px;
+    text-transform: uppercase;
+    color: #c51512;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Rowdies', sans-serif;
+}
+
+header a:hover {
+    color:  #ff0000;
+}
+
+.dd-banner-destaque {
+    background-image: url(./assets/banner-destaque.jpg);
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+    
+}
+
+
