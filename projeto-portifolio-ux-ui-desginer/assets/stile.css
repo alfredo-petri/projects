@@ -351,6 +351,18 @@ body {
         transform-origin: top center;
     }
 
+    /* Home Portifólio */
+
+    .jl-portifolio-navigator {
+        width: 145px;
+        height: 400px;
+        display: table;
+        background-color: #ff0000;
+        position: absolute;
+        left: 30px;
+        top: 35vh;
+
+    }
 
 }
 
@@ -391,7 +403,7 @@ body {
     }
 
     .jl-menu a:before {
-        content: '';
+        content: '.';
         width: 100%;
         height: 4px;
         background-color:  #2ccb69;
@@ -558,10 +570,15 @@ body {
 
 .jl-full-height {
     height: 100vh;
+    position: relative;
 }
 
 .jl-first-section {
     height: calc(100vh - 30px);
+}
+
+.jl-no-padding {
+    padding: 0 !important;
 }
 
 /* CLASSES DE COMPORTAMENTO */
