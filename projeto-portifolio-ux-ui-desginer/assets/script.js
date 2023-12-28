@@ -13,6 +13,9 @@ let toggleModal = document.querySelectorAll('.jl-toggle-modal')
 let scrollDown = document.querySelector('.jl-scroll-down')
 
 
+
+//funções
+
 //função page preloader
 window.addEventListener('load', function () {
 
