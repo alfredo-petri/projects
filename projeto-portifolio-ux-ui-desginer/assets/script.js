@@ -134,7 +134,7 @@ sliderContainer.style.width = containerWidth + 'px';
 
 // loop para atribuir largura dinamica ao elemento slider item
 for ( let indexSliderItem = 0; indexSliderItem < sliderItem.length; indexSliderItem ++){
-sliderItem[indexSliderItem].style.width = containerWidth+'px'; 
+sliderItem[indexSliderItem].style.width = containerWidth + 'px'; 
 
 // variavel que captura a largura dinamica de cada item 
 let sliderItemWidth = sliderItem[indexSliderItem].offsetWidth;
@@ -149,5 +149,48 @@ sliderList.style.width = sliderListWidth + 'px';
 
 // Animação Slider onClick
 
+// declarando variaveis que receberam os elementos botão prev, botao next e a posição dos itens na lista
+let itemPrev = document.querySelector ('.jl-item-prev');
+let itemNext = document.querySelector ('.jl-item-next');
+
+// declarando variaveis que receberam a posicao dos itens da lista e a posição final 
+let sliderPosition = 0;
+let lastItem = sliderListWidth - containerWidth;
+
+//aciona a função next ao cliclar no botão next
+itemNext.addEventListener('click', function() {
+
+// se a posição do item (sliderPosition) for igual a ultima posição (lastItem), o return vazio interrompe a função
+    if((-sliderPosition) === lastItem ) {
+        return;
+    }
+
+// alterando a posição do item ao clicar no botão next
+    sliderPosition -= containerWidth;
+
+//executa a animação de mudança de posição nos itens do slider
+    anime({
+        targets: sliderList,
+        translateX: sliderPosition
+      });
+})
+
+//aciona a função prev ao cliclar no botão next
+itemPrev.addEventListener('click', function() {
+
+// se a posição do item (sliderPosition) for igual a primeira posição, ou seja igual a 0, o return vazio interrompe a função
+    if(sliderPosition === 0 ) {
+        return;
+    }
+
+// alterando a posição do item ao clicar no botão prev
+    sliderPosition += containerWidth;
+
+//executa a animação de mudança de posição nos itens do slider
+    anime({
+        targets: sliderList,
+        translateX: sliderPosition
+        });
+})
 
 // FIM PORTIFOLIO SLIDER
