@@ -1,9 +1,7 @@
 // INICIO PORTIFÓLIO SLIDER
 
 
-// INICIO - DECLARACAO DE VARIAVEIS
-
-    // Declarando váriaveis dos elementos do slider
+// INICIO - DECLARACAO DE VARIAVEIS SLIDER
 
     // variavel que recebe o elemento slider container
     let sliderContainer = document.querySelector ('.jl-slider-container');
@@ -27,13 +25,13 @@
 
     // declarando variaveis que receberam a posicao dos itens da lista e a posição final 
     let sliderPosition = 0;
-    let lastItem = sliderListWidth - containerWidth;
 
-// FIM - DECLARACAO DE VARIAVEIS
+    
+// FIM - DECLARACAO DE VARIAVEIS SLIDER
 
 
 
-// INICIO - ATRIBUIÇAO DE LARGURAS DINAMICAS
+// INICIO - ATRIBUICAO DE LARGURAS DINAMICAS
 
     // atribui largura dinamica, capturada, ao elemento slider container
     sliderContainer.style.width = containerWidth + 'px';
@@ -42,17 +40,31 @@
     for ( let indexSliderItem = 0; indexSliderItem < sliderItem.length; indexSliderItem ++){
     sliderItem[indexSliderItem].style.width = containerWidth + 'px'; 
 
-        // variavel que captura a largura dinamica de cada item 
-        let sliderItemWidth = sliderItem[indexSliderItem].offsetWidth;
+    // variavel que captura a largura dinamica de cada item 
+    let sliderItemWidth = sliderItem[indexSliderItem].offsetWidth;
 
-        //definindo a largura total do elemento slider list dinamicamente
-        sliderListWidth +=  sliderItemWidth;
+    //definindo a largura total do elemento slider list dinamicamente
+    sliderListWidth +=  sliderItemWidth;
     }
 
     // atribuindo a largura total do elemento slider list
     sliderList.style.width = sliderListWidth + 'px';
-    
-// FIM - ATRIBUICAO DE LARGURAS DINAMICAS
+
+// FIM - ATRIBUIÇÃO DE LARGURAS DINAMICAS
+
+
+
+
+
+
+
+// DECLARACAO DA VARIAVEL lastItem (CORRIGIR ERRO)
+let lastItem = sliderListWidth - containerWidth;
+
+
+
+
+
 
 
 
@@ -97,20 +109,20 @@
 
 
 
-// INICIO - FUNCTIONS PREV/NEXT
-
-// aciona os métodos necessários ao cliclar no botão next
-itemNext.addEventListener('click', function(){
-    nextSlideAnimation();
-})
-
-// aciona os métodos necessários ao cliclar no botão prev
-itemPrev.addEventListener('click', function() {
-    prevSlideAnimation();
-});
-
-// FIM - FUNCTIONS PREV/NEXT
 
 
+// INICIO - MAIN FUNCTIONS
+
+    //aciona os métodos necessários ao cliclar no botão next
+    itemNext.addEventListener('click', function(){
+        nextSlideAnimation();
+    })
+
+    //aciona os métodos necessários ao cliclar no botão prev
+    itemPrev.addEventListener('click', function() {
+        prevSlideAnimation();
+    });
+
+// FIM - MAIN FUNCTIONS
 
 // FIM PORTIFOLIO SLIDER
