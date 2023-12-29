@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
+    list-style: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Open Sans', sans-serif;
@@ -429,7 +430,26 @@ header {
 
     ion-icon {
         font-size: 30px;
-      }
+    }
+
+    .jl-slider-container {
+        background-color: yellow;
+        display: block;
+        overflow: hidden;
+    }
+
+    .jl-slider-list {
+        width: auto;
+        height: 700px;
+        display: block;
+        background-color: deeppink;
+    }
+
+    .jl-slider-item {
+        display: block;
+        float: left;
+        height: 500px;
+    }
 
 }
 

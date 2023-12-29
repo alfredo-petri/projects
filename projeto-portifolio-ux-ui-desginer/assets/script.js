@@ -56,3 +56,33 @@ var waypoint = new Waypoint({
         scrollDown.classList.toggle('jl-fade-out'); 
     }, offset: '75%'
   }) 
+
+
+  // PORTIFÓLIO SLIDER
+
+  // Declarando váriaveis slider
+
+  let sliderContainer = document.querySelector ('.jl-slider-container');
+  let sliderList = document.querySelector ('.jl-slider-list');
+  let sliderItem = document.querySelectorAll ('.jl-slider-item');
+  let sliderListWidth = null;
+
+  // Declarando variáveis de captura de larguras individuais
+
+  let containerWidth = sliderContainer.parentElement.offsetWidth;
+  
+
+  // Passando larguras dinâmicas
+
+  sliderContainer.style.width = containerWidth+'px';
+
+  for ( let indexSliderItem = 0; indexSliderItem < sliderItem.length; indexSliderItem ++){
+    sliderItem[indexSliderItem].style.width = containerWidth+'px'; 
+
+    let sliderItemWidth = sliderItem[indexSliderItem].offsetWidth;
+    
+    sliderListWidth +=  sliderItemWidth;
+  }
+
+  sliderList.style.width = sliderListWidth + 'px';
+  // Animação Slider onClick
