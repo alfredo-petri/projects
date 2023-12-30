@@ -1,7 +1,10 @@
 // INICIO PORTIFÓLIO SLIDER
 
 
-// INICIO - DECLARACAO DE VARIAVEIS SLIDER
+// INICIO - DECLARACAO DE VARIAVEIS
+
+
+    //DECLARACAO DE VARIAVEIS SLIDER
 
     // variavel que recebe o elemento slider container
     let sliderContainer = document.querySelector ('.jl-slider-container');
@@ -9,9 +12,18 @@
     let sliderList = document.querySelector ('.jl-slider-list');
     // variavel que recebe o elemento slider item
     let sliderItem = document.querySelectorAll ('.jl-slider-item');
+    // constante que recebe a quantidade de slides
+    const sliderTotalItems = sliderItem.length;
+    // variavel que recebe a classe .jl-current-slide, usado no controle de slides
+    let currentSlide = document.querySelector('.jl-current-slide');
+    // variavel que recebe a classe ,jl-total-slide, usado no controle de slides
+    let totalSlide = document.querySelector('.jl-total-slide');
+    // variavel que armazena o contador atual do controle de slides
+    let currentCounter = 1;
 
 
-    // Declarando variáveis de captura de larguras individuais
+
+    // DECLARACAO DE VARIAVEIS PARA CAPTURA DE LARGURAS INDIVIDUAIS
 
     // variavel que atribui uma largura dinâmica para o container 
     let containerWidth = sliderContainer.parentElement.offsetWidth;
@@ -19,11 +31,11 @@
     let sliderListWidth = null;
 
 
-    // declarando variaveis que receberam os elementos botão prev, botao next e a posição dos itens na lista
+    // DECLARACAO DE VARIAVEIS QUE RECEBEM OS ELEMENTOS BOTAO PREV E BOTAO NEXT
     let itemPrev = document.querySelector ('.jl-item-prev');
     let itemNext = document.querySelector ('.jl-item-next');
 
-    // declarando variaveis que receberam a posicao dos itens da lista e a posição final 
+    // variavel que recebe a posicao dos itens na lista do slider
     let sliderPosition = 0;
 
     
@@ -53,25 +65,13 @@
 // FIM - ATRIBUIÇÃO DE LARGURAS DINAMICAS
 
 
-
-
-
-
-
-// DECLARACAO DA VARIAVEL lastItem (CORRIGIR ERRO)
-let lastItem = sliderListWidth - containerWidth;
-
-
-
-
-
-
-
-
 // INICIO - HANDLERS
 
-    // declarando o método responsável por animar a transição para o próximo slider
+    // metodo responsável por animar a transição para o próximo slider
     let nextSlideAnimation = function(){
+
+        // DECLARACAO DA VARIAVEL lastItem
+        let lastItem = sliderListWidth - containerWidth;
 
         // se a posição do item (sliderPosition) for igual a ultima posição (lastItem), o return vazio interrompe a função
         if((-sliderPosition) === lastItem ) {
@@ -87,7 +87,7 @@ let lastItem = sliderListWidth - containerWidth;
         });
     };
 
-    // declarando o método responsável por animar a transição para o slider anterior
+    // metodo responsável por animar a transição para o slider anterior
     let prevSlideAnimation = function() {
         
         // se a posição do item (sliderPosition) for igual a primeira posição, ou seja igual a 0, o return vazio interrompe a função
@@ -105,7 +105,33 @@ let lastItem = sliderListWidth - containerWidth;
             });
     };
 
+    // metodo reponsavel por aumentar o current counter 
+    let currentCounterAdd = function (){
+        if (currentCounter > 0 && currentCounter < sliderTotalItems){
+            currentCounter++;
+            currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
+        }
+    } 
+
+    // metodo reponsavel por aumentar o current counter 
+    let currentCounterSub = function (){
+        if (currentCounter > 1 && currentCounter <= sliderTotalItems){
+            currentCounter--;
+            currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
+        }
+    } 
+
 // FIM - HANDLERS
+
+
+// INICIO - ACTIONS
+
+    // atribuição automatica de numero de slides aos controles do slider
+    totalSlide.innerHTML = sliderTotalItems.toString().padStart(2, '0');
+
+
+// FIM - ACTIONS
+
 
 
 
@@ -116,11 +142,13 @@ let lastItem = sliderListWidth - containerWidth;
     //aciona os métodos necessários ao cliclar no botão next
     itemNext.addEventListener('click', function(){
         nextSlideAnimation();
+        currentCounterAdd();
     })
 
     //aciona os métodos necessários ao cliclar no botão prev
     itemPrev.addEventListener('click', function() {
         prevSlideAnimation();
+        currentCounterSub();
     });
 
 // FIM - MAIN FUNCTIONS
