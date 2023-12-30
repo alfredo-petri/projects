@@ -22,6 +22,8 @@
     let currentCounter = 1;
     // variavel que recebe o item atual da navegacao
     let navItems = document.querySelectorAll('.jl-item-navigator a')
+    // variavel que recebe o numero destaque do item atual
+    let navEmphasisNumber = document.querySelector('.jl-navigator-counter span')
 
 
 
@@ -115,6 +117,7 @@
             currentCounter++;
             // formata o contador para que seja exibido um 0 antes dele.
             currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
+            navEmphasisNumber.innerHTML = currentCounter.toString().padStart(2, '0');
         }
     } 
 
@@ -125,6 +128,7 @@
             currentCounter--;
             // formata o contador para que seja exibido um 0 antes dele.
             currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
+            navEmphasisNumber.innerHTML = currentCounter.toString().padStart(2, '0');
         }
     } 
 
