@@ -139,6 +139,11 @@
             // condicao de verificacao para adicionar a aclasse css
             if (currentNav === currentCounter){
                 navItems[indexNav].classList.add('jl-item-active') 
+                //animacao aumentar
+                anime({
+                    targets: '.jl-item-active',
+                    width: 85
+                });
             }
         }
     }
@@ -149,8 +154,15 @@
         // primeiro o loop remove, entao ele adiciona ao item atual a classe active
         for (let removeOtherActive = 0; removeOtherActive < navItems.length; removeOtherActive++){
             navItems[removeOtherActive].classList.remove('jl-item-active') 
-            setActiveNav()
+
+            //animacao diminuir
+            anime({
+                targets: navItems[removeOtherActive],
+                width: 20
+            });
         }
+
+        setActiveNav();
     }
 
 
@@ -158,6 +170,12 @@
 
 
 // INICIO - ACTIONS
+
+    //animacao
+    anime({
+        targets: '.jl-item-active',
+        width: 85
+    });
 
     // atribuição automatica de numero de slides aos controles do slider
     totalSlide.innerHTML = sliderTotalItems.toString().padStart(2, '0');

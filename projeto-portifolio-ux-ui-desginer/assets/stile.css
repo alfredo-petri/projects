@@ -386,7 +386,6 @@ header {
     }
 
     .jl-item-navigator a.jl-item-active {
-        width: 85px;
         background-color: #2ccb69;
     }
 
