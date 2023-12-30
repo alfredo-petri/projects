@@ -20,6 +20,8 @@
     let totalSlide = document.querySelector('.jl-total-slide');
     // variavel que armazena o contador atual do controle de slides
     let currentCounter = 1;
+    // variavel que recebe o item atual da navegacao
+    let navItems = document.querySelectorAll('.jl-item-navigator a')
 
 
 
@@ -105,21 +107,52 @@
             });
     };
 
-    // metodo reponsavel por aumentar o current counter 
+    // metodo responsavel por aumentar o current counter 
     let currentCounterAdd = function (){
+
+        // condicao que verifica se o contador atual esta dentro do limite de itens, entao acrescenta +1 ao contador 
         if (currentCounter > 0 && currentCounter < sliderTotalItems){
             currentCounter++;
+            // formata o contador para que seja exibido um 0 antes dele.
             currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
         }
     } 
 
-    // metodo reponsavel por aumentar o current counter 
+    // metodo responsavel por diminuir o current counter 
     let currentCounterSub = function (){
+        // condicao que verifica se o contador atual esta dentro do limite de itens, entao diminui 1 do contador atual
         if (currentCounter > 1 && currentCounter <= sliderTotalItems){
             currentCounter--;
+            // formata o contador para que seja exibido um 0 antes dele.
             currentSlide.innerHTML = currentCounter.toString().padStart(2, '0');
         }
     } 
+
+    // metodo para aplicar a classe css .jl-item-active ao atual item do da navegação
+    let setActiveNav = function () {
+
+        // loop para adicionar a classe active ao item atual
+        for (let indexNav = 0; indexNav < navItems.length; indexNav++){
+            
+            // converte string em numero 
+            let currentNav = parseInt(navItems[indexNav].getAttribute('data-nav'));
+            // condicao de verificacao para adicionar a aclasse css
+            if (currentNav === currentCounter){
+                navItems[indexNav].classList.add('jl-item-active') 
+            }
+        }
+    }
+
+    //metodo para remover a classe css .jl-item-active dos demais itens e adiciona-la ao item atual
+    let changeActiveNav = function () {
+
+        // primeiro o loop remove, entao ele adiciona ao item atual a classe active
+        for (let removeOtherActive = 0; removeOtherActive < navItems.length; removeOtherActive++){
+            navItems[removeOtherActive].classList.remove('jl-item-active') 
+            setActiveNav()
+        }
+    }
+
 
 // FIM - HANDLERS
 
@@ -143,12 +176,14 @@
     itemNext.addEventListener('click', function(){
         nextSlideAnimation();
         currentCounterAdd();
+        changeActiveNav();
     })
 
     //aciona os métodos necessários ao cliclar no botão prev
     itemPrev.addEventListener('click', function() {
         prevSlideAnimation();
         currentCounterSub();
+        changeActiveNav();
     });
 
 // FIM - MAIN FUNCTIONS
