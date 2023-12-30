@@ -29,6 +29,12 @@ header {
     }
 }
 
+@keyframes slideInLong {
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes lineDown {
     0% {
         transform: scale(1, 0);
@@ -80,6 +86,13 @@ header {
         transform: scaleX(1);
     }
 }
+
+@keyframes scaleUp {
+    to{
+        transform: scale(1);
+    }
+}
+
 
 @media screen and (min-width: 320px) {
 
@@ -457,10 +470,12 @@ header {
         width: calc(100%-75px);
         display: table;
         margin-top: 75px;
+        opacity: 0;
     }
 
     .jl-portfolio-item-info h1 {
         margin-top: -20px;
+        
     }
 
     .jl-portfolio-thumb {
@@ -488,6 +503,7 @@ header {
         height: auto;
         position: relative;
         left: -75px;
+        transform: scale(0);
     }
 
     
@@ -729,6 +745,10 @@ header {
     animation: slideIn 0.6s forwards ease-out;
 }
 
+.jl-slide-in-long {
+    animation: slideInLong 0.6s 0.6s forwards ease-out;
+}
+
 .jl-is-on {
     display: block;
 }
@@ -739,4 +759,8 @@ header {
 
 .jl-scale-right {
     animation: scaleRight 0.7s 0.2s forwards cubic-bezier(0,1.01,.32,1);
+}
+
+.jl-scale-up {
+    animation: scaleUp 0.5s 0.5s forwards cubic-bezier(0,1.01,.32,1);
 }

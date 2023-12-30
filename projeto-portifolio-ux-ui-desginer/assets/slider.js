@@ -154,25 +154,7 @@
         }
     }
 
-    //metodo para remover a classe css .jl-item-active dos demais itens e adiciona-la ao item atual
-    let changeActiveNav = function () {
-
-        // primeiro o loop remove, entao ele adiciona ao item atual a classe active
-        for (let removeOtherActive = 0; removeOtherActive < navItems.length; removeOtherActive++){
-            navItems[removeOtherActive].classList.remove('jl-item-active') 
-
-            //animacao diminuir
-            anime({
-                targets: navItems[removeOtherActive],
-                width: 20
-            });
-        }
-
-        setActiveNav();
-        setActiveSlide()
-    }
-
-    
+        
     // metodo para aplicar a classe css .jl-slide-active ao slide atual 
     let setActiveSlide = function () {
 
@@ -184,26 +166,39 @@
             // condicao de verificacao para adicionar a classe css
             if (currentSlide === currentCounter){
                 sliderItem[indexSlide].classList.add('jl-slide-active');
-
-                console.log(sliderItem[indexSlide]);
-
                 sliderItem[indexSlide].querySelector('.jl-portfolio-item-box').classList.add('jl-scale-right'); 
+                sliderItem[indexSlide].querySelector('.jl-portfolio-thumb img').classList.add('jl-scale-up'); 
+                sliderItem[indexSlide].querySelector('.jl-portfolio-item-info').classList.add('jl-slide-in-long'); 
             }
         }
     }
 
-    /*
-    //metodo para remover a classe css .jl-slide-active dos demais itens e adiciona-la ao item atual
-    let changeActiveSlide = function () {
+    //metodo para remover a classe css .jl-item-active e .jl-slide-active dos demais itens e adiciona-las ao item atual
+    let changeActive = function () {
 
         // primeiro o loop remove, entao ele adiciona ao item atual a classe active
-        for (let removeOtherActive = 0; removeOtherActive < sliderItem.length; removeOtherActive++){
-        sliderItem[removeOtherActive].classList.remove('jl-slide-active') 
+        for (let removeOtherActiveNav = 0; removeOtherActiveNav < navItems.length; removeOtherActiveNav++){
+            navItems[removeOtherActiveNav].classList.remove('jl-item-active') 
+
+            //animacao diminuir
+            anime({
+                targets: navItems[removeOtherActiveNav],
+                width: 20
+            });
+
+            for (let removeOtherActiveSlide = 0; removeOtherActiveSlide < sliderItem.length; removeOtherActiveSlide++){
+                sliderItem[removeOtherActiveSlide].classList.remove('jl-slide-active') 
+                sliderItem[removeOtherActiveSlide].querySelector('.jl-portfolio-item-box').classList.remove('jl-scale-right'); 
+                sliderItem[removeOtherActiveSlide].querySelector('.jl-portfolio-thumb img').classList.remove('jl-scale-up'); 
+                sliderItem[removeOtherActiveSlide].querySelector('.jl-portfolio-item-info').classList.remove('jl-slide-in-long'); 
+                }
+        
         }
 
+        setActiveNav();
         setActiveSlide();
     }
-    */
+
 
 
 // FIM - HANDLERS
@@ -234,14 +229,14 @@
     itemNext.addEventListener('click', function(){
         nextSlideAnimation();
         currentCounterAdd();
-        changeActiveNav();
+        changeActive();
     })
 
     //aciona os métodos necessários ao cliclar no botão prev
     itemPrev.addEventListener('click', function() {
         prevSlideAnimation();
         currentCounterSub();
-        changeActiveNav();
+        changeActive();
     });
 
 // FIM - MAIN FUNCTIONS
