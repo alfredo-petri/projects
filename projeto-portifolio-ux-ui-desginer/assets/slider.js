@@ -87,7 +87,8 @@
         //executa a animação de mudança de posição nos itens do slider
         anime({
             targets: sliderList,
-            translateX: sliderPosition
+            translateX: sliderPosition,
+            easing: 'cubicBezier(0,1.01,.32,1)'
         });
     };
 
@@ -105,7 +106,8 @@
         //executa a animação de mudança de posição nos itens do slider
         anime({
             targets: sliderList,
-            translateX: sliderPosition
+            translateX: sliderPosition,
+            easing: 'cubicBezier(0,1.01,.32,1)'
             });
     };
 
@@ -140,7 +142,7 @@
             
             // converte string em numero 
             let currentNav = parseInt(navItems[indexNav].getAttribute('data-nav'));
-            // condicao de verificacao para adicionar a aclasse css
+            // condicao de verificacao para adicionar a classe css
             if (currentNav === currentCounter){
                 navItems[indexNav].classList.add('jl-item-active') 
                 //animacao aumentar
@@ -167,7 +169,41 @@
         }
 
         setActiveNav();
+        setActiveSlide()
     }
+
+    
+    // metodo para aplicar a classe css .jl-slide-active ao slide atual 
+    let setActiveSlide = function () {
+
+        // loop para adicionar a classe active ao item atual
+        for (let indexSlide = 0; indexSlide < sliderItem.length; indexSlide++){
+            
+            // converte string em numero 
+            let currentSlide = parseInt(sliderItem[indexSlide].getAttribute('data-slide'));
+            // condicao de verificacao para adicionar a classe css
+            if (currentSlide === currentCounter){
+                sliderItem[indexSlide].classList.add('jl-slide-active');
+
+                console.log(sliderItem[indexSlide]);
+
+                sliderItem[indexSlide].querySelector('.jl-portfolio-item-box').classList.add('jl-scale-right'); 
+            }
+        }
+    }
+
+    /*
+    //metodo para remover a classe css .jl-slide-active dos demais itens e adiciona-la ao item atual
+    let changeActiveSlide = function () {
+
+        // primeiro o loop remove, entao ele adiciona ao item atual a classe active
+        for (let removeOtherActive = 0; removeOtherActive < sliderItem.length; removeOtherActive++){
+        sliderItem[removeOtherActive].classList.remove('jl-slide-active') 
+        }
+
+        setActiveSlide();
+    }
+    */
 
 
 // FIM - HANDLERS
