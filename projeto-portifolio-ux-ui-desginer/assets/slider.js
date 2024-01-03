@@ -186,6 +186,7 @@
                 width: 20
             });
 
+            //loop para adicionar as classes responsaveis pelas animações aos seus respectivos itens
             for (let removeOtherActiveSlide = 0; removeOtherActiveSlide < sliderItem.length; removeOtherActiveSlide++){
                 sliderItem[removeOtherActiveSlide].classList.remove('jl-slide-active') 
                 sliderItem[removeOtherActiveSlide].querySelector('.jl-portfolio-item-box').classList.remove('jl-scale-right'); 
