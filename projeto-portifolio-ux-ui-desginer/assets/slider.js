@@ -11,7 +11,7 @@
     // variavel que recebe o elemento slider list
     let sliderList = document.querySelector ('.jl-slider-list');
     // variavel que recebe o elemento slider item
-    let sliderItem = document.querySelectorAll ('.jl-slider-item');
+    let sliderItem = document.querySelectorAll ('.jl-portfolio-item');
     // constante que recebe a quantidade de slides
     const sliderTotalItems = sliderItem.length;
     // variavel que recebe a classe .jl-current-slide, usado no controle de slides

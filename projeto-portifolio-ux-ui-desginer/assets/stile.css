@@ -470,15 +470,18 @@ body {
     }
 
     .jl-slider-list .jl-portfolio-item-info {
-        width: calc(100%-75px);
+        width: calc(100% - 75px);
         display: table;
         margin-top: 75px;
         opacity: 0;
     }
 
+    .jl-portfolio-list .jl-portfolio-item-info {
+        width: calc(100% - 105px);
+    }
+
     .jl-slider-list .jl-portfolio-item-info h1 {
         margin-top: -20px;
-        
     }
 
     .jl-slider-list .jl-portfolio-thumb, .jl-portfolio-list .jl-portfolio-thumb {
@@ -525,7 +528,33 @@ body {
 
     /* ----PAGE PORTFOLIO---- */
 
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+        text-align: right;
+        margin-top: 62px;
+    }
 
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > button{
+        float: right;
+    }
+
+    
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row {
+        flex-direction: row-reverse;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-left: 105px;
+        margin-top: 62px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
+        left: 75px;
+    }
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+        float: left;
+        margin-left: 75px;
+    }
+    
 
 
     
@@ -598,7 +627,7 @@ body {
 
 }
 
-/*  botoẽs  */
+/*  BOTÕES  */
 
 .jl-btn {
     display: table;
