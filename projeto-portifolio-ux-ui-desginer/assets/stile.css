@@ -314,14 +314,14 @@ body {
         display: block;
         position: absolute;
         bottom: -25px;
-        right: 0;
+        right: -0.5px;
         background: transparent url('../assets/midia/corner.svg') no-repeat;
     }
 
     /* ----PAGE HOME---- */
 
     .jl-display-text {
-        margin-top: 10%;
+        margin-top: 8%;
     }
 
     
@@ -334,7 +334,7 @@ body {
 
     .jl-scroll-down {
         width: 70px;
-        height: 125px;
+        height: 105px;
         border-radius: 35px 35px 0 0;
         background-color: #2ccb69;
         display: block;
@@ -350,7 +350,7 @@ body {
     .jl-arrow-down {
         width: 100%;
         height: 75px;
-      display: table;   
+        display: table;   
         margin-top: 30px;
         position: relative;
     }
@@ -602,6 +602,26 @@ body {
         left: -15px;
     }
 
+    /* ----PAGE ABOUT---- */
+
+    .jl-hero {
+        height: 500px;
+        background-image: url('./portfolio-pages/manage-it-midia/hero.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: block;
+    }
+
+    .jl-hero-inner {
+        height: 500px;
+        position: relative;
+    }
+
+    .jl-hero-inner::before {
+        content: '';
+        
+    }
     
 
 
