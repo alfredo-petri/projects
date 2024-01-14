@@ -651,14 +651,27 @@ body {
         border-right: 1px solid #2ccb69;
     }
 
+    .jl-post {
+        width: 100%;
+        display: table;
+    }
+
+    .jl-post p{
+        margin-bottom: 30px;
+    }
+
     .jl-post-section {
         width: 100%;
         display: table;
         padding: 45px 0;
     }
 
-    .jl-post p{
-        margin-bottom: 30px;
+    .jl-post-gallery {
+        margin-top: -270px;
+    }
+
+    .jl-pre-gallery {
+        padding-bottom: 270px;
     }
 
 
