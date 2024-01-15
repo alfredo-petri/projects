@@ -692,6 +692,33 @@ body {
         position: relative;
     }
 
+    .jl-gallery-frame-container .jl-items-next-prev {
+        width: 150px;
+        margin: 75px auto 0;
+    }
+
+    .jl-close-gallery {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        display: block;
+        position: absolute;
+        top: -15px;
+        right: -45px;
+        background-color: #000;
+        z-index: 1200;
+    }
+
+    .jl-close-gallery ion-icon {
+        color: #2ccb69;
+        width: 25px;
+        height: 25px;
+        line-height: 45px;
+        align-items: center;
+        cursor: pointer;
+    }
+
     img.jl-gallery-frame {
         width: 100%;
         max-width: 100%;
