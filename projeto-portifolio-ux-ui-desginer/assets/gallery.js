@@ -65,10 +65,7 @@ const nextItem = function(){
     currentItemNum = parseInt(frameImage.getAttribute('data-index'));
     nextItemNum = currentItemNum +1;
    
-    console.log (currentItemNum);
-    console.log (nextItemNum);
-   
-    for (let i = 0; n < galleryImages.length; i++){
+    for (let i = 0; i < galleryImages.length; i++){
         item = galleryImages[i];
         dataItemNum = parseInt(item.getAttribute('data-item'));
 
