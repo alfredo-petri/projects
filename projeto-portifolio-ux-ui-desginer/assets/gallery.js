@@ -20,6 +20,14 @@ let itemNum = null;
 let currentItemNum = null;
 //variavel que indica o numero do proximo item no frame
 let nextItemNum = null;
+//variavel que ira receber o item atual
+let item = null;
+//variavel que ira receber o atributo data-item
+let dataItemNum = null;
+//variavel que captura o caminho da proxima imagem a ser exibida no frame
+let nextSrc = null;
+//variavel que captura o atributo data-index do proximo item
+let nextIndex = null;
 
 //metodo para pegar a imagem e aplica-la no frame
 const getImageSrc =  function(){
@@ -28,12 +36,13 @@ const getImageSrc =  function(){
     for (let i = 0; i < galleryImages.length; i++){
         //função para pegar o caminho e num da imagem desejada e aplica-la ao frame, a partir de um click
         galleryImages [i].addEventListener('click', function(){
+
             imageSrc = this.getAttribute('data-src');
             frameImage.setAttribute ('src', imageSrc);
+
             itemNum = this.getAttribute('data-item');
             frameImage.setAttribute ('data-index', itemNum);
             
-
             //adiciona visibilidade aos elementos overlay e frame de imagem
             overlay.classList.add('jl-is-on');
             frameContainer.classList.add('jl-is-on');
@@ -55,8 +64,21 @@ for (let i = 0; i < closeGallery.length; i++){
 const nextItem = function(){
     currentItemNum = parseInt(frameImage.getAttribute('data-index'));
     nextItemNum = currentItemNum +1;
+   
     console.log (currentItemNum);
     console.log (nextItemNum);
+   
+    for (let i = 0; n < galleryImages.length; i++){
+        item = galleryImages[i];
+        dataItemNum = parseInt(item.getAttribute('data-item'));
+
+        if (dataItemNum === nextItemNum){
+            nextSrc = item.getAttribute('data-src');
+            nextIndex = item.getAttribute('data-item');
+            frameImage.setAttribute('src', nextSrc);
+            frameImage.setAttribute('data-index', nextIndex);
+        }
+    }
 }
 
 
