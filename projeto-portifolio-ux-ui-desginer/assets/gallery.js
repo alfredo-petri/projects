@@ -14,7 +14,7 @@ let closeGallery = document.querySelectorAll('.jl-toggle-gallery');
 let btnPrev = document.querySelector ('.jl-item-prev');
 //variavel de captura do botao next
 let btnNext = document.querySelector ('.jl-item-next');
-//variavel de captura do numero da imagem que será aplicada no frame
+//varprevl de captura do numero da imagem que será aplicada no frame
 let itemNum = null;
 //variavel que indica o numero do item atual no frame
 let currentItemNum = null;
@@ -28,6 +28,18 @@ let dataItemNum = null;
 let nextSrc = null;
 //variavel que captura o atributo data-index do proximo item
 let nextIndex = null;
+
+let prevSrc = null;
+//variavel que captura o atributo data-index do proximo item
+let prevIndex = null;
+
+
+
+const totalCounterNumber = document.querySelector('.jl-total-slide').innerHTML = galleryImages.length.toString().padStart(2, '0');
+
+const applyCurrentNumber = (number) => {
+    document.querySelector('.jl-current-slide').innerHTML = number.toString().padStart(2, '0');
+} 
 
 //metodo para pegar a imagem e aplica-la no frame
 const getImageSrc =  function(){
@@ -46,6 +58,8 @@ const getImageSrc =  function(){
             //adiciona visibilidade aos elementos overlay e frame de imagem
             overlay.classList.add('jl-is-on');
             frameContainer.classList.add('jl-is-on');
+
+            applyCurrentNumber(itemNum);
         })
     }
 }
@@ -61,25 +75,6 @@ for (let i = 0; i < closeGallery.length; i++){
     })
 }
 
-/*
-const nextItem = function(){
-    currentItemNum = parseInt(frameImage.getAttribute('data-index'));
-    nextItemNum = currentItemNum +1;
-   
-    for (let i = 0; i < galleryImages.length; i++){
-        item = galleryImages[i];
-        dataItemNum = parseInt(item.getAttribute('data-item'));
-
-        if (dataItemNum === nextItemNum){
-            nextSrc = item.getAttribute('data-src');
-            nextIndex = item.getAttribute('data-item');
-            frameImage.setAttribute('src', nextSrc);
-            frameImage.setAttribute('data-index', nextIndex);
-        }
-    }
-}
-*/
-
 const nextItem = function(){
 
     itemNum = parseInt(itemNum) +1;
@@ -90,19 +85,30 @@ const nextItem = function(){
     nextSrc = item.getAttribute('data-src');
     nextIndex = item.getAttribute('data-item');
     frameImage.setAttribute('src', nextSrc);
-    frameImage.setAttribute('data-index', nextIndex);
+    frameImage.setAttribute('data-index', nextIndex); 
+    applyCurrentNumber(itemNum);
+}
+
+
+const prevItem = function(){
+
+    itemNum = parseInt(itemNum) -1;
+   
+    if (galleryImages[itemNum] == undefined) return;
+
+    item = galleryImages[itemNum];
+    prevSrc = item.getAttribute('data-src');
+    prevIndex = item.getAttribute('data-item');
+    frameImage.setAttribute('src', prevSrc);
+    frameImage.setAttribute('data-index', prevIndex); 
+    applyCurrentNumber(itemNum);
 }
 
 
 btnNext.addEventListener('click', function(){
     nextItem()
 })
-//identificar o item atual no frame
 
-//identificar o proximo item
-
-//loop para pegar proximo item
-
-//capturar o caminho do frame 
-
-//atribui o  novo caminho ao frame
+btnPrev.addEventListener('click', function(){
+    prevItem()
+})
