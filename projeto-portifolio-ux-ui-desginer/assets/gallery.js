@@ -61,6 +61,7 @@ for (let i = 0; i < closeGallery.length; i++){
     })
 }
 
+/*
 const nextItem = function(){
     currentItemNum = parseInt(frameImage.getAttribute('data-index'));
     nextItemNum = currentItemNum +1;
@@ -76,6 +77,20 @@ const nextItem = function(){
             frameImage.setAttribute('data-index', nextIndex);
         }
     }
+}
+*/
+
+const nextItem = function(){
+
+    itemNum = parseInt(itemNum) +1;
+   
+    if (galleryImages[itemNum] == undefined) return;
+
+    item = galleryImages[itemNum];
+    nextSrc = item.getAttribute('data-src');
+    nextIndex = item.getAttribute('data-item');
+    frameImage.setAttribute('src', nextSrc);
+    frameImage.setAttribute('data-index', nextIndex);
 }
 
 
