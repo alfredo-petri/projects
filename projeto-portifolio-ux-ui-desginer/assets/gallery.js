@@ -86,7 +86,7 @@ const nextItem = function(){
     nextIndex = item.getAttribute('data-item');
     frameImage.setAttribute('src', nextSrc);
     frameImage.setAttribute('data-index', nextIndex); 
-    applyCurrentNumber(itemNum);
+    applyCurrentNumber(nextIndex);
 }
 
 const prevItem = function(){
@@ -100,7 +100,7 @@ const prevItem = function(){
     prevIndex = item.getAttribute('data-item');
     frameImage.setAttribute('src', prevSrc);
     frameImage.setAttribute('data-index', prevIndex); 
-    applyCurrentNumber(itemNum);
+    applyCurrentNumber(prevIndex);
 }
 
 
