@@ -89,7 +89,6 @@ const nextItem = function(){
     applyCurrentNumber(itemNum);
 }
 
-
 const prevItem = function(){
 
     itemNum = parseInt(itemNum) -1;
