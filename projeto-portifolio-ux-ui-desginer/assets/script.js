@@ -105,11 +105,13 @@
             menuMobile.classList.toggle('jl-menu-is-closed');
             menuMobile.classList.toggle('jl-menu-is-open');
             overlayMenu.classList.toggle('jl-is-on');
-            if (iconMenu === 'menu-outline'){
-                btnMenumobileIcon.setAttribute('name', 'close-outline');
+            /*
+            if (iconMenu === 'menu'){
+                btnMenumobileIcon.setAttribute('name', 'close');
             } else {
-                btnMenumobileIcon.setAttribute('name', 'menu-outline');
+                btnMenumobileIcon.setAttribute('name', 'menu');
             }
+            */
         })
         
     }
