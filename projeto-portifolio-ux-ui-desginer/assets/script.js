@@ -7,10 +7,29 @@
     let btnContact = document.querySelector('.jl-btn-contact');
 
     // variavel para selecionar a classe css  .jl-toggle-modal presente no botão de orçamento
-    let toggleModal = document.querySelectorAll('.jl-toggle-modal')
+    let toggleModal = document.querySelectorAll('.jl-toggle-modal');
 
     // variavel para receber btn acroll down
-    let scrollDown = document.querySelector('.jl-scroll-down')
+    let scrollDown = document.querySelector('.jl-scroll-down');
+
+    // declarando variavel para receber a classe css .jl-overlay        
+    let overlay = document.querySelector('.jl-overlay');
+
+    // declarando variavel para receber o ID css #jl-modal-orçamento presente no container do modal        
+    let modalOrcamento = document.querySelector('#jl-modal-orcamento');
+
+    // declarando variavel para receber a classe css .jl-overlay-menu        
+    let overlayMenu = document.querySelector('.jl-overlay-menu');
+
+    // variavel para selecionar a classe css  .jl-toggle-menu presente no botão de abrir/fechar menu
+    let toggleMenu = document.querySelectorAll('.jl-toggle-menu');
+
+
+    let menuMobile = document.querySelector('.jl-menu-mob');
+
+    let btnMenumobileIcon = document.querySelector ('.jl-btn-menu-mob ion-icon');
+
+    let iconMenu = btnMenumobileIcon.getAttribute ('name');
 
 // FIM - DECLARANDO VARIAVEIS
 
@@ -62,12 +81,6 @@
         // função acionada atravś de clique no botão de orçamento    
         toggleModal[i].addEventListener('click', function(){
 
-            // declarando variavel para receber a classe css .jl-overlay        
-            let overlay = document.querySelector('.jl-overlay');
-
-            // declarando variavel para receber o ID css #jl-modal-orçamento presente no container do modal        
-            let modalOrcamento = document.querySelector('#jl-modal-orcamento');
-
             // adiciona a classe css .jl-is-on ao elemento overlay
             overlay.classList.toggle('jl-is-on');
             // adiciona a classe css .jl-is-on ao elemento modal
@@ -82,6 +95,27 @@
 
 // FIM - MODAL ORÇAMENTO
 
+
+// INICIO - MENU MOBILE
+
+    // loop abrindo e fechando modal de orçamento
+    // declaração de variavel i para iteração e estrutura do loop
+    for (let i = 0; i < toggleMenu.length; i++){
+        toggleMenu[i].addEventListener('click', function(){
+            menuMobile.classList.toggle('jl-menu-is-closed');
+            menuMobile.classList.toggle('jl-menu-is-open');
+            overlayMenu.classList.toggle('jl-is-on');
+            if (iconMenu === 'menu-outline'){
+                btnMenumobileIcon.setAttribute('name', 'close-outline');
+            } else {
+                btnMenumobileIcon.setAttribute('name', 'menu-outline');
+            }
+        })
+        
+    }
+
+
+// FIM - MENU MOBILE
 
 
 // INICIO - FADEOUT SCROLL DOWN ANIMATION

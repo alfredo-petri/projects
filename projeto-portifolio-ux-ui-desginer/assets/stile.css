@@ -114,7 +114,7 @@ body {
         z-index: 1000;
     }
 
-    .jl-overlay {
+    .jl-overlay, .jl-overlay-menu {
         width: 100vw;
         height: 100vh;
         display: none;
@@ -208,6 +208,53 @@ body {
 
     .jl-menu {
         display: none;
+    }
+
+    .jl-btn-menu-mob {
+        display: block;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: none;
+        background-color: #2ccb69;
+        color: #000;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        z-index: 1350;
+        cursor: pointer;
+    }
+
+    .jl-btn-menu-mob ion-icon {
+        vertical-align: middle;
+    }
+
+    .jl-menu-mob {
+        display: block;
+        width: 240px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        padding: 80px 30px 30px;
+        background-color: #000;
+        z-index: 1300;
+        transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+    
+    .jl-menu-is-open {
+        right: 0;
+    }
+
+    .jl-menu-is-closed {
+        right: -240px;
+    }
+
+    .jl-menu-mob a {
+        display: block;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
     }
 
     .jl-btn-contact {
@@ -750,6 +797,10 @@ body {
 }
 
 @media screen and (min-width: 992px) {
+
+    .jl-menu-mob {
+        display: none;
+    }
 
     .jl-menu {
         display: table;
