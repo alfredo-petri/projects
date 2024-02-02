@@ -116,7 +116,7 @@ body {
 
     .jl-overlay, .jl-overlay-menu {
         width: 100vw;
-        height: 100vh;
+        height: 110vh;
         display: none;
         position: fixed;
         z-index: 1000;
@@ -232,7 +232,7 @@ body {
     .jl-menu-mob {
         display: block;
         width: 240px;
-        height: 100vh;
+        height: 110vh;
         position: fixed;
         top: 0;
         padding: 80px 30px 30px;
@@ -553,7 +553,6 @@ body {
     .jl-slider-list .jl-portfolio-item {
         display: block;
         float: left;
-        margin-top: calc(28vh - 75px);
     }
 
     .jl-portfolio-list .jl-portfolio-item {
@@ -588,7 +587,12 @@ body {
         position: relative;
     }
 
-    .jl-slider-list .jl-portfolio-thumb > button, .jl-portfolio-list .jl-portfolio-thumb > button {
+    .jl-slider-list .jl-portfolio-thumb > button {
+        margin: 5px auto 0;
+        float: none;
+    }
+
+    .jl-portfolio-list .jl-portfolio-thumb > button {
         margin-top: 5px;
         margin-right: 75px;
         float: right;
@@ -908,6 +912,17 @@ body {
     .jl-navigator-counter::before {
         width: 30px;
     }
+
+    .jl-slider-list .jl-portfolio-thumb > button {
+        margin-top: 5px;
+        margin-right: 0px;
+        float: right;
+    }
+
+    .jl-slider-list .jl-portfolio-item {
+        margin-top: calc(28vh - 75px);
+    }
+
     /* FIM RESPONSIVIDADE */
 
     .jl-menu {
