@@ -127,16 +127,21 @@ body {
 
     .jl-modal {
         opacity: 0;
-        width: 800px;
+        width: 90%;
         display: none;
         padding: 30px;
         border-radius: 0 30px 30px 30px;
-        position: fixed;
+        position: absolute;
         top: 13%;
         left: 0;
         right: 0;
         margin: 0 auto;
         z-index: 1200; 
+    }
+
+    .jl-modal-header h1 {
+        line-height: 30px;
+        margin-bottom: 15px;
     }
 
     .jl-modal-header, .jl-modal-body, .jl-form {
@@ -160,8 +165,8 @@ body {
     }
 
     .jl-form label{
-        margin-bottom: 10px;
-        font-size: 16px;
+        margin-bottom: 3px;
+        font-size: 14px;
         display: inline-block;    
     }
 
@@ -174,6 +179,7 @@ body {
         color: #fff;
         font-size: 16px;
         padding: 0 15px;
+        margin-bottom: 8px;
     }
 
     .jl-text-area {
@@ -377,7 +383,7 @@ body {
         background-repeat: no-repeat;
         background-position: 50% bottom;
         position: relative;
-        background-size: 130% auto;
+        background-size: 120% auto;
     } 
 
     .jl-home-presentation h1 {
@@ -935,7 +941,7 @@ body {
     }
 
     .jl-slider-list .jl-portfolio-item-info button {
-        margin: 0;
+        margin: 2px;
     }
 
     .jl-slider-list .jl-portfolio-thumb {
@@ -1030,8 +1036,24 @@ body {
 
 @media screen and (min-width: 1200px) {
 
+    /* INICIO DA RESPONSIVIDADE */
+
     .jl-title-medium {
         font-size: 64px;
+    }
+
+    .jl-modal {
+        width: 800px;
+    }
+
+    .jl-form label{
+        margin-bottom: 10px;
+        font-size: 16px;
+        display: inline-block;    
+    }
+
+    .jl-field, .jl-text-area {
+        margin-bottom: 15px;
     }
 
     .jl-slider-list .jl-portfolio-thumb {
@@ -1057,6 +1079,8 @@ body {
         width: 35px;
     }
 
+    /* FIM DA RESPONSIVIDADE */
+
 }
 
 @media screen and (min-width: 1364px) {
@@ -1077,6 +1101,7 @@ body {
     border: none;
     transition: all 0.2s ease-out;
     position: relative;
+    margin: 2px;
 }
 
 .jl-btn-block{
