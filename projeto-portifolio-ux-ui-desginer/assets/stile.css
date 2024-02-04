@@ -577,7 +577,7 @@ body {
     
 
     .jl-portfolio-list .jl-portfolio-item-info {
-        width: calc(100% - 105px);
+        width: 100%;
     }
 
     
@@ -597,7 +597,7 @@ body {
     .jl-portfolio-list .jl-portfolio-thumb {
         width: 100%;
         display: table;
-        padding: 75px 0 19px 0;
+        padding-bottom: 19px;
         position: relative;
     }
 
@@ -610,7 +610,6 @@ body {
     .jl-portfolio-list .jl-portfolio-thumb > button {
         margin-top: 5px;
         margin-right: 75px;
-        float: right;
     }
 
     .jl-slider-list .jl-portfolio-item-box {
@@ -626,9 +625,9 @@ body {
     }
     
     .jl-portfolio-list .jl-portfolio-item-box {
+        display: none;
         width: 100%;
         height: 100%;
-        display: block;
         background-color: #2C2C2C;
         position: absolute;
         top: 0;
@@ -649,37 +648,52 @@ body {
         max-width: 100%;
         height: auto;
         position: relative;
-        left: -75px;
+        left: 0;
     } 
 
     /* ----PAGE PORTFOLIO---- */
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
-        text-align: right;
-        margin-top: 62px;
+    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-item-info p {
+        text-align: center;
     }
+
+    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-item-info > button{
+        margin: auto;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-thumb > button {
+        margin: 10px auto 0;
+    }
+
+    /* .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+        width: 100%;
+    } 
 
     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > button{
         float: right;
-    }
+    }*/
 
     
     .jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row {
         flex-direction: row-reverse;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
-        margin-left: 105px;
-        margin-top: 62px;
-    }
+    /*  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        width: 100%;
+    }   */
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
+    /*  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
         left: 75px;
-    }
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+    }   */
+    
+    /*  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
         float: left;
         margin-left: 75px;
-    }
+    }   */
+
+    
+
+
     
 
     /* ----PAGE ABOUT---- */
@@ -946,9 +960,13 @@ body {
 
     .jl-slider-list .jl-portfolio-thumb {
         padding: 30px 30px 10px 0;
-       margin-top: 45px;
+        margin-top: 45px;
     }
     
+    .jl-portfolio-list .jl-portfolio-thumb {
+        padding-top: 75px;
+    }
+
     /* erro
     .jl-slider-list .jl-portfolio-thumb{
         padding: 75px 0 19px 0;
@@ -978,8 +996,75 @@ body {
         height: 100vh;
     }
 
+
+    /* PAGE PORTIFOLIO RESPONSIVE */
+
+    .jl-portfolio-list .jl-portfolio-item-box {
+        display: block;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-top: 62px;
+        padding-left: 25px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+        margin-top: 62px;
+        padding-right: 25px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info h1 {
+        text-align: left;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info h1 {
+        text-align: right;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info p {
+        text-align: left;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info p {
+        text-align: right;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info > button{
+        float: left;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > button{
+        float: right;
+    }
+
     
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb {
+        left: -75px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb {
+        right: -75px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+        float: left;
+        margin: 10px 0 0 75px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > button{
+        float: right;
+        margin: 10px 75px 0 0;
+    }
     
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
+        left: 75px;
+    
+    }
+    
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > img{
+        left: -75px;
+    
+    }
 
     /* FIM RESPONSIVIDADE */
 
