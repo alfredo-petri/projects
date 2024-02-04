@@ -565,7 +565,7 @@ body {
     }
 
     .jl-portfolio-list .jl-portfolio-item {
-        margin-bottom: 100px;
+        margin-bottom: 120px;
     }
 
     .jl-slider-list .jl-portfolio-item-info {
@@ -698,10 +698,34 @@ body {
 
     /* ----PAGE ABOUT---- */
 
-    #jl-avatar-about img {
-        position: relative;
-        left: -15px;
+    .jl-section-about {
+        height: calc(100% - 130px);
     }
+
+    .jl-section-about-content {
+        height: 100%;
+    }
+
+    .jl-avatar-about {
+        position: relative;
+    }
+
+    .jl-box-img {
+        position: absolute;
+        left: -10px;
+        bottom: 0px;
+    }
+
+    .jl-title-about, .jl-info-about, .jl-awards-about {
+        width: 100%;
+        display: table;
+        float: left;
+        margin-bottom: 30px;
+    }
+
+
+
+   
 
     /* ----PAGE ABOUT---- */
 
@@ -853,7 +877,7 @@ body {
     }
 
     .jl-slider-list .jl-portfolio-item-info button {
-        margin: 0 auto;
+        margin: auto;
     }
 
     .jl-full-height {
@@ -964,7 +988,7 @@ body {
     }
     
     .jl-portfolio-list .jl-portfolio-thumb {
-        padding-top: 75px;
+        padding-top: 30px;
     }
 
     /* erro
@@ -973,12 +997,20 @@ body {
     }
     */
 
+   
 
     .jl-slider-list .jl-portfolio-thumb img {
-        width: 120%;
-        max-width: 120%;
+        width: calc(100% + 75px);
+        max-width: calc(100% + 75px);
         left: -75px;
     }
+
+    .jl-portfolio-list .jl-portfolio-thumb img {
+        width: calc(100% + 30px);
+        max-width: calc(100% + 30px);
+    }
+
+
 
     /* erro
     .jl-slider-list .jl-portfolio-thumb > button, .jl-portfolio-list .jl-portfolio-thumb > button {
@@ -1004,12 +1036,12 @@ body {
     }
 
     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
-        margin-top: 62px;
+        margin-top: 20px;
         padding-left: 25px;
     }
 
     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
-        margin-top: 62px;
+        margin-top: 20px;
         padding-right: 25px;
     }
 
@@ -1048,21 +1080,21 @@ body {
 
     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
         float: left;
-        margin: 10px 0 0 75px;
+        margin: 10px 0 0 30px;
     }
 
     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > button{
         float: right;
-        margin: 10px 75px 0 0;
+        margin: 10px 30px 0 0;
     }
     
     .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
-        left: 75px;
+        left: 30px;
     
     }
     
     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > img{
-        left: -75px;
+        left: -60px;
     
     }
 
@@ -1141,19 +1173,57 @@ body {
         margin-bottom: 15px;
     }
 
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-top: 62px;
+        padding-left: 25px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+        margin-top: 62px;
+        padding-right: 25px;
+    }
+
+
     .jl-slider-list .jl-portfolio-thumb {
         padding: 75px 0 19px 0;
         margin-top: 0;
     }
 
+    .jl-portfolio-list .jl-portfolio-thumb {
+        padding-top: 75px;
+    } 
+
     .jl-slider-list .jl-portfolio-thumb img {
         width: 100%;
         max-width: 100%;
-        left: -75px;
     }
 
-    .jl-slider-list .jl-portfolio-thumb > button, .jl-portfolio-list .jl-portfolio-thumb > button {
+    .jl-portfolio-list .jl-portfolio-thumb img {
+        width: 100%;
+        max-width: 100%;        
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > img{
+        left: 75px;
+    
+    }
+    
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > img{
+        left: -75px;    
+    }
+
+    .jl-slider-list .jl-portfolio-thumb > button {
         margin-right: 75px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+        float: left;
+        margin: 10px 0 0 75px;
+    }
+
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > button{
+        float: right;
+        margin: 10px 75px 0 0;
     }
 
     .jl-navigator-counter span{
@@ -1170,6 +1240,7 @@ body {
 
 @media screen and (min-width: 1364px) {
 
+    
 }
 
 @media screen and (min-width: 1600px) {
