@@ -32,6 +32,8 @@
     let iconMenu 
 
     let triggerTopbar = document.querySelector ('.jl-trigger-topbar');
+    let topBar = document.querySelector ('.jl-topbar');
+    let logo = document.querySelector ('.jl-logo');
 
 // FIM - DECLARANDO VARIAVEIS
 
@@ -39,13 +41,15 @@
 // INICIO - TOPBAR (WAIPOINTS)
 
 // declarando novo objeto
-let topBar = new Waypoint({
+let topBarAnimation = new Waypoint({
     
     element: triggerTopbar,
 
     // metodo que adiciona a animaçao fadeout ao elemento .jl-scroll-down quando rolar a página 25% para baixo 
     handler: function() {
-        console.log ('atingiu o topo')
+        topBar.classList.toggle('jl-topbar-bg');
+        logo.classList.toggle('jl-logo-shorten');
+        console.log('pow');
     }, offset: '50px'
 }) 
 
