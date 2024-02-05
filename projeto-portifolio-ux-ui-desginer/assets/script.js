@@ -27,9 +27,9 @@
 
     let menuMobile = document.querySelector('.jl-menu-mob');
 
-    let btnMenumobileIcon = document.querySelector ('.jl-btn-menu-mob ion-icon');
+    let btnMenuMobileIcon = document.querySelector ('.jl-btn-menu-mob ion-icon');
 
-    let iconMenu = btnMenumobileIcon.getAttribute ('name');
+    let iconMenu 
 
 // FIM - DECLARANDO VARIAVEIS
 
@@ -100,22 +100,25 @@
 
     // loop abrindo e fechando modal de orçamento
     // declaração de variavel i para iteração e estrutura do loop
+    
+    
     for (let i = 0; i < toggleMenu.length; i++){
         toggleMenu[i].addEventListener('click', function(){
+            overlayMenu.classList.toggle('jl-is-on');
             menuMobile.classList.toggle('jl-menu-is-closed');
             menuMobile.classList.toggle('jl-menu-is-open');
-            overlayMenu.classList.toggle('jl-is-on');
-            /*
+            
+            iconMenu = btnMenuMobileIcon.getAttribute ('name');
+            
             if (iconMenu === 'menu'){
-                btnMenumobileIcon.setAttribute('name', 'close');
+                btnMenuMobileIcon.setAttribute('name', 'close');
             } else {
-                btnMenumobileIcon.setAttribute('name', 'menu');
+                btnMenuMobileIcon.setAttribute('name', 'menu');
             }
-            */
+            
         })
         
     }
-
 
 // FIM - MENU MOBILE
 
