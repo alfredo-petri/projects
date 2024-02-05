@@ -31,8 +31,23 @@
 
     let iconMenu 
 
+    let triggerTopbar = document.querySelector ('.jl-trigger-topbar');
+
 // FIM - DECLARANDO VARIAVEIS
 
+
+// INICIO - TOPBAR (WAIPOINTS)
+
+// declarando novo objeto
+let topBar = new Waypoint({
+    
+    element: triggerTopbar,
+
+    // metodo que adiciona a animaçao fadeout ao elemento .jl-scroll-down quando rolar a página 25% para baixo 
+    handler: function() {
+        console.log ('atingiu o topo')
+    }, offset: '50px'
+}) 
 
 // INICIO - PRELOADER
 
@@ -114,27 +129,8 @@
                 btnMenuMobileIcon.setAttribute('name', 'close');
             } else {
                 btnMenuMobileIcon.setAttribute('name', 'menu');
-            }
-            
-        })
-        
+            }  
+        })   
     }
 
 // FIM - MENU MOBILE
-
-
-// INICIO - FADEOUT SCROLL DOWN ANIMATION
-
-    // animando elementos on scroll com a biblioteca waypoints
-    // declarando novo objeto
-    let waypoint = new Waypoint({
-        
-        element: scrollDown,
-
-        // metodo que adiciona a animaçao fadeout ao elemento .jl-scroll-down quando rolar a página 25% para baixo 
-        handler: function() {
-            scrollDown.classList.toggle('jl-fade-out'); 
-        }, offset: '75%'
-    }) 
-
-//FIM FADEOUT SCROLL DOWN ANIMATION  

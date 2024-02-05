@@ -12,6 +12,8 @@
     </head>
     <body>
 
+        <div class="jl-trigger-topbar"></div>
+
         <div class="jl-preloader">
             <div class="jl-preloader-inner">
                 <img src="./assets/midia/lemon-loader.svg" alt="um limao verde em formato de logo">
@@ -281,5 +283,23 @@
         <script src="./assets/anime.min.js"></script>
         <script src="./assets/slider.js"></script>
         <script src="./assets/script.js"></script>
+
+        <script>
+            // INICIO - FADEOUT SCROLL DOWN ANIMATION
+
+            // animando elementos on scroll com a biblioteca waypoints
+            // declarando novo objeto
+            let waypoint = new Waypoint({
+                
+                element: scrollDown,
+
+                // metodo que adiciona a animaçao fadeout ao elemento .jl-scroll-down quando rolar a página 25% para baixo 
+                handler: function() {
+                    scrollDown.classList.toggle('jl-fade-out'); 
+                }, offset: '75%'
+            }) 
+        </script>
+
+//FIM FADEOUT SCROLL DOWN ANIMATION  
     </body>
 </html>

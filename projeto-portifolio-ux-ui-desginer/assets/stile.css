@@ -95,6 +95,15 @@ body {
     }
 }
 
+.jl-trigger-topbar {
+    width: 1px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 130px;
+    background-color: #068737;
+}
 
 @media screen and (min-width: 320px) {
 
@@ -840,7 +849,7 @@ body {
         position: absolute;
         top: 3%;
         left: 7%;
-        z-index: 1150;
+        z-index: 1250;
     }
 
     .jl-gallery-frame-inner .jl-skeleton-loading > div{

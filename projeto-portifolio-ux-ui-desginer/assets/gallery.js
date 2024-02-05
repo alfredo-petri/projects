@@ -1,5 +1,5 @@
 // variavel de captura do elemento overlay
-let overlay = document.querySelector('.jl-overlay');
+//let overlay = document.querySelector('.jl-overlay');
 //variavel de captura do container do frame
 let frameContainer = document.querySelector('.jl-gallery-frame-container');
 //variavel de captura da imagem do frame
@@ -45,11 +45,6 @@ const skeletonAnimation = function (imagem) {
         }, 2000);
     });
 }
-
-
-
-
-
 
 const totalCounterNumber = document.querySelector('.jl-total-slide').innerHTML = galleryImages.length.toString().padStart(2, '0');
 
