@@ -708,20 +708,26 @@ body {
 
     .jl-avatar-about {
         position: relative;
+        height: 350px;
     }
 
     .jl-box-img {
         position: absolute;
-        left: -10px;
+        left: 0px;
         bottom: 0px;
+        width: 85%;
+        max-width: 85%;
+        display: table;
     }
 
     .jl-title-about, .jl-info-about, .jl-awards-about {
-        width: 100%;
+        width: 90%;
         display: table;
-        float: left;
-        margin-bottom: 30px;
+        float: center;
+        margin: 0 auto 30px;
     }
+
+    
 
 
 
@@ -871,6 +877,10 @@ body {
         font-size: 90px;
     }
 
+    .jl-title-about .jl-title-large {
+        font-size: 50px;
+    }
+
     .jl-title-medium {
         font-size: 36px;
         text-align: center;
@@ -888,9 +898,31 @@ body {
     
 }
 
+@media screen and (min-width: 350px) {
 
+    .jl-avatar-about {
+        height: 450px;
+    }
+
+}
+
+@media screen and (min-width: 430px) {
+
+    .jl-avatar-about {
+        height: 550px;
+    }
+
+}
 
 @media screen and (min-width: 576px) {
+    .jl-title-about .jl-title-large {
+        font-size: 72px;
+    }
+
+
+    .jl-avatar-about {
+        height: 650px;
+    }
 
 }
 
@@ -899,6 +931,16 @@ body {
     .jl-home-presentation {
         background-size: 100% auto;
     }
+
+    .jl-avatar-about {
+        height: 750px;
+    }
+
+    .jl-box-img {
+        width: 80%;
+        max-width: 80%;
+    }
+
 }
 
 
@@ -910,11 +952,31 @@ body {
     .jl-title-medium {
         font-size: 48px;
     }
+
+    .jl-avatar-about {
+        height: 850px;
+    }
+
+    .jl-box-img {
+        width: 75%;
+        max-width: 75%;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
 
     /* INICIO RESPONSIVIDADE */
+
+    .jl-avatar-about {
+        height: auto;
+    }
+
+    .jl-box-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
 
     .jl-menu-mob, .jl-btn-menu-mob {
         display: none;
@@ -1095,7 +1157,32 @@ body {
     
     .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > img{
         left: -60px;
-    
+    }
+
+    /* PAGE ABOUT REPONSIVIDADE */
+
+    .jl-title-about, .jl-info-about, .jl-awards-about {
+        width: 100%;
+        display: table;
+        float: left;
+        margin: 0 auto 30px;
+    }
+
+    .jl-title-about {
+        width: 100%;
+    }
+
+    .jl-title-about .jl-title-large {
+        font-size: 90px;
+    }
+
+    .jl-info-about {
+        width: 60%;
+    }
+
+    .jl-awards-about {
+        width: 40%;
+        padding-left: 30px;
     }
 
     /* FIM RESPONSIVIDADE */
@@ -1149,6 +1236,13 @@ body {
         font-size: 120px;
     }
 
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+    .jl-box-img {
+        width: 150%;
+        max-width: 150%;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1234,6 +1328,10 @@ body {
         width: 35px;
     }
 
+    .jl-title-about .jl-title-large {
+        font-size: 120px;
+    }
+
     /* FIM DA RESPONSIVIDADE */
 
 }
@@ -1246,6 +1344,20 @@ body {
 @media screen and (min-width: 1600px) {
 
 }
+
+@media screen and (min-width: 1740px) {
+
+    .jl-info-about {
+        width: 50%;
+    }
+
+    .jl-awards-about {
+        width: 30%;
+    } 
+
+
+}
+
 
 /*  BOTÕES  */
 
@@ -1451,11 +1563,6 @@ body {
 
 .jl-no-border-radius-right{
     border-radius: 23px 0 0 23px;
-}
-
-.jl-box-img {
-    width: 100%;
-    display: table;
 }
 
 .jl-img-responsive {
