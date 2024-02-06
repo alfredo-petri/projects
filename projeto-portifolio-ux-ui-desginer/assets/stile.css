@@ -133,6 +133,63 @@ body {
     background: transparent;
 }
 
+.jl-top-left, .jl-bottom-right {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: fixed;
+    z-index: 800;
+    background-color: #000;
+}
+
+.jl-top-left {
+    top: 0;
+    left: 0;
+}
+
+.jl-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.jl-top-left::before, .jl-top-left::after {
+    display: block;
+    content: '';
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.jl-top-left::before{
+    width: 30px;
+    height: 100vh;
+}
+
+.jl-top-left::after {
+    width: 100vw;
+    height: 30px;
+}
+
+.jl-bottom-right::before, .jl-bottom-right::after {
+    display: block;
+    content: '';
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.jl-bottom-right::before{
+    width: 30px;
+    height: 100vh;
+}
+
+.jl-bottom-right::after {
+    width: 100vw;
+    height: 30px;
+}
+
 @media screen and (min-width: 320px) {
 
     /* Common Structure */
@@ -334,9 +391,10 @@ body {
         bottom: 45px;
         right: 45px;
         border-radius: 50%;
-        z-index: 200;
+        z-index: 850;
         transition: all 0.2s;
         border: none;
+        cursor: pointer;
     }
 
     .jl-contact-info {
@@ -347,7 +405,7 @@ body {
         position: fixed;
         bottom: 118px;
         right: 67px;
-        z-index: 200;
+        z-index: 850;
     }
 
     .jl-contact-info-inner {
@@ -859,6 +917,32 @@ body {
 
     .jl-post-gallery {
         margin-top: -270px;
+    }
+
+    .jl-thumb-box {
+        width: auto;
+        display: block;
+        position: relative;
+    }
+
+    .jl-thumb-box::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index: 800;
+        background-color: #2ccb6999;
+        background-image: url('./midia/icon-see-more.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .jl-thumb-box:hover::before {
+        display: block;
+        cursor: pointer;
     }
 
     .jl-pre-gallery {

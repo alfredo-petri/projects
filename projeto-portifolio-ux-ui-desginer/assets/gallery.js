@@ -5,7 +5,7 @@ let frameContainer = document.querySelector('.jl-gallery-frame-container');
 //variavel de captura da imagem do frame
 let frameImage = document.querySelector('.jl-gallery-frame-image');
 //variavel de captura da imagem da galeria qie se usada no frame
-let galleryImages = document.querySelectorAll ('.jl-thumb-img');
+let galleryImages = document.querySelectorAll ('.jl-thumb-box');
 //variavel de captura do caminho da imagem 
 let imageSrc = null;
 //variavel de captura de elementos responsaveis por fechar o frame
@@ -60,12 +60,12 @@ const getImageSrc =  function(){
         //função para pegar o caminho e num da imagem desejada e aplica-la ao frame, a partir de um click
         galleryImages [i].addEventListener('click', function(){
 
-            imageSrc = this.getAttribute('data-src');
+            imageSrc = this.querySelector('img').getAttribute('data-src');
             frameImage.setAttribute ('src', imageSrc);
 
             skeletonLoading.style.display = 'flex';
 
-            itemNum = this.getAttribute('data-item');
+            itemNum = this.querySelector('img').getAttribute('data-item');
             frameImage.setAttribute ('data-index', itemNum);
             
             //adiciona visibilidade aos elementos overlay e frame de imagem
@@ -96,7 +96,7 @@ const nextItem = function(){
    
     if (galleryImages[itemNum] == undefined) return;
 
-    item = galleryImages[itemNum];
+    item = galleryImages[itemNum].querySelector('img');
     nextSrc = item.getAttribute('data-src');
     nextIndex = item.getAttribute('data-item');
 
@@ -114,7 +114,7 @@ const prevItem = function(){
    
     if (galleryImages[itemNum] == undefined) return;
 
-    item = galleryImages[itemNum];
+    item = galleryImages[itemNum].querySelector('img');
     prevSrc = item.getAttribute('data-src');
     prevIndex = item.getAttribute('data-item');
 
