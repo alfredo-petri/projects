@@ -845,13 +845,7 @@ body {
         margin: 0 auto 30px;
     }
 
-    
-
-
-
-   
-
-    /* ----PAGE ABOUT---- */
+    /* ----PAGE DETAILS---- */
 
     .jl-hero {
         height: 500px;
@@ -1048,7 +1042,26 @@ body {
         top: 20px;
     } 
 
-    /* responsividade */
+    /* PAGE 404 */
+
+    .jl-404 {
+        padding-top: 25%;
+    }
+
+    .jl-404 h1 {
+        text-align: center;
+        font-size: 54px;
+    }
+
+    .jl-404 p {
+        text-align: center;
+    }
+
+    .jl-404 a {
+        margin: 0 auto 60px;
+    }
+
+    /* RESPONSIVIDADE */
 
     .jl-title-large {
         font-size: 90px;
@@ -1101,6 +1114,14 @@ body {
         height: 650px;
     }
 
+    .jl-404 {
+        padding-top: 20%;
+    }
+
+    .jl-404 h1 {
+        font-size: 90px;
+    }
+
 }
 
 
@@ -1137,6 +1158,10 @@ body {
     .jl-box-img {
         width: 75%;
         max-width: 75%;
+    }
+
+    .jl-404 {
+        padding-top: 15%;
     }
 
 }
@@ -1362,6 +1387,12 @@ body {
         padding-left: 30px;
     }
 
+    /* RESPOSIVIDADE PAGE 404 */
+
+    .jl-404 a {
+        margin: 0 auto;
+    }
+
     /* FIM RESPONSIVIDADE */
 
     .jl-menu {
@@ -1514,7 +1545,13 @@ body {
 }
 
 @media screen and (min-width: 1364px) {
+    .jl-404 {
+        padding-top: 12%;
+    }
 
+    .jl-404 h1 {
+        font-size: 120px;
+    }
     
 }
 
