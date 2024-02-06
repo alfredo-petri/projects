@@ -95,6 +95,32 @@ body {
     }
 }
 
+@keyframes topbarBg {
+    from {
+        background: transparent;
+    }to {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+30,0.9+55,0+100 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 30%,rgba(0,0,0,0.9) 55%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
+}
+
+@keyframes logoShorter {
+    from {
+        top: 0px;
+    }to {
+        top: -17px;
+    }
+}
+
+@keyframes logoBigger {
+    from {
+        top: -17px;
+    }to {
+        top: 0px;
+    }
+}
+
+
 
 
 .jl-trigger-topbar {
@@ -104,7 +130,7 @@ body {
     position: absolute;
     left: 0;
     top: 130px;
-    background-color: #068737;
+    background: transparent;
 }
 
 @media screen and (min-width: 320px) {
@@ -208,15 +234,14 @@ body {
         width: 100%;
         height: 110px;
         display: block;
-        background-color: transparent;
+        background: transparent;
         position: fixed;
         z-index: 900;
         transition: all 0.5s ease;
     }
 
     .jl-topbar-bg {
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+30,0.9+55,0+100 */
-        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 30%,rgba(0,0,0,0.9) 55%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        animation: topbarBg 0.5s forwards ease;
 
     }
 
@@ -231,9 +256,14 @@ body {
         position: relative;
     }
 
-    .jl-logo-shorten {
-        top: -17px;
+    .jl-logo-shorter {
+        animation: logoShorter 0.3s forwards ease-out;
     }
+
+    .jl-logo-bigger {
+        animation: logoBigger 0.3s forwards ease-out;
+    }
+    
 
     .jl-logo img {
         display: block;

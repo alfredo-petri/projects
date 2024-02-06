@@ -48,7 +48,8 @@ let topBarAnimation = new Waypoint({
     // metodo que adiciona a animaçao fadeout ao elemento .jl-scroll-down quando rolar a página 25% para baixo 
     handler: function() {
         topBar.classList.toggle('jl-topbar-bg');
-        logo.classList.toggle('jl-logo-shorten');
+        logo.classList.toggle('jl-logo-shorter');
+        logo.classList.toggle('jl-logo-bigger');
         console.log('pow');
     }, offset: '50px'
 }) 
