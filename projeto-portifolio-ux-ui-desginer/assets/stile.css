@@ -108,13 +108,13 @@ body {
     from {
         top: 0px;
     }to {
-        top: -17px;
+        top: -7px;
     }
 }
 
 @keyframes logoBigger {
     from {
-        top: -17px;
+        top: -7px;
     }to {
         top: 0px;
     }
@@ -304,11 +304,11 @@ body {
 
     .jl-logo {
         width: 75px;
-        height: 110px;
+        height: 90px;
         margin-left: 60px;
         float:left;
         background-color: #2ccb69;
-        border-radius: 0px 0px 37px 0px;
+        border-radius: 0px 0px 20px 0px;
         transition: all 0.2s ease-out;
         position: relative;
     }
@@ -326,7 +326,7 @@ body {
         display: block;
         width: 46px;
         height: 31px;
-        margin: 55px auto 0;
+        margin: 45px 13px 0;
     }
 
     .jl-menu {
@@ -848,7 +848,7 @@ body {
     /* ----PAGE DETAILS---- */
 
     .jl-hero {
-        height: 500px;
+        height: auto;
         background-image: url('./portfolio-pages/manage-it-midia/hero.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -860,27 +860,17 @@ body {
         margin-bottom: 50px;
     }
 
-    .jl-hero-inner {
-        height: 500px;
+    .jl-hero-inner {    
+        height: auto;
+        display: table;
+        padding: 40px 0;
     }
 
     .jl-hero-inner-content {
-        position: relative;
-        z-index: 0;
-    }
-
-    .jl-hero-inner-content::before {
-        content: '';
         width: 100%;
         height: 100%;
-        background-color: #000000d9;
         display: block;
-        position: absolute;
-        top: -65px;
-        left: -65px;
-        box-sizing: content-box;
-        padding: 65px;
-        z-index: -1;
+        padding: 15px 25px 25px;
     }
 
     .jl-hero-inner-content p{
@@ -891,7 +881,14 @@ body {
         width: 100%;
         height: 100%;
         display: table;
-        border-right: 1px solid #2ccb69;
+        border-right: none;
+    }
+    
+    .jl-project-description {
+        width: 100%;
+        height: 100%;
+        display: table;
+        margin-top: 30px;
     }
 
     .jl-post {
@@ -1107,6 +1104,10 @@ body {
 @media screen and (min-width: 576px) {
     .jl-title-about .jl-title-large {
         font-size: 72px;
+    }
+
+    .jl-hero-inner-content {
+        padding: 55px 65px 65px;
     }
 
 
@@ -1385,6 +1386,20 @@ body {
     .jl-awards-about {
         width: 40%;
         padding-left: 30px;
+    }
+
+    /* RESPONSIVIDADE PAGE DETAILS */
+
+    .jl-hero-inner {
+        padding: 0;
+    }
+
+    .jl-project-stats {
+        border-right: 1px solid #2ccb69;
+    }
+
+    .jl-project-description {
+        margin-top: 0px;
     }
 
     /* RESPOSIVIDADE PAGE 404 */
@@ -1760,11 +1775,11 @@ body {
 }
 
 .jl-section-offset-top {
-    margin-top: 130px;
+    margin-top: 100px;
 }
 
 .jl-first-section {
-    height: calc(100vh - 30px);
+    height: calc(100vh - 40px);
 }
 
 .jl-no-padding {
