@@ -720,12 +720,12 @@ body {
     }
 
 
-    .jl-slider-list .jl-portfolio-thumb > button {
+    .jl-slider-list .jl-portfolio-thumb > .jl-btn {
         margin: 5px auto 0;
         float: none;
     }
 
-    .jl-portfolio-list .jl-portfolio-thumb > button {
+    .jl-portfolio-list .jl-portfolio-thumb > .jl-btn {
         margin-top: 5px;
         margin-right: 75px;
     }
@@ -775,11 +775,11 @@ body {
         text-align: center;
     }
 
-    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-item-info > button{
+    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-item-info > .jl-btn{
         margin: auto;
     }
 
-    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-thumb > button {
+    .jl-portfolio-list .jl-portfolio-item .jl-portfolio-thumb > .jl-btn {
         margin: 10px auto 0;
     }
 
@@ -787,7 +787,7 @@ body {
         width: 100%;
     } 
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > .jl-btn{
         float: right;
     }*/
 
@@ -804,7 +804,7 @@ body {
         left: 75px;
     }   */
     
-    /*  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+    /*  .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > .jl-btn{
         float: left;
         margin-left: 75px;
     }   */
@@ -1076,7 +1076,7 @@ body {
         text-align: center;
     }
 
-    .jl-slider-list .jl-portfolio-item-info button {
+    .jl-slider-list .jl-portfolio-item-info .jl-btn {
         margin: auto;
     }
 
@@ -1242,7 +1242,7 @@ body {
         text-align: left;
     }
 
-    .jl-slider-list .jl-portfolio-item-info button {
+    .jl-slider-list .jl-portfolio-item-info .jl-btn {
         margin: 2px;
     }
 
@@ -1277,12 +1277,12 @@ body {
 
 
     /* erro
-    .jl-slider-list .jl-portfolio-thumb > button, .jl-portfolio-list .jl-portfolio-thumb > button {
+    .jl-slider-list .jl-portfolio-thumb > .jl-btn, .jl-portfolio-list .jl-portfolio-thumb > .jl-btn {
         margin-right: 30px;
     }
     */
 
-    .jl-slider-list .jl-portfolio-thumb > button {
+    .jl-slider-list .jl-portfolio-thumb > .jl-btn {
         margin-top: 5px;
         margin-right: 0px;
         float: right;
@@ -1325,11 +1325,11 @@ body {
         text-align: right;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info > .jl-btn{
         float: left;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info > .jl-btn{
         float: right;
     }
 
@@ -1342,12 +1342,12 @@ body {
         right: -75px;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > .jl-btn{
         float: left;
         margin: 10px 0 0 30px;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > .jl-btn{
         float: right;
         margin: 10px 30px 0 0;
     }
@@ -1514,16 +1514,16 @@ body {
         left: -75px;    
     }
 
-    .jl-slider-list .jl-portfolio-thumb > button {
+    .jl-slider-list .jl-portfolio-thumb > .jl-btn {
         margin-right: 75px;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-thumb > .jl-btn{
         float: left;
         margin: 10px 0 0 75px;
     }
 
-    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > button{
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-thumb > .jl-btn{
         float: right;
         margin: 10px 75px 0 0;
     }
