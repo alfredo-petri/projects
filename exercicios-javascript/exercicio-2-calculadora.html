@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura no console com prompt</title>
+</head>
+<body>
+    <script>
+
+        // Declaração de variável para obtenção de dados via prompt
+        let anoNascimento = prompt("Por favor informe em que ano você nasceu");
+
+        // Loop para validação de ano informado
+        while(anoNascimento > 2024 || anoNascimento < 1900){
+            alert("Por favor informe corretamente o seu ano de nascimento")
+            anoNascimento = prompt("Por favor informe em que ano você nasceu");
+        }
+
+        // Declaração de variável para obtenção de dados via prompt
+        let anoAtual = prompt("Por favor informe o ano atual");
+
+        // Loop para validação de ano informado
+        while(anoAtual < anoNascimento || anoAtual > 2024){
+            alert("Por favor informe corretamente o ano atual")
+            anoAtual = prompt("Por favor informe o ano atual");
+        }
+        
+        //variavel que receberá a idade do usuário
+        let idade = anoAtual - anoNascimento;
+
+        console.log ("Você nasceu no ano " + anoNascimento + ", portanto neste ano: " + anoAtual + ", você completa ou já completou " + idade + " anos de idade.");
+
+    </script>
+</body>
+</html>
