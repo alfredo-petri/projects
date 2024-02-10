@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM - leia mais feature</title>
+        <style>
+            body{
+                width: 70%;
+                margin: auto;
+            }
+
+            .conteudo span{
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .conteudo p {
+                height: 35px;
+                overflow: hidden;
+                transition: 1s;
+            }
+            
+            .fullView {
+                height: 200px !important;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="conteudo">
+            <h2>Titulo do Conteúdo - <span>Leia mais...</span></h2>
+            <p> 
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus illum debitis delectus obcaecati iste sapiente reprehenderit. 
+                Recusandae assumenda distinctio est cum aspernatur voluptatibus, ut aliquid repellat nostrum, dolorem suscipit exercitationem!
+            </p>
+        </div>
+        <script>
+            document.querySelector('.conteudo span').addEventListener('click', function(){
+                let conteudo = document.querySelector('.conteudo p');
+                let leiaMais = document.querySelector('.conteudo span');
+
+                if (conteudo.classList.contains('fullView')){
+                    conteudo.classList.remove('fullView');
+                    leiaMais.innerHTML = ("Leia mais...");
+                } else {
+                    conteudo.classList.add('fullView');
+                    leiaMais.innerHTML = ("Ocultar");
+                }
+            })
+        </script>
+    </body>
+</html>

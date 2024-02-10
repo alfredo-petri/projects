@@ -7,7 +7,6 @@
     </head>
     <body>
         <script>
-            /*
 
             //Estudo sobre datas usando o objeto date nativo do javascript
 
@@ -60,6 +59,10 @@
 
             //INICIO EXEMPLO 1 - Calculadora de Idade Dinâmica
 
+                //mensagems para informar ao usuário do que se trata o exemplo
+                alert('EXEMPLO 1 - Calculadora de idade dinâmica')
+                alert('Neste exemplo você pode digitar o ano em que nasceu e o sistema exibirá quantos anos você tem')
+
                 // Declaração de variável para obtenção de dados via prompt
                 let anoNascimento = prompt("Por favor informe em que ano você nasceu");
 
@@ -80,9 +83,9 @@
 
             //FIM EXEMPLO 1 - Calculadora de Idade Dinâmica
 
-                */
 
             //INICIO EXEMPLO 2 - Calculadora de tempo decorrido
+
                 //mensagems para informar ao usuário do que se trata o exemplo
                 alert('EXEMPLO 2 - Calculadora de tempo decorrido')
                 alert('Neste exemplo você pode digitar uma data que o sistema exibirá quantos dias, meses e anos se passaram entre a data especificada e o dia atual')
@@ -98,35 +101,25 @@
                     data = new Date (prompt("Por favor insira a data desejada no seguinte formato: mm/dd/aaaa"));
                 }
 
-                console.log (data.getFullYear());
-                console.log (anoAtual2.getFullYear());
-
-                // Variável para obtenção do tempo atual em milisegundos
+                // Variável para obtenção do tempo inicial em milisegundos
                 let tempoInicial = data.getTime();
 
+                // Variável para obtenção do tempo atual em milisegundos
                 let tempoFinal = anoAtual2.getTime();
-
-                console.log (tempoInicial);
-                console.log (tempoFinal);
                 
-                //variavel que receberá dias decorridos
+                //variavel que receberá dias decorridos com método para ignorar as casas decimais
                 let diasDecorridos = Math.trunc((tempoFinal - tempoInicial) / (1000 * 3600 * 24));
 
-                //variavel que receberá meses decorridos
+                //variavel que receberá meses decorridos com método para ignorar as casas decimais
                 let mesesDecorridos = Math.trunc(diasDecorridos / 30);
 
-                //variavel que receberá anos decorridos
+                //variavel que receberá anos decorridos com método para ignorar as casas decimais
                 let anosDecorridos = Math.trunc(diasDecorridos / 365);
 
-                console.log(anosDecorridos);
-                console.log(mesesDecorridos);
-                console.log(diasDecorridos);
-
-                alert (`Desde de a data ${data.getDate()} até a data atual: ${anoAtual2.getDate()}, se passou:`
+                alert (`Desde de a data definida até a data atual, se passou:`
                 + `\num total de ${anosDecorridos} anos, equivalente a:`
                 + `\num total de ${mesesDecorridos} meses, equivalente a:`
                 + `\num total de ${diasDecorridos} dias`);
-
 
             //FIM EXEMPLO 2 - Calculadora de dias decorridos
 
