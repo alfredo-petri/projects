@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitura no console com prompt</title>
-</head>
-<body>
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora dinâmica com válidações</title>
+    </head>
+    <body>
+        <script>
 
-        let numero1 = prompt('Informe o primeiro número da operação')
+            // variavel que irá receber valor so tipo numero através do parseInt e prompt
+            let numero1 = parseInt (prompt ('Informe o primeiro número da operação'));
 
-    </script>
-</body>
+            //variavel que receberá o tipo da operação segundo as opções disponiveis
+            let sinal = prompt('informe o sinal do tipo da operação: "+" para adição, "-" para subtração, "/" para divisão e "*" para multiplicação');
+
+            //loop para validação do tipo de operação
+            while (sinal!= '+' && sinal != '-' && sinal != '/' && sinal != '*') {
+                alert ('Por favor, indique uma operação válida')
+                sinal = prompt('informe o sinal do tipo da operação: "+" para adição, "-" para subtração, "/" para divisão e "*" para multiplicação');
+            }
+
+            // variavel que irá receber valor so tipo numero através do parseInt e prompt
+            let numero2 = parseInt(prompt ("Informe o segundo número da operação"));
+        
+            //variavel para armazenar o resultado da operação
+            let resultado = 0;
+
+            // loop para executar a operação selecionada
+            if(sinal === "+") {
+                resultado = (numero1 + numero2)
+            } else if(sinal == "-") {
+                resultado = (numero1 - numero2)
+            } else if(sinal == "/") {
+                resultado = (numero1 / numero2)
+            } else if(sinal == "*"){
+                resultado = (numero1 * numero2)
+            } else {
+                console.log('operação inválida')
+            };
+
+            //exibe o resultado para o usuário
+            alert ('O resultado da operação é ' + resultado);
+
+            console.log (resultado);
+
+        </script>
+    </body>
 </html>
