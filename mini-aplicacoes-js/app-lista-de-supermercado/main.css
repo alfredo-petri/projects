@@ -7,6 +7,7 @@
 
 body {
     width: 60%;
+    min-width: 555px;
     display: table;
     margin: auto;
 }
@@ -33,7 +34,7 @@ header h2 {
     width: 35%;
     background-color: #dbdbdb;
     font-size: 14px;
-    margin-right: 2.5%;
+    margin-right: 2%;
     padding-left: 15px;
 }
 

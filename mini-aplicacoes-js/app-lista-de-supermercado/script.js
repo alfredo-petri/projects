@@ -1,10 +1,16 @@
 var items = [];
 
-document.querySelector('input[type=submit').addEventListener('click', ()=>{
+document.querySelector('input[type=submit]').addEventListener('click',()=>{
     
-    let nomeProduto = document.querySelector('input[name=nome_produto]').value;
-    let precoProduto = document.querySelector('input[name=preco_produto]').value;
+    var nomeProduto = document.querySelector('input[name=nome_produto]');
+    var precoProduto = document.querySelector('input[name=price]');
 
-    alert (nomeProduto);
-    alert (precoProduto);
-});
+    items.push({
+        nome: nomeProduto.value,
+        valor: precoProduto.value
+    });
+
+    console.log (items)
+
+}); 
+
