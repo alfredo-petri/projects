@@ -85,3 +85,13 @@ header h2 {
 .soma-produto span{
     font-weight: 500;
 }
+
+button {
+    margin-top: 50px;
+    padding: 8px 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: solid 2px black;
+
+}
