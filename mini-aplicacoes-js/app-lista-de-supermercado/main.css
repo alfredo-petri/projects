@@ -25,14 +25,62 @@ header h2 {
     line-height: 80px;
 }
 
+.lista-cadastro {
+    margin-bottom: 30px;
+}
+
 .input {
     width: 35%;
-    height: 35px;
     background-color: #dbdbdb;
-    margin-left: 4%;
+    font-size: 14px;
+    margin-right: 2.5%;
+    padding-left: 15px;
 }
 
 .input-btn {
-    width: 20%;
-    height: 35px;
+    width: 24%;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #858585;  
+}
+
+.input, .input-btn {
+    height: 40px;
+    border-radius: 4px;
+    border: solid 2px black;
+}
+
+.input-btn:hover {
+    background-color: #686868;  
+}
+
+.lista-produtos-single {
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.lista-produtos-single h3{
+    margin-left: 15px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.lista-produtos-single span {
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.soma-produto {
+    margin: 40px 15px 0 0;
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.soma-produto span{
+    font-weight: 500;
 }
