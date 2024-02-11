@@ -33,6 +33,11 @@ document.querySelector('input[type=submit]').addEventListener('click',()=>{
 
     somaProduto.innerHTML = soma;
 
-    
 }); 
+
+document.querySelector('button[name=limpar]').addEventListener('click', ()=>{
+    items = [];
+    document.querySelector('.lista-produtos').innerHTML = "";
+    document.querySelector('.soma-produto span').innerHTML = "00.00";
+});
 
