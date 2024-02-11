@@ -18,7 +18,7 @@
             .conteudo p {
                 height: 35px;
                 overflow: hidden;
-                transition: 1s;
+                transition: 0.5s;
             }
             
             .fullView {
@@ -46,10 +46,10 @@
             </p>
         </div>
         <script>
-            document.querySelector('.conteudo span').addEventListener('click', function(){
-                let conteudo = document.querySelector('.conteudo p');
-                let leiaMais = document.querySelector('.conteudo span');
-
+                var leiaMais = document.querySelector('.conteudo span');
+                var conteudo = document.querySelector('.conteudo p'); 
+            
+            leiaMais.addEventListener('click', function(){             
                 if (conteudo.classList.contains('fullView')){
                     conteudo.classList.remove('fullView');
                     leiaMais.innerHTML = ("Leia mais...");

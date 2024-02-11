@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slider</title>
+        <style>
+            body {
+                width: 60%;
+                display: table;
+                margin: auto;
+            }
+
+            .container{
+                position: relative;
+                top: 100px;
+                width: 100%;
+                height: auto;
+                z-index: 100;
+            }
+
+            .container img{
+                position: absolute;
+                left:0;
+                top:0;
+                width:100%;
+                z-index: 150;
+                opacity: 0;
+                transition:1s;
+            }
+
+            .bullets{
+                text-align: center;
+                margin-top: 50px;
+                z-index: 200;
+            }
+
+            .bullet-single{
+                margin:0 8px;
+                cursor: pointer;
+                display: inline-block;
+                width:20px;
+                height:20px;
+                border-radius: 50%;
+                background-color: #6e6e6e;
+            }
+
+            .active-bullet{
+                background-color:#3d3d3d;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img style="opacity:1;" src="https://picsum.photos/id/237/300/200" />
+            <img src="https://picsum.photos/id/238/300/200" />
+            <img src="https://picsum.photos/id/239/300/200" />
+        </div>
+        <div class="bullets">
+            <div class="bullet-single active-bullet"></div>
+            <div class="bullet-single"></div>
+            <div class="bullet-single"></div>
+        </div>
+     
+
+        <script>
+
+            //variavel que recebe o item anterior ao atual
+            var lastIndex = 0;
+
+            //variavel que recebe o array de imagens
+            var images = document.querySelectorAll('.container img');
+
+            //loop para pegar a ultima e imagem e a imagem atual através de click
+            images.forEach((item,index)=>{
+                document.querySelectorAll('.bullet-single')[index]
+                .addEventListener('click',()=>{
+                    let lastImage = document.querySelectorAll('.container img')[lastIndex];
+                    let actualImage = document.querySelectorAll('.container img')[index];
+                    
+                    //Resetar as bullets e setar a nova com base na imagem.
+
+                    document.querySelectorAll('.bullet-single')[lastIndex]
+                    .classList.remove('active-bullet');
+                    
+                    document.querySelectorAll('.bullet-single')[index]
+                    .classList.add('active-bullet');
+
+                    //trocar a visualização  da imagem anterior para a atual
+                    lastImage.style.opacity = 0;
+                    actualImage.style.opacity = 1;
+
+                    lastIndex = index;   
+                })
+            })
+
+        </script>
+        
+    </body>
+</html>
