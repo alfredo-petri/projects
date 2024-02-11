@@ -10,7 +10,29 @@ document.querySelector('input[type=submit]').addEventListener('click',()=>{
         valor: precoProduto.value
     });
 
-    console.log (items)
+    let listaProdutos = document.querySelector('.lista-produtos');
+    let soma = 0;
 
+    listaProdutos.innerHTML = ``;
+    
+    items.map((val)=>{
+        soma+= parseFloat(val.valor);
+        listaProdutos.innerHTML+=`
+            <div class="lista-produtos-single">
+            <h3>`+val.nome+`</h3>
+            <span>R$ `+val.valor+`</span>
+            </div>
+        ` 
+    })
+
+    soma=soma.toFixed(2);
+    nomeProduto.value = "";
+    precoProduto.value = "";
+
+    let somaProduto = document.querySelector('.soma-produto span');
+
+    somaProduto.innerHTML = soma;
+
+    
 }); 
 
