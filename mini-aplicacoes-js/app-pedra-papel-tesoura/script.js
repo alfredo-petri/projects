@@ -1,11 +1,12 @@
 
-var elementos = document.querySelectorAll('.player-options > div img');
+var elements = document.querySelectorAll('.player-options > div img');
 var playerOpt = "";
 var inimigoOpt = "";
+var winner = document.querySelector('.winner');
 
 function resetOpacityPlayer(){
-    for(let i = 0; i < elementos.length; i++){
-        elementos[i].style.opacity = 0.3;
+    for(let i = 0; i < elements.length; i++){
+        elements[i].style.opacity = 0.3;
     }
 }
 
@@ -16,6 +17,52 @@ function resetInimigo (){
         enemyOptions[i].style.opacity = 0.3;
     }
 }
+
+function victory (){
+    if (playerOpt == "paper") {
+        if (inimigoOpt == "paper") {
+            winner.innerHTML = "O resultado deu empate!";
+            winner.style.backgroundColor = "#d6d6d6";
+        } else if (inimigoOpt == "scisor") {
+            winner.innerHTML = "O inimigo ganhou!";
+            winner.style.backgroundColor = "#ff1515";
+        } else if (inimigoOpt == "rock") {
+            winner.innerHTML = "Você ganhou!";
+            winner.style.backgroundColor = "#15ff5b";
+        } else {
+            alert("erro");
+        }
+    } else if (playerOpt == "scisor") {
+        if (inimigoOpt == "scisor") {
+            winner.innerHTML = "O resultado deu empate!";
+            winner.style.backgroundColor = "#d6d6d6";
+        } else if (inimigoOpt == "rock") {
+            winner.innerHTML = "O inimigo ganhou!";
+            winner.style.backgroundColor = "#ff1515";
+        } else if (inimigoOpt == "paper") {
+            winner.innerHTML = "Você ganhou!";
+            winner.style.backgroundColor = "#15ff5b";
+        } else {
+            alert("erro");
+        }
+    } else if (playerOpt == "rock") {
+        if (inimigoOpt == "rock") {
+            winner.innerHTML = "O resultado deu empate!";
+            winner.style.backgroundColor = "#d6d6d6";
+        } else if (inimigoOpt == "paper") {
+            winner.innerHTML = "O inimigo ganhou!";
+            winner.style.backgroundColor = "#ff1515";
+        } else if (inimigoOpt == "scisor") {
+            winner.innerHTML = "Você ganhou!";
+            winner.style.backgroundColor = "#15ff5b";
+        } else {
+            alert("erro");
+        }
+    } else {
+        alert("erro");
+    }
+}
+
 
 function enemyRound(){
     let rand = Math.floor(Math.random()*3);
@@ -29,11 +76,14 @@ function enemyRound(){
             inimigoOpt = enemyOptions[i].getAttribute('data-opt');
         }
     }
+
+    victory();
+
 }
 
 
-for(let i = 0; i < elementos.length; i++){
-    elementos[i].addEventListener('click', (t)=> {
+for(let i = 0; i < elements.length; i++){
+    elements[i].addEventListener('click', (t)=> {
 
         resetOpacityPlayer();
 
