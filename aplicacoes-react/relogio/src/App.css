@@ -1,0 +1,9 @@
+*{
+    margin: 0 auto;
+}
+
+.relogio h2{
+    font-size: 64px;
+    text-align: center;
+    color: #ff0000;
+}
