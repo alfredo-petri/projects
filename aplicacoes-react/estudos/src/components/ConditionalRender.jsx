@@ -7,13 +7,13 @@ const ConditionalRender = () => {
     
     return (
         <>
-            <h2>Condicional Simples</h2>
-            <h3>Isso será exibido?</h3>
+            <h3>Condicional Simples</h3>
+            <p>Isso será exibido?</p>
             {x && <p>Como o resultado foi true, a mensagem foi exibida</p>}
 
 
-            <h2>Condicional composta</h2>
-            <h3>O nome do usuário é João?</h3>
+            <h3>Condicional composta</h3>
+            <p>O nome do usuário é João?</p>
             {name === "João" ? (
                 <div>
                     <p>Sim, nome do usuário é João</p>

@@ -3,8 +3,9 @@ const TemplateExpressions = ()=> {
     const name = "Alfredo";
 
     return (
-        <>
-            <h2>Olá {name}, tudo bem?</h2>
+        <>  
+            <h3>Template Expression</h3>
+            <p>Olá {name}, tudo bem?</p>
         </>
     );
 }

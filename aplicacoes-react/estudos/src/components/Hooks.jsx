@@ -8,6 +8,7 @@ const Hooks = () => {
 
     return (
         <>
+            <h3>Hooks</h3>
             <p>Valor: {value}</p>
             <button onClick={() => setValue(value+1)}>alterar valor</button>
         </>
