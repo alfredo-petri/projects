@@ -1,7 +1,7 @@
 //import css
-import './App.css'
+import './App.css';
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 //import components
 import TemplateExpressions from './components/TemplateExpressions.jsx';
@@ -12,6 +12,10 @@ import ConditionalRender from './components/ConditionalRender.jsx';
 import Props from './components/Props.jsx';
 import PropsDestructuring from './components/PropsDestructuring.jsx';
 import ExecuteFunction from './components/ExecuteFunction.jsx';
+import Message from './components/Message.jsx';
+import ChangeMessage from './components/ChangeMessage.jsx';
+import Exercicio4 from './components/Exercicio4.jsx';
+import FirstForm from './components/FirstForm.jsx';
 
 //main function
 function App() {
@@ -19,12 +23,24 @@ function App() {
   const pessoas = [
     {id: 1, nome: "Pedro", idade: 28, cidade: "Altamira"},
     {id: 2, nome: "Luna", idade: 13, cidade: "São Paulo"},
-    {id: 3, nome: "Clara", idade: 56, cidade: "Curitiba"}
+    {id: 3, nome: "Clara", idade: 56, cidade: "Curitiba"},
+  ];
+
+  const people = [
+    {id: 1, nome: "Pedro", idade: 28, profissao: "Engenheiro"},
+    {id: 2, nome: "Luna", idade: 13, profissao: "Estudante"},
+    {id: 3, nome: "Clara", idade: 36, profissao: "Bombeira"},
   ];
 
   const showMessage =  () => {
-    console.log('Evento do componente pai');
+    alert('Evento do componente pai');
   }
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage (msg);
+  };
 
   return (
     <>
@@ -56,8 +72,31 @@ function App() {
         />
       ))}
 
-      <ExecuteFunction myFunction={showMessage}/>
+      <ExecuteFunction myFunction={showMessage} />
+      
+      <br />
+      <br />
+
+      {/*StateLift*/}
+      <Message msg={message}/>
+      <ChangeMessage handleMessage={handleMessage}/>
+
+      <br />
+
+      {people.map ((person) => (
+        <Exercicio4 
+          key = {person.id}
+          name = {person.nome} 
+          age = {person.idade} 
+          job = {person.profissao} 
+        />
+      ))}
+
+      <FirstForm />
+
+    
     </>
+
   )
 }
 

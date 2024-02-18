@@ -10,10 +10,10 @@ const Challenge = () => {
     }
 
     return (
-        <>
+        <div>
             <h3>Events</h3>
             <button onClick={handleMyEvent}>clique para efetuar a operação</button>
-        </>
+        </div>
     )
 
 }

@@ -1,0 +1,11 @@
+.FirstForm {
+    text-align: left;
+}
+
+.FirstForm input{
+    width: 200px;
+    height: 20px;
+    display: block;
+    margin: 5px 0 20px;
+    
+}

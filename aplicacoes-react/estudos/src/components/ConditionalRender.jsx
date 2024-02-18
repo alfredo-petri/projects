@@ -6,7 +6,7 @@ const ConditionalRender = () => {
     const [name] = useState("Joao");
     
     return (
-        <>
+        <div>
             <h3>Condicional Simples</h3>
             <p>Isso será exibido?</p>
             {x && <p>Como o resultado foi true, a mensagem foi exibida</p>}
@@ -23,7 +23,7 @@ const ConditionalRender = () => {
                 <p>Não, o nome do usuário nao é João, o nome é {name}</p>
                </div>
             )}
-        </>
+        </div>
     )
 }
 
