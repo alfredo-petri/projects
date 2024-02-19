@@ -92,7 +92,7 @@ function App() {
         />
       ))}
 
-      <FirstForm />
+      <FirstForm user={{name: "Josias", email: "josias@gmail.com"}}/>
 
     
     </>
