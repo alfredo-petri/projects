@@ -1,7 +1,7 @@
 import { useState } from "react";
-import './CalculatorCopy.css';
+import './Calculator.css';
 
-const CalculatorCopy = () => {
+const Calculator = () => {
 
     const [currentValue, setCurrentValue] = useState("0");
     const [pendingOperation, setPendingOperation] = useState(null);
@@ -102,14 +102,10 @@ const CalculatorCopy = () => {
                     ))}
                     </div>
                 
-                
-                
             </div>
-
-            
 
         </div>
     )
 }
 
-export default CalculatorCopy
+export default Calculator
