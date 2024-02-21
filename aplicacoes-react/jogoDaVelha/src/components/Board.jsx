@@ -6,7 +6,7 @@ const Board = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const winner = calculateWinner(squares);
     
-    // AI
+    // Variavel AI
     const [aiIsThinking, setAiIsThinking] = useState (false); 
     
     const handleCLick = (i) => {
@@ -21,12 +21,13 @@ const Board = () => {
         setIsNext(!isNext)
     };
 
+
     const resetGame = ()=> {
         setSquares (Array(9).fill(null));
         setIsNext(true);
     }
 
-    // AI
+    // Inicio AI
 
     useEffect(() => {
         if (!isNext && !winner) {
@@ -43,6 +44,8 @@ const Board = () => {
 
         };
     }, [isNext, squares, winner]);
+
+    // Fim AI
 
 
     return (
