@@ -8,8 +8,8 @@ abstract class DefaultAccount {
   
     constructor(name: string, identificationDocument: number, balance: number){
       this.name = name;
-      this.balance = balance;
       this.identificationDocument = identificationDocument;
+      this.balance = balance;
     };
 
     // All public methods
@@ -39,25 +39,23 @@ abstract class DefaultAccount {
     };
   
     // Method to deposit some amount
-    deposit = (balance: number): void => {
+    deposit = (amount: number): void => {
       if (this.validateStatus()) {
-        console.log(`Você depositou R$ ${balance}`);
-        this.balance = this.balance + balance;
+        console.log(`Você depositou R$ ${amount}`);
+        this.balance += amount;
         this.getBalance();
       }
     };
   
     // Method to withdraw some amount
-    withDraw = (balance: number): number => {
-      if ((this.balance >= balance) && this.validateStatus()){
-        this.balance = this.balance - balance
-        console.log(`Você sacou R$ ${balance}`);
+    withDraw = (amount: number): void => {
+      if ((this.balance >= amount) && this.validateStatus()){
+        this.balance -= amount;
+        console.log(`Você sacou R$ ${amount}`);
       } else {
         console.log ("Saldo Insuficiente");
       }
-
       this.getBalance();
-      return this.balance
     }; 
 
     // Method to validate account status
@@ -74,11 +72,10 @@ abstract class DefaultAccount {
 
     
     // Method to change account status
-    private setStatus = (): boolean => {
+    private setStatus = (): void => {
       if (this.balance < 0) {
         this.status = false;
       } 
-      return this.status
     };
     
   };
