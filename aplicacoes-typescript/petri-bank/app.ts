@@ -1,12 +1,14 @@
 import PersonalAccount from './class/personal-account ';
 import BusinessAccount from './class/business-account';
+import InvestorAccount from './class/investorAccount';
 
-const alfredoAccount: PersonalAccount = new PersonalAccount (883183062, "Alfredo", 151);
+const personalAccount: PersonalAccount = new PersonalAccount ("João Augusto", 154268, 1000 );
 
-const petriSolucoesAccount: BusinessAccount = new BusinessAccount ("Petri Soluções", 1844);
+const businessAccount: BusinessAccount = new BusinessAccount ("InfoTec Soluções", 1844, 10000);
 
-alfredoAccount.getBalance();
+const investorAccount: InvestorAccount = new InvestorAccount ("Ana Clara", 251478, 200);
 
-alfredoAccount.deposit(150);
+personalAccount.deposit(80);
 
-alfredoAccount.getBalance();
+
+
