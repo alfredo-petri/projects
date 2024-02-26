@@ -9,9 +9,9 @@ class BusinessAccount extends DefaultAccount {
       if (this.validateStatus()){
         if (((this.balance)*0.7) >= balance){
           this.balance = this.balance + balance
-          console.log(`Você pegou um empréstismo de R$ ${balance}`);
+          console.log(`Você pegou um empréstismo de R$ ${balance.toFixed(2)}`);
         } else {
-          console.log (`Emprestimo negado, o valor máximo de empréstimo liberado é de R$ ${(this.balance)*0.7 }`);
+          console.log (`Emprestimo negado, o valor máximo de empréstimo liberado é de R$ ${((this.balance)*0.7).toFixed(2) }`);
         }
       }
       this.getBalance();

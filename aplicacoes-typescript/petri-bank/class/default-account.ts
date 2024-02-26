@@ -35,13 +35,13 @@ abstract class DefaultAccount {
     
     // Method to check balance amount
     getBalance = (): void => {
-      console.log (`O saldo atual é de R$ ${this.balance}`);
+      console.log (`O saldo atual é de R$ ${this.balance.toFixed(2)}`);
     };
   
     // Method to deposit some amount
     deposit = (amount: number): void => {
       if (this.validateStatus()) {
-        console.log(`Você depositou R$ ${amount}`);
+        console.log(`Você depositou R$ ${amount.toFixed(2)}`);
         this.balance += amount;
         this.getBalance();
       }
@@ -51,7 +51,7 @@ abstract class DefaultAccount {
     withDraw = (amount: number): void => {
       if ((this.balance >= amount) && this.validateStatus()){
         this.balance -= amount;
-        console.log(`Você sacou R$ ${amount}`);
+        console.log(`Você sacou R$ ${amount.toFixed(2)}`);
       } else {
         console.log ("Saldo Insuficiente");
       }
