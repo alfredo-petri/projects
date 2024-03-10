@@ -29,6 +29,11 @@ form, li {
     align-items: center;
 }
 
+p {
+    margin: 15px auto;
+    text-align: center;
+}
+
 button {
     padding: 5px 10px;
     border-radius: 4px;
@@ -54,7 +59,6 @@ form > button:hover {
 }
 
 
-
 li {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -74,7 +78,9 @@ input [type="text"] {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
+} 
+
+
 
 .limpar {
     border:2px solid #d93939;
