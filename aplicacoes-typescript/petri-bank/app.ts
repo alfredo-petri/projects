@@ -8,7 +8,3 @@ const businessAccount: BusinessAccount = new BusinessAccount ("InfoTec Soluçõe
 const investorAccount: InvestorAccount = new InvestorAccount ("Ana Clara", 251478, 200);
 
 businessAccount.getLoan(30000.7545);
-
-
-
-
