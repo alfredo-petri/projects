@@ -18,12 +18,12 @@ function App() {
         <Link to="/axios-posts">First Api Request - Axios</Link>
       </div>
       <div>
-        {/* <Link to="/gerenciar-posts-axios">Gerenciar Posts - Axios</Link>  */}
+       
       </div>
       <Routes>
         <Route path="fetch-posts" element={<FetchPosts />} />
         <Route path="axios-posts" element={<AxiosPosts />} />
-        {/* <Route path="gerenciar-posts-axios" element={<PostManagerAxios />} />  */}
+       
       </Routes>
     </BrowserRouter>
   )
