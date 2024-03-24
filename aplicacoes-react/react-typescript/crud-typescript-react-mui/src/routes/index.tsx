@@ -1,16 +1,20 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ThemeModeButton } from "../shared/components/ThemeModeButton";
+import { ThemeModeButton } from "../shared/components/theme-mode/ThemeModeButton";
+import { Button } from "@mui/material";
+import { useDrawerContext } from "../shared/contexts";
 
 export const AppRoutes = () => {
 
-    return (
-        <Routes>
-            <Route
-                path="/pagina-inicial"
-                element={<ThemeModeButton/>}
-            />
+    const {toggleDrawerOpen} = useDrawerContext();
 
-            <Route path="*" element={<Navigate to="/pagina-inicial" />} />
-        </Routes>
+    return (
+        <>
+            <ThemeModeButton />
+            <Button onClick={toggleDrawerOpen}>menu</Button>
+
+            <Routes>
+                <Route path="*" element={<Navigate to="/pagina-inicial" />} />
+            </Routes>
+        </>
     );
 };
