@@ -2,6 +2,9 @@ import { Box, Drawer, useTheme, Divider, useMediaQuery } from "@mui/material";
 import { UserAvatar } from "../user-avatar/UserAvatar";
 import { MenuOptions } from "./MenuOptions";
 import { useDrawerContext } from "../../contexts";
+import { HomeRepairService } from "@mui/icons-material";
+import HomeIcon from '@mui/icons-material/Home';
+
 
 interface IMenuLateralProps {
     children: React.ReactNode;
@@ -11,6 +14,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down("sm"));
     const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext()
+
 
     return (
         <Box>
@@ -34,7 +38,18 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
                     <Divider />
 
                     <Box flex={1}>
-                        <MenuOptions />
+                        <MenuOptions 
+                            label="Home"
+                            to="/pagina-inicial"
+                            onClick={smDown? toggleDrawerOpen : undefined}
+                            icon= {<HomeIcon />}
+                        />
+                        <MenuOptions 
+                            label="pagina"
+                            to="/pagina"
+                            onClick={smDown? toggleDrawerOpen : undefined}
+                            icon= {<HomeRepairService />}
+                        />
                     </Box>
                 </Box>
             </Drawer>
