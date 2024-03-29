@@ -1,0 +1,7 @@
+{
+    "name": "my-first-socket-io-app",
+    "version": "1.0.0",
+    "description": "socket-io-chat",
+    "type": "commonjs",
+    "dependencies": {}
+  }
