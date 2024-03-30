@@ -33,44 +33,54 @@ app.get("/", (req, res) => {
     res.sendFile(join(__dirname, "index.html"));
 });
 
-io.on("connection", (socket) => {
-    console.log("a user connected");
-    socket.on("disconnect", () => {
-        console.log("user disconnected");
-    });
-});
+// io.on("connection", (socket) => {
+//     console.log("a user connected");
+//     socket.on("disconnect", () => {
+//         console.log("user disconnected");
+//     });
+// });
 
-io.on("connection", (socket) => {
-    socket.on("chat message", async (msg) => {
+io.on("connection", async (socket) => {
+    socket.on("chat message", async (msg, clientOffset, callback) => {
         let result;
         try {
             // store the message in the database
-            result = db.run('INSERT INTO messages (content) VALUES (?)', msg);
+            result = db.run(
+                "INSERT INTO messages (content) VALUES (? , ?)",
+                msg,
+                clientOffset,
+            );
         } catch (e) {
-            //TODO handle the failure
+            if (e.errno === 19 /* SQL constraint */) {
+                // the message was already inserted, so we notify the client
+                callback();
+            } else {
+                // nothing to do, just let the client retry
+            }
             return;
         }
 
         // include the offset with the message
         io.emit("chat message", msg, result.lastID);
 
-        if (!socket.recovered) {
-            // if the connection state recovery was not sucessful
-            try {
-                await db.each('SELECT id, content FROM messages WHERE id > ?',
-                    [socket.handshake.auth.serverOffset || 0],
-                    (_err, row) => {
-                        socket.emit ('chat message', row.content, row.id);
-                    }
-                )
-            } catch (e) {
-                // something wrong
-            }
-        }
-
+        // acknowledge the event
+        callback();
     });
 
-    
+    if (!socket.recovered) {
+        // if the connection state recovery was not sucessful
+        try {
+            await db.each(
+                "SELECT id, content FROM messages WHERE id > ?",
+                [socket.handshake.auth.serverOffset || 0],
+                (_err, row) => {
+                    socket.emit("chat message", row.content, row.id);
+                },
+            );
+        } catch (e) {
+            // something wrong
+        }
+    }
 });
 
 server.listen(3000, () => {
