@@ -65,32 +65,33 @@
         </form>
 
         <script>
-            const toggleButton = document.getElementById('toggle-btn');
-          
-            toggleButton.addEventListener('click', (e) => {
-              e.preventDefault();
-              if (socket.connected) {
-                toggleButton.innerText = 'Connect';
-                socket.disconnect();
-              } else {
-                toggleButton.innerText = 'Disconnect';
-                socket.connect();
-              }
+            const toggleButton = document.getElementById("toggle-btn");
+
+            toggleButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (socket.connected) {
+                    toggleButton.innerText = "Connect";
+                    socket.disconnect();
+                } else {
+                    toggleButton.innerText = "Disconnect";
+                    socket.connect();
+                }
             });
-          </script>
+        </script>
 
         <script src="/socket.io/socket.io.js"></script>
         <script>
-
-            let counter = 0;    
+            let counter = 0;
 
             const socket = io({
-                auth: {
-                    serverOffset: 0
-                },
+                
                 //enable entries
                 ackTimeout: 10000,
-                retries:3,
+                retries: 3,
+
+                auth: {
+                    serverOffset: 0,
+                },
             });
 
             const form = document.getElementById("form");
@@ -102,7 +103,7 @@
 
                 if (input.value) {
                     //compute an unique offset
-                    const clientOffset = `${socket.id}-${counter++}`
+                    const clientOffset = `${socket.id}-${counter++}`;
                     socket.emit("chat message", input.value, clientOffset);
                     input.value = "";
                 }
