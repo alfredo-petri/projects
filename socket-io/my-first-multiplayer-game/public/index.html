@@ -20,7 +20,7 @@
         <canvas id="screen" width="10" height="10"></canvas>
 
         <script type="module">
-            import createKeyboardListener from "./keyboardListener.js";
+            import createKeyboardListener from "/public/keyboardListener.js";
             import createGame from "./game.js";
             import renderScreen from "./renderScreen.js";
 
@@ -32,7 +32,7 @@
             renderScreen(screen, game, requestAnimationFrame);
         </script>
 
-        <script src="/socket.io/socket.io.js"></script>
+        <script src="../socket.io/socket.io.js"></script>
         <script>
             const socket = io();
         </script>

@@ -2,7 +2,7 @@ import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import createGame from './game.js'
+import createGame from './public/game.js'
 import { Server } from 'socket.io';
 
 const app = express();
@@ -20,12 +20,12 @@ console.log(game.state)
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
+  res.sendFile(join(__dirname, 'public/index.html'));
 });
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-  });
+});
   
 
 server.listen(3000, () => {
