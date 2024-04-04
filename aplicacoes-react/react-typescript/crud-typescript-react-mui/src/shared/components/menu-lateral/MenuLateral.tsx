@@ -2,8 +2,8 @@ import { Box, Drawer, useTheme, Divider, useMediaQuery } from "@mui/material";
 import { UserAvatar } from "../user-avatar/UserAvatar";
 import { MenuOptions } from "./MenuOptions";
 import { useDrawerContext } from "../../contexts";
-import { HomeRepairService } from "@mui/icons-material";
-import HomeIcon from '@mui/icons-material/Home';
+
+
 
 
 interface IMenuLateralProps {
@@ -13,7 +13,7 @@ interface IMenuLateralProps {
 export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down("sm"));
-    const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext()
+    const { isDrawerOpen, toggleDrawerOpen, drawerOptions,  } = useDrawerContext()
 
 
     return (
@@ -38,18 +38,15 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
                     <Divider />
 
                     <Box flex={1}>
-                        <MenuOptions 
-                            label="Home"
-                            to="/pagina-inicial"
-                            onClick={smDown? toggleDrawerOpen : undefined}
-                            icon= {<HomeIcon />}
-                        />
-                        <MenuOptions 
-                            label="pagina"
-                            to="/pagina"
-                            onClick={smDown? toggleDrawerOpen : undefined}
-                            icon= {<HomeRepairService />}
-                        />
+                        {drawerOptions.map(drawerOption => (
+                            <MenuOptions 
+                                key={drawerOption.path}
+                                label={drawerOption.label}
+                                to={drawerOption.path}
+                                onClick={smDown? toggleDrawerOpen : undefined}
+                                icon= {drawerOption.icon}
+                            />
+                        ))}
                     </Box>
                 </Box>
             </Drawer>
