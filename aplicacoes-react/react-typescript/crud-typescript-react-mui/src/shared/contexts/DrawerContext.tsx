@@ -15,7 +15,6 @@ interface IDrawerOptions {
     label: string;
     path: string;
     icon: React.ReactNode;
-    color?: string;
 }
 
 const DrawerContext = createContext({} as IDrawerContextData);

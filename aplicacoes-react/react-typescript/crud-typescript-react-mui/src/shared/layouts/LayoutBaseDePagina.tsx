@@ -6,15 +6,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 interface ILayoutBaseDePaginaProps {
     children: React.ReactNode;
-    titulo: string;
+    title: string;
+    toolbar?: React.ReactNode;
 }
 
 export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
     children,
-    titulo,
+    title,
+    toolbar,
 }) => {
     const { toggleDrawerOpen } = useDrawerContext();
-    const { isTablet } = useBreakpoints();
+    const { isTablet, isDesktop } = useBreakpoints();
     const theme = useTheme();
     const { themeName } = useAppThemeContext();
 
@@ -22,14 +24,14 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
     const isLight = themeName === "LightTheme";
 
     return (
-        <Box
-            height={"calc(100vh - 48px)"}
-            paddingTop={"48px"}
-            display={"flex"}
-            flexDirection={"column"}
-            gap={1}
-        >
-            <Stack
+        <Box height={"100vh"} display={"flex"} flexDirection={"column"} gap={1}>
+            <Box
+                padding={1}
+                display={"flex"}
+                alignItems={"center"}
+                height={isTablet ? theme.spacing(6) : isDesktop ? theme.spacing(9) : theme.spacing(12)}
+            >
+            {isTablet && (<Stack
                 direction="row"
                 spacing={0}
                 alignItems="center"
@@ -39,26 +41,30 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
                     aria-label="menu"
                     onClick={toggleDrawerOpen}
                     sx={{
-                        display: isTablet ? "block" : "none",
-                        position: "fixed",
+                        position: "absolute",
                         top: "5px",
                         right: "15px",
-                        color: isLight ? LightTheme.palette.text.primary : DarkTheme.palette.text.primary
+                        color: isLight
+                            ? LightTheme.palette.text.primary
+                            : DarkTheme.palette.text.primary,
                     }}
                 >
                     <MenuIcon />
                 </IconButton>
-            </Stack>
-            <Box
-                padding={1}
-                display={"flex"}
-                alignItems={"center"}
-                height={theme.spacing(5)}
-            >
-                <Typography variant="h5">{titulo}</Typography>
+            </Stack>)}
+                <Typography
+                    variant={ isTablet ? "h5" : isDesktop ? "h4" : "h3"}
+                    whiteSpace={"nowrap"}
+                    overflow={"hidden"}
+                    textOverflow={"ellipsis"}
+                >
+                    {title}
+                </Typography>
             </Box>
-            <Box>Barra de Ferramentas</Box>
-            <Box>{children}</Box>
+            {toolbar && <Box>{toolbar}</Box>}
+            <Box flex={1} overflow={"auto"}>
+                {children}
+            </Box>
         </Box>
     );
 };
