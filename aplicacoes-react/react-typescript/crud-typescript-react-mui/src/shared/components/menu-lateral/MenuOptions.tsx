@@ -24,6 +24,7 @@ export const MenuOptions: React.FC<IMenuOptionsProps> = ({
 
     const resolvePath = useResolvedPath(to);
     const match = useMatch ({path: resolvePath.pathname, end: false })
+    
     const handleClick = () => {
         onClick?.();
         navigate(to);

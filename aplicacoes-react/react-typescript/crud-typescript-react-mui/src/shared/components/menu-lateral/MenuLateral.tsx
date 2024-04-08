@@ -1,10 +1,9 @@
-import { Box, Drawer, useTheme, Divider, useMediaQuery } from "@mui/material";
+import { Box, Drawer, Divider, useTheme } from "@mui/material";
 import { UserAvatar } from "../user-avatar/UserAvatar";
 import { MenuOptions } from "./MenuOptions";
 import { useDrawerContext } from "../../contexts";
-
-
-
+import { useBreakpoints } from "../../themes";
+import { ThemeModeButton } from "../theme-mode/ThemeModeButton";
 
 interface IMenuLateralProps {
     children: React.ReactNode;
@@ -12,13 +11,18 @@ interface IMenuLateralProps {
 
 export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     const theme = useTheme();
-    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
-    const { isDrawerOpen, toggleDrawerOpen, drawerOptions,  } = useDrawerContext()
+    const { isTablet } = useBreakpoints();
 
+    const { isDrawerOpen, toggleDrawerOpen, drawerOptions } =
+        useDrawerContext();
 
     return (
         <Box>
-            <Drawer open={isDrawerOpen} variant={smDown ? "temporary" : "permanent"} onClose={toggleDrawerOpen}>
+            <Drawer
+                open={isDrawerOpen}
+                variant={isTablet ? "temporary" : "permanent"}
+                onClose={toggleDrawerOpen}
+            >
                 <Box
                     width={theme.spacing(28)}
                     height="100vh"
@@ -38,19 +42,21 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
                     <Divider />
 
                     <Box flex={1}>
-                        {drawerOptions.map(drawerOption => (
-                            <MenuOptions 
+                        {drawerOptions.map((drawerOption) => (
+                            <MenuOptions
                                 key={drawerOption.path}
                                 label={drawerOption.label}
                                 to={drawerOption.path}
-                                onClick={smDown? toggleDrawerOpen : undefined}
-                                icon= {drawerOption.icon}
+                                onClick={isTablet ? toggleDrawerOpen : undefined}
+                                icon={drawerOption.icon}
                             />
                         ))}
                     </Box>
+
+                    <ThemeModeButton />
                 </Box>
             </Drawer>
-            <Box height="100vh" marginLeft={smDown? 0 : theme.spacing(28)}>
+            <Box height="100vh" marginLeft={isTablet ? 0 : theme.spacing(28)}>
                 {children}
             </Box>
         </Box>
