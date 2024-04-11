@@ -1,9 +1,9 @@
 import { Box, Drawer, Divider, useTheme } from "@mui/material";
 import { UserAvatar } from "../user-avatar/UserAvatar";
-import { MenuOptions } from "./MenuOptions";
 import { useDrawerContext } from "../../contexts";
 import { useBreakpoints } from "../../themes";
 import { ThemeModeButton } from "../theme-mode/ThemeModeButton";
+import { MenuOptions } from "./MenuOptions";
 
 interface IMenuLateralProps {
     children: React.ReactNode;
