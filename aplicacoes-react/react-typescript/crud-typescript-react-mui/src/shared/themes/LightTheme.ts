@@ -8,7 +8,7 @@ export const LightTheme = createTheme({
                 main: amber[700],
                 dark: amber[900],
                 light: amber[500],
-                contrastText: blueGrey[900]
+                contrastText: grey[50]
             },
             secondary:{
                 main: blueGrey[500],
