@@ -7,13 +7,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 interface ILayoutBaseDePaginaProps {
     children: React.ReactNode;
     title: string;
-    toolbar?: React.ReactNode;
+    listTool?: React.ReactNode;
 }
 
 export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
     children,
     title,
-    toolbar,
+    listTool: listTool,
 }) => {
     const { toggleDrawerOpen } = useDrawerContext();
     const { isTablet, isDesktop } = useBreakpoints();
@@ -61,7 +61,7 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({
                     {title}
                 </Typography>
             </Box>
-            {toolbar && <Box>{toolbar}</Box>}
+            {listTool && <Box>{listTool}</Box>}
             <Box flex={1} overflow={"auto"}>
                 {children}
             </Box>
