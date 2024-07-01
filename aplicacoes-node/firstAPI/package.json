@@ -1,21 +1,22 @@
 {
-  "name": "firstAPI",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-
-  "scripts": {
-    "dev": "ts-node-dev  --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
-  },
-
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "prisma": "^5.16.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.5.2"
-  },
-  "dependencies": {
-    "@prisma/client": "^5.16.1",
-    "express": "^4.19.2"
-  }
+    "name": "firstapi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "tsnd --exit-child --respawn --transpile-only --files src/server.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "prisma": "^5.16.1",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.5.2"
+    }
 }

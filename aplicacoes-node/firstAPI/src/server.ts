@@ -2,4 +2,8 @@ import express from "express"
 
 const app = express()
 
-app.listen(3000, ()=>console.log(`app rodando na porta 3000`))
+app.get("/", (req, res) => {
+    return res.json({ message: "deu boa" })
+})
+
+app.listen(3333, () => console.log("Server started"))
