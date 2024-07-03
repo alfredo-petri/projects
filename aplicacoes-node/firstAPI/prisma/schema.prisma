@@ -8,9 +8,14 @@ generator client {
     provider = "prisma-client-js"
 }
 
+// datasource db {
+//     provider = "sqlite"
+//     url      = env("DATABASE_URL")
+// }
+
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -18,10 +23,10 @@ model User {
     name       String
     email      String
     password   String
-    Access     Access?  @relation(fields: [accessId], references: [id])
-    accessId   String?
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+    Access     Access?  @relation(fields: [accessId], references: [id])
+    accessId   String?
 }
 
 model Access {
@@ -37,10 +42,10 @@ model Product {
     name       String
     price      String
     amount     Int
-    Store      Store?   @relation(fields: [storeId], references: [id])
-    storeId    String?
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+    Store      Store?   @relation(fields: [storeId], references: [id])
+    storeId    String?
 }
 
 model Store {
