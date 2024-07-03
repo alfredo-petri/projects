@@ -1,0 +1,11 @@
+### create user
+
+POST http://localhost:3333/user
+
+{
+    "name": "junior",
+    "email": "junior@hotmail.com",
+    "password": "123"
+}
+
+### create access
