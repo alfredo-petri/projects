@@ -38,6 +38,16 @@ export const createUser = async (req: Request, res: Response) => {
                 },
             },
         },
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            Access: {
+                select: {
+                    name: true,
+                },
+            },
+        },
     })
 
     return res.json(user)
