@@ -5,6 +5,16 @@ export const createStore = async (req: Request, res: Response) => {
     const { name } = req.body
     const { userId } = req.params
 
+    const isUser = await prisma.user.findUnique({
+        where: {
+            id: userId,
+        },
+    })
+
+    if (!isUser) {
+        return res.status(400).json({ message: "usuário não existe" })
+    }
+
     const store = await prisma.store.create({
         data: {
             name,
