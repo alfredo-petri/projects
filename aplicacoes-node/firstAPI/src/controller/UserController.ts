@@ -58,3 +58,9 @@ export const deleteAllUsers = async (req: Request, res: Response) => {
 
     return res.json({ message: "all users deleted" })
 }
+
+export const listUsers = async (req: Request, res: Response) => {
+    const listUsers = await prisma.user.findMany()
+
+    return res.json(listUsers)
+}
