@@ -10,3 +10,9 @@ export const createAccess = async (req: Request, res: Response) => {
 
     return res.json(access)
 }
+
+export const listAccess = async (req: Request, res: Response) => {
+    const listAccess = await prisma.access.findMany()
+
+    return res.json(listAccess)
+}
