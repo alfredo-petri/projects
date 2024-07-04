@@ -3,9 +3,18 @@ import { prisma } from "../database/prisma"
 
 
 export const createUser = async (req: Request, res: Response) => {
-    const { name, email, password } = req.body
+    const { name, email, password, accessName } = req.body
     const user = await prisma.user.create({
-        data: { name, email, password },
+        data: {
+            name,
+            email,
+            password,
+            Access: {
+                connect: {
+                    name: accessName,
+                },
+            },
+        },
     })
 
     return res.json(user)
