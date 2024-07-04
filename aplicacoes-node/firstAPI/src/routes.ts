@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createUser, deleteAllUsers, listUsers } from "./controller/UserController"
 import { createAccess, listAccess } from "./controller/AccessController"
-import { createStore } from "./controller/StoreController"
+import { createStore, listStores } from "./controller/StoreController"
 
 export const router = Router()
 
@@ -13,3 +13,4 @@ router.post("/access", createAccess)
 router.get("/access/list", listAccess)
 
 router.post("/store/:userId", createStore)
+router.get("/store/list", listStores)

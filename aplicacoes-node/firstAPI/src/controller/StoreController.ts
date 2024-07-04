@@ -18,3 +18,9 @@ export const createStore = async (req: Request, res: Response) => {
 
     return res.json(store)
 }
+
+ export const listStores = async (req: Request, res: Response) => {
+     const stores = await prisma.store.findMany()
+
+     return res.json(stores)
+ }
