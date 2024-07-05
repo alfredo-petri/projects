@@ -28,3 +28,25 @@ export const createProduct = async (req: Request, res: Response) => {
         return res.status(400).json({ message: "loja inválida" })
     }
 }
+
+export const listProducts = async (req: Request, res: Response) => {
+    const products = await prisma.product.findMany({
+        select: {
+            name: true,
+            amount: true,
+            price: true,
+            id: true,
+            Store: true,
+        },
+    })
+
+    const response = products.map((product) => ({
+        id: product.id,
+        produto: product.name,
+        preco: product.price,
+        quantidade: product.amount,
+        loja: product.Store?.name,
+    }))
+
+    return res.json(response)
+}
