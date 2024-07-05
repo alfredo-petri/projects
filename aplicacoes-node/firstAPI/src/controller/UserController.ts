@@ -16,13 +16,13 @@ export const createUser = async (req: Request, res: Response) => {
     }
 
     const isAcessName = await prisma.access.findUnique({
-        where: { 
-            name: accessName
-        }
+        where: {
+            name: accessName,
+        },
     })
 
     if (!isAcessName) {
-        return res.status(400).json({message: "permissao inválida"})
+        return res.status(400).json({ message: "permissao inválida" })
     }
 
     const hashPassword = await hash(password, 8)
@@ -32,9 +32,13 @@ export const createUser = async (req: Request, res: Response) => {
             name,
             email,
             password: hashPassword,
-            Access: {
-                connect: {
-                    name: accessName,
+            user_access: {
+                create: {
+                    Access: {
+                        connect: {
+                            name: accessName,
+                        },
+                    },
                 },
             },
         },
@@ -42,9 +46,13 @@ export const createUser = async (req: Request, res: Response) => {
             id: true,
             name: true,
             email: true,
-            Access: {
+            user_access: {
                 select: {
-                    name: true,
+                    Access: {
+                        select: {
+                            name: true,
+                        },
+                    },
                 },
             },
         },
@@ -60,7 +68,37 @@ export const deleteAllUsers = async (req: Request, res: Response) => {
 }
 
 export const listUsers = async (req: Request, res: Response) => {
-    const listUsers = await prisma.user.findMany()
+    const listUsers = await prisma.user.findMany({
+        select: {
+            id: true,
+            name: true,
+            email: true,
+            store: {
+                select: {
+                    name: true,
+                },
+            },
+            user_access: {
+                select: {
+                    Access: {
+                        select: {
+                            name: true,
+                        },
+                    },
+                },
+            },
+        },
+    })
 
-    return res.json(listUsers)
+    const users = listUsers.map((user) => ({
+        id: user.id,
+        nome: user.name,
+        email: user.email,
+        lojas: user.store.map((store) => ({
+            loja: store.name,
+        })),
+        permissoes: user.user_access.map((access) => ({ permicao: access.Access?.name })),
+    }))
+
+    return res.json(users)
 }
