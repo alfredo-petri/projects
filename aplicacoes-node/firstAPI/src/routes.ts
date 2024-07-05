@@ -3,6 +3,7 @@ import { createUser, deleteAllUsers, listUsers } from "./controller/UserControll
 import { createAccess, listAccess } from "./controller/AccessController"
 import { createStore, listStores } from "./controller/StoreController"
 import { createProduct, listProducts } from "./controller/ProductController"
+import { signIn } from "./controller/SessionController"
 
 export const router = Router()
 
@@ -18,3 +19,5 @@ router.get("/store/list", listStores)
 
 router.post("/product/:storeId", createProduct)
 router.get("/product/list", listProducts)
+
+router.post("/sign-in", signIn)
