@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createUser, deleteAllUsers, listUsers } from "./controller/UserController"
+import { createUser, deleteAllUsers, getUser, listUsers } from "./controller/UserController"
 import { createAccess, listAccess } from "./controller/AccessController"
 import { createStore, listStores } from "./controller/StoreController"
 import { createProduct, listProducts } from "./controller/ProductController"
@@ -9,6 +9,7 @@ import { authMiddlewhare } from "./middlewares/AuthMiddleware"
 export const router = Router()
 
 router.post("/user", createUser)
+router.get("/user", getUser)
 router.get("/user/list", authMiddlewhare(["adm", "gerente"]), listUsers)
 router.delete("/user/delete-all", authMiddlewhare(["adm"]), deleteAllUsers)
 

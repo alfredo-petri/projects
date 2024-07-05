@@ -75,6 +75,33 @@ export const deleteAllUsers = async (req: Request, res: Response) => {
     }
 }
 
+export const getUser = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.user
+
+        const user = await prisma.user.findUnique({
+            where: {
+                id,
+            },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                store: { select: { name: true } },
+                user_access: { select: { Access: { select: { name: true } } } },
+            },
+        })
+
+        if (!user) {
+            return res.status(204).json({ message: "Usuário não encontrado" })
+        }
+
+        return res.status(200).json(user)
+    } catch (error) {
+        return res.status(400).json(error)
+    }
+}
+
 export const listUsers = async (req: Request, res: Response) => {
    try {
        const listUsers = await prisma.user.findMany({
