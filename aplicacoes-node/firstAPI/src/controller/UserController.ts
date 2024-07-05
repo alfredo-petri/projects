@@ -3,62 +3,66 @@ import { prisma } from "../database/prisma"
 import { hash } from "bcrypt"
 
 export const createUser = async (req: Request, res: Response) => {
-    const { name, email, password, accessName } = req.body
+    try {
+        const { name, email, password, accessName } = req.body
 
-    const isUserEmail = await prisma.user.findUnique({
-        where: {
-            email,
-        },
-    })
+        const isUserEmail = await prisma.user.findUnique({
+            where: {
+                email,
+            },
+        })
 
-    if (isUserEmail) {
-        return res.status(400).json({ message: "o email já existe, por favor digite outro email válido" })
-    }
+        if (isUserEmail) {
+            return res.status(400).json({ message: "o email já existe, por favor digite outro email válido" })
+        }
 
-    const isAcessName = await prisma.access.findUnique({
-        where: {
-            name: accessName,
-        },
-    })
+        const isAcessName = await prisma.access.findUnique({
+            where: {
+                name: accessName,
+            },
+        })
 
-    if (!isAcessName) {
-        return res.status(400).json({ message: "permissao inválida" })
-    }
+        if (!isAcessName) {
+            return res.status(400).json({ message: "permissao inválida" })
+        }
 
-    const hashPassword = await hash(password, 8)
+        const hashPassword = await hash(password, 8)
 
-    const user = await prisma.user.create({
-        data: {
-            name,
-            email,
-            password: hashPassword,
-            user_access: {
-                create: {
-                    Access: {
-                        connect: {
-                            name: accessName,
+        const user = await prisma.user.create({
+            data: {
+                name,
+                email,
+                password: hashPassword,
+                user_access: {
+                    create: {
+                        Access: {
+                            connect: {
+                                name: accessName,
+                            },
                         },
                     },
                 },
             },
-        },
-        select: {
-            id: true,
-            name: true,
-            email: true,
-            user_access: {
-                select: {
-                    Access: {
-                        select: {
-                            name: true,
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                user_access: {
+                    select: {
+                        Access: {
+                            select: {
+                                name: true,
+                            },
                         },
                     },
                 },
             },
-        },
-    })
+        })
 
-    return res.json(user)
+        return res.status(200).json(user)
+    } catch (error) {
+        return res.status(400).json(error)
+    }
 }
 
 export const deleteAllUsers = async (req: Request, res: Response) => {
