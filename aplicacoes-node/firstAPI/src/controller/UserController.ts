@@ -76,37 +76,41 @@ export const deleteAllUsers = async (req: Request, res: Response) => {
 }
 
 export const listUsers = async (req: Request, res: Response) => {
-    const listUsers = await prisma.user.findMany({
-        select: {
-            id: true,
-            name: true,
-            email: true,
-            store: {
-                select: {
-                    name: true,
-                },
-            },
-            user_access: {
-                select: {
-                    Access: {
-                        select: {
-                            name: true,
-                        },
-                    },
-                },
-            },
-        },
-    })
+   try {
+       const listUsers = await prisma.user.findMany({
+           select: {
+               id: true,
+               name: true,
+               email: true,
+               store: {
+                   select: {
+                       name: true,
+                   },
+               },
+               user_access: {
+                   select: {
+                       Access: {
+                           select: {
+                               name: true,
+                           },
+                       },
+                   },
+               },
+           },
+       })
 
-    const users = listUsers.map((user) => ({
-        id: user.id,
-        nome: user.name,
-        email: user.email,
-        lojas: user.store.map((store) => ({
-            loja: store.name,
-        })),
-        permissoes: user.user_access.map((access) => ({ permicao: access.Access?.name })),
-    }))
+       const users = listUsers.map((user) => ({
+           id: user.id,
+           nome: user.name,
+           email: user.email,
+           lojas: user.store.map((store) => ({
+               loja: store.name,
+           })),
+           permissoes: user.user_access.map((access) => ({ permicao: access.Access?.name })),
+       }))
 
-    return res.json(users)
+       return res.status(200).json(users)
+   } catch (error) {
+       return res.status(400).json(error)
+   }
 }
