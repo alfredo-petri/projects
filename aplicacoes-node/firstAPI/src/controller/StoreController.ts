@@ -29,20 +29,33 @@ export const createStore = async (req: Request, res: Response) => {
     return res.json(store)
 }
 
- export const listStores = async (req: Request, res: Response) => {
-     const stores = await prisma.store.findMany({
-         select: {
-             name: true,
-             id: true,
-             User: {
-                 select: {
-                     name: true,
-                 },
-             },
-         },
-     })
+export const listStores = async (req: Request, res: Response) => {
+    const stores = await prisma.store.findMany({
+        select: {
+            name: true,
+            id: true,
+            User: {
+                select: {
+                    name: true,
+                },
+            },
+            Product: {
+                select: {
+                    id: true,
+                    name: true,
+                    amount: true,
+                    price: true,
+                },
+            },
+        },
+    })
 
-     const response = stores.map((store) => ({ id: store.id, loja: store.name, dono: store.User?.name }))
+    const response = stores.map((store) => ({
+        id: store.id,
+        loja: store.name,
+        dono: store.User?.name,
+        produtos: store.Product.map((product) => ({ id: product.id, produto: product.name, quantidade: product.amount, preco: product.price })),
+    }))
 
-     return res.json(response)
- }
+    return res.json(response)
+}
