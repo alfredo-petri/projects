@@ -136,6 +136,10 @@ export const listUsers = async (req: Request, res: Response) => {
            permissoes: user.user_access.map((access) => ({ permicao: access.Access?.name })),
        }))
 
+       if (!users) {
+           return res.status(204).json({ message: "Usuário não encontrado" })
+       }
+
        return res.status(200).json(users)
    } catch (error) {
        return res.status(400).json(error)
