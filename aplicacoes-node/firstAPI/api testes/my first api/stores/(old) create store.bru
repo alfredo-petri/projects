@@ -1,5 +1,5 @@
 meta {
-  name: create store
+  name: (old) create store
   type: http
   seq: 2
 }
@@ -7,7 +7,11 @@ meta {
 post {
   url: http://localhost:3333/store/8d437450-1609-47ea-a84a-84f8d4724956
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: 
 }
 
 body:json {
