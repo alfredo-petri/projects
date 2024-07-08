@@ -3,11 +3,13 @@ import { prisma } from "../database/prisma"
 
 export const createStore = async (req: Request, res: Response) => {
     const { name } = req.body
-    const { userId } = req.params
+    const { id } = req.user
+    // const { userId } = req.params
 
     const isUser = await prisma.user.findUnique({
         where: {
-            id: userId,
+            // id: userId,
+            id,
         },
     })
 
@@ -20,7 +22,8 @@ export const createStore = async (req: Request, res: Response) => {
             name,
             User: {
                 connect: {
-                    id: userId,
+                    // id: userId,
+                    id,
                 },
             },
         },
