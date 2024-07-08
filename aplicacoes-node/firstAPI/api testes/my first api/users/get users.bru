@@ -1,0 +1,15 @@
+meta {
+  name: get users
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3333/user/list
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIwNDUyNzg1LCJleHAiOjE3MjA0NTYzODV9.chFxxOBYNZCsnnxeT4mPNVO_ZLHXzM6bkzClrVhpuJo
+}

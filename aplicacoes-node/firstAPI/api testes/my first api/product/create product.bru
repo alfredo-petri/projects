@@ -1,0 +1,19 @@
+meta {
+  name: create product
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3333/product/71f9feb0-a311-4038-9c23-4fec9ca75d42
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "agasalho",
+    "price": "129.9",
+    "amount": 11
+  }
+}
