@@ -1,0 +1,353 @@
+{
+  "name": "my first api",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "access",
+      "items": [
+        {
+          "type": "http",
+          "name": "create access",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3333/access",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\"name\": \"logistica\"}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get access",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3333/access/list",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "product",
+      "items": [
+        {
+          "type": "http",
+          "name": "get products",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3333/product/list",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "create product",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3333/product/71f9feb0-a311-4038-9c23-4fec9ca75d42",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"agasalho\",\n  \"price\": \"129.9\",\n  \"amount\": 11\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "stores",
+      "items": [
+        {
+          "type": "http",
+          "name": "get stores",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3333/store/list",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIwNDU2MDkzLCJleHAiOjE3MjA0NTk2OTN9.ukKnua5aWaee1PgZECQ331EYW34Db9QIFzz7U-78Qm8"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "(old) create store",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3333/store/8d437450-1609-47ea-a84a-84f8d4724956",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Loja do Alfredo\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": ""
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "create store - id",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3333/store",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Loja do Alfredo\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIwNDU1ODQwLCJleHAiOjE3MjA0NTk0NDB9.PW1CaRUcCWq0jx6uvxqVtKn7D1wFBQRytUVhY4CMW08"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "sign-in",
+      "items": [
+        {
+          "type": "http",
+          "name": "sign-in",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3333/sign-in",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n\"email\":\"alfredo@email.com\",\n\"password\": \"123\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "users",
+      "items": [
+        {
+          "type": "http",
+          "name": "create user",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3333/user",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"ildo\", \n  \"email\": \"ildo@email.com\",\n  \"password\": \"123\",\n  \"accessName\": \"comprador\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete all users",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3333/user/delete-all",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get users",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3333/user/list",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIwNDUyNzg1LCJleHAiOjE3MjA0NTYzODV9.chFxxOBYNZCsnnxeT4mPNVO_ZLHXzM6bkzClrVhpuJo"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "get user",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3333/user",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIwNDU2MDkzLCJleHAiOjE3MjA0NTk2OTN9.ukKnua5aWaee1PgZECQ331EYW34Db9QIFzz7U-78Qm8"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "none"
+      }
+    },
+    "meta": {
+      "name": "my first api"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "my first api",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
