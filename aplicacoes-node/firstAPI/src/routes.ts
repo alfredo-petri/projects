@@ -9,14 +9,15 @@ import { authMiddlewhare } from "./middlewares/AuthMiddleware"
 export const router = Router()
 
 router.post("/user", createUser)
-router.get("/user", getUser)
+router.get("/user", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), getUser)
 router.get("/user/list", authMiddlewhare(["adm", "gerente"]), listUsers)
 router.delete("/user/delete-all", authMiddlewhare(["adm"]), deleteAllUsers)
 
 router.post("/access", authMiddlewhare(["adm", "gerente"]), createAccess)
 router.get("/access/list", authMiddlewhare(["adm", "gerente"]), listAccess)
 
-router.post("/store/:userId", authMiddlewhare(["adm"]), createStore)
+// router.post("/store/:userId", authMiddlewhare(["adm"]), createStore)
+router.post("/store", authMiddlewhare(["adm"]), createStore)
 router.get("/store/list", authMiddlewhare(["adm", "gerente"]), listStores)
 
 router.post("/product/:storeId", authMiddlewhare(["adm", "gerente", "logistica"]), createProduct)
