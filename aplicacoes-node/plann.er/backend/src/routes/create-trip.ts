@@ -13,11 +13,13 @@ export async function createTrip(app: FastifyInstance) {
                     destination: z.string().min(4),
                     starts_at: z.coerce.date(),
                     ends_at: z.coerce.date(),
+                    owner_name: z.string(),
+                    owner_email: z.string().email(),
                 }),
             },
         },
         async (req) => {
-            const { destination, ends_at, starts_at } = req.body
+            const { destination, ends_at, starts_at, owner_name, owner_email } = req.body
 
             if (dayjs(starts_at).isBefore(new Date())) {
                 throw new Error("invalid trip start date")
@@ -36,3 +38,6 @@ export async function createTrip(app: FastifyInstance) {
         }
     )
 }
+
+
+//todo continuar no min 48
