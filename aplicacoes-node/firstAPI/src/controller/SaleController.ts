@@ -13,7 +13,24 @@ export const createSale = async (req: Request, res: Response) => {
             }
         }) 
 
-        return res.json(productsByDatabase)
+        const productAmount = productsByDatabase.map(product => {
+            const { id, name, price } = product
+            const amount = products.find((p: Product)=> p.id == product.id).amount
+            
+            return {
+                id, name, price, amount 
+            }
+        })
+
+        let value = 0
+        for (const product of productAmount) {
+            value += product.price * parseInt(product.amount)
+        }
+
+
+
+
+        return res.json(value)
     } catch (error) {
         console.log(error)
     }
