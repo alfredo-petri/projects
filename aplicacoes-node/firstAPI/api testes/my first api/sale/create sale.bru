@@ -1,0 +1,25 @@
+meta {
+  name: create sale
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3333/sale
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxMjEwMzE2LCJleHAiOjE3MjEyMTM5MTZ9.BS2LdaP7lkcaMzWxUE17a5pIjYSSbCSrfQdTYnNwykA
+}
+
+body:json {
+  {
+    "products": [
+      {
+        "id": "8e3c7011-b1ef-4cd1-aecb-1f8c5e7708f9"
+      }
+    ]
+  }
+}
