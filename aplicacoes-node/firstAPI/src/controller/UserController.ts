@@ -87,7 +87,7 @@ export const getUser = async (req: Request, res: Response) => {
                 id: true,
                 name: true,
                 email: true,
-                store: { select: { name: true } },
+                store: { select: { id: true, name: true } },
                 user_access: { select: { Access: { select: { name: true } } } },
             },
         })
