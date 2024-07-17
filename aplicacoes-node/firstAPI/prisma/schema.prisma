@@ -77,8 +77,8 @@ model Store {
 model Sale {
     id          String        @id @default(uuid())
     total_value Float
-    created_at DateTime  @default(now())
-    updated_at DateTime  @updatedAt
+    created_at  DateTime      @default(now())
+    updated_at  DateTime      @updatedAt
     Buyer       User?         @relation("buyer", fields: [buyerId], references: [id])
     buyerId     String?
     Seller      User?         @relation("seller", fields: [sellerId], references: [id])
@@ -87,12 +87,12 @@ model Sale {
 }
 
 model SaleProduct {
-    id          String  @id @default(uuid())
-    amount_sale Int
-    created_at DateTime  @default(now())
-    updated_at DateTime  @updatedAt
-    Sale        Sale    @relation(fields: [saleId], references: [id])
-    saleId      String
-    Product     Product @relation(fields: [productId], references: [id])
-    productId   String
+    id         String   @id @default(uuid())
+    sale_value Int
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+    Sale       Sale     @relation(fields: [saleId], references: [id])
+    saleId     String
+    Product    Product  @relation(fields: [productId], references: [id])
+    productId  String
 }
