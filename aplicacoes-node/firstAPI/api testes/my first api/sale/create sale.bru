@@ -11,15 +11,22 @@ post {
 }
 
 auth:bearer {
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxMjEwMzE2LCJleHAiOjE3MjEyMTM5MTZ9.BS2LdaP7lkcaMzWxUE17a5pIjYSSbCSrfQdTYnNwykA
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxMzgzOTM5LCJleHAiOjE3MjEzODc1Mzl9.eCO-TFAlxhuIJsoV2EFyldnj-NvQoK1-7eah0DdK7H8
 }
 
 body:json {
   {
     "products": [
       {
-        "id": "8e3c7011-b1ef-4cd1-aecb-1f8c5e7708f9"
+        "id": "8e3c7011-b1ef-4cd1-aecb-1f8c5e7708f9",
+        "amount": 2
+      },
+      {
+        "id": "568dea1a-a716-43af-bbf0-c47f65e3aa95",
+        "amount":1
       }
-    ]
+    ],
+    "userSellerId": "3493e1eb-40ca-4801-b1cf-0b4859fc3f9b"
   }
+  
 }
