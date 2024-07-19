@@ -27,10 +27,34 @@ export const createSale = async (req: Request, res: Response) => {
             value += product.price * parseInt(product.amount)
         }
 
+        const sale = await prisma.sale.create({
+            data: {
+                total_value: value,
+                Seller: { connect: { id: userSellerId } },
+                Buyer: { connect: { id } },
+                SaleProduct: {
+                    create: productAmount.map((product) => ({
+                        Product: { connect: { id: product.id } },
+                        amount_sale: product.amount,
+                    })),
+                },
+            },
+            include: {
+                SaleProduct: true,
+            },
+        })
 
+        productAmount.map(async (product) => {
+            await prisma.product.updateMany({
+                where: { id: product.id },
+                data: {
+                    amount: { decrement: parseInt(product.amount) },
+                },
+            })
+        })
 
+        return res.status(201).json({ sale, message: "Compra realizada com sucesso." })
 
-        return res.json(value)
     } catch (error) {
         console.log(error)
     }
