@@ -27,6 +27,10 @@ export const createSale = async (req: Request, res: Response) => {
             value += product.price * parseInt(product.amount)
         }
 
+        if (id === userSellerId) {
+            return res.status(400).json({ message: "O ID do vendedor e o ID do comprador devem ser diferentes" })
+        }
+
         const sale = await prisma.sale.create({
             data: {
                 total_value: value,
