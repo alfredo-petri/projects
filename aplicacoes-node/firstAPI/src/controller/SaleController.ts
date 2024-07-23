@@ -1,24 +1,27 @@
-import { Request, Response } from "express";
-import { prisma } from "../database/prisma";
-import { Product } from "@prisma/client";
+import { Request, Response } from "express"
+import { prisma } from "../database/prisma"
+import { Product } from "@prisma/client"
 
 export const createSale = async (req: Request, res: Response) => {
     const { products, userSellerId } = req.body
     const { id } = req.user
-    
+
     try {
         const productsByDatabase = await prisma.product.findMany({
             where: {
-                id: { in: products.map((product: Product) => product.id)               }
-            }
-        }) 
+                id: { in: products.map((product: Product) => product.id) },
+            },
+        })
 
-        const productAmount = productsByDatabase.map(product => {
+        const productAmount = productsByDatabase.map((product) => {
             const { id, name, price } = product
-            const amount = products.find((p: Product)=> p.id == product.id).amount
-            
+            const amount = products.find((p: Product) => p.id == product.id).amount
+
             return {
-                id, name, price, amount 
+                id,
+                name,
+                price,
+                amount,
             }
         })
 
@@ -58,8 +61,43 @@ export const createSale = async (req: Request, res: Response) => {
         })
 
         return res.status(201).json({ sale, message: "Compra realizada com sucesso." })
-
     } catch (error) {
         console.log(error)
     }
+}
+
+export const listSales = async (req: Request, res: Response) => {
+    const sales = await prisma.sale.findMany({
+        select: {
+            id: true,
+            total_value: true,
+            SaleProduct: {
+                select: {
+                    Product: {
+                        select: {
+                            id: true,
+                            name: true,
+                            price: true,
+                        },
+                    },
+                    amount_sale: true,
+                },
+            },
+            Seller: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            Buyer: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            created_at: true,
+        },
+    })
+
+    return res.status(200).json(sales)
 }

@@ -5,7 +5,7 @@ import { createStore, listStores } from "./controller/StoreController"
 import { createProduct, listProducts } from "./controller/ProductController"
 import { signIn } from "./controller/SessionController"
 import { authMiddlewhare } from "./middlewares/AuthMiddleware"
-import { createSale } from "./controller/SaleController";
+import { createSale, listSales } from "./controller/SaleController"
 
 export const router = Router()
 
@@ -27,6 +27,8 @@ router.post("/product/:storeId", authMiddlewhare(["adm", "gerente", "logistica"]
 router.get("/product/list", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), listProducts)
 
 router.post("/sale", authMiddlewhare(["adm", "vendedor"]), createSale)
+router.get("/sale/list", authMiddlewhare(["adm", "gerente", "vendedor"]), listSales)
+
 
 // router.post("/user", createUser)
 // router.get("/user", getUser)
