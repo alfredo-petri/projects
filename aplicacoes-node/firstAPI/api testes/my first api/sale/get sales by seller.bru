@@ -1,0 +1,15 @@
+meta {
+  name: get sales by seller
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseURL}}/sale/list-seller
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzNDkzZTFlYi00MGNhLTQ4MDEtYjFjZi0wYjQ4NTlmYzNmOWIiLCJyb2xlcyI6WyJ2ZW5kZWRvciJdLCJpYXQiOjE3MjE4MTc0OTUsImV4cCI6MTcyMTgyMTA5NX0.jC6YfcXbGA7jVr2Cer8H0AhFssInxXMRMh5Kdx3S6_w
+}

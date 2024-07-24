@@ -1,0 +1,15 @@
+meta {
+  name: get sales
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseURL}}/sale/list
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YmViMjhjNi02MWU4LTQ1NTEtOTVhMC00ODgzODlkZTIwMjIiLCJyb2xlcyI6WyJjb21wcmFkb3IiXSwiaWF0IjoxNzIxNzMxNjMyLCJleHAiOjE3MjE3MzUyMzJ9.Lr7g8Etq2NLdLwomnKGHEEOduv6QhtL9D72yNJS203s
+}
