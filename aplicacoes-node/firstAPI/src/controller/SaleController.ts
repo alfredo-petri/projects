@@ -101,3 +101,80 @@ export const listSales = async (req: Request, res: Response) => {
 
     return res.status(200).json(sales)
 }
+
+export const listSalesByBuyer = async (req: Request, res: Response) => {
+    const { id } = req.user
+    const sales = await prisma.sale.findMany({
+        where: { buyerId: id },
+        select: {
+            id: true,
+            total_value: true,
+            SaleProduct: {
+                select: {
+                    Product: {
+                        select: {
+                            id: true,
+                            name: true,
+                            price: true,
+                        },
+                    },
+                    amount_sale: true,
+                },
+            },
+            Seller: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            Buyer: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            created_at: true,
+        },
+    })
+
+    return res.status(200).json(sales)
+}
+
+export const listSalesBySeller = async (req: Request, res: Response) => {
+    const { id } = req.user
+    const sales = await prisma.sale.findMany({
+        where: { sellerId: id },
+        select: {
+            id: true,
+            total_value: true,
+            SaleProduct: {
+                select: {
+                    Product: {
+                        select: {
+                            id: true,
+                            name: true,
+                            price: true,
+                        },
+                    },
+                    amount_sale: true,
+                },
+            },
+            Seller: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            Buyer: {
+                select: {
+                    id: true,
+                    name: true,
+                },
+            },
+            created_at: true,
+        },
+    })
+
+    return res.status(200).json(sales)
+}
+

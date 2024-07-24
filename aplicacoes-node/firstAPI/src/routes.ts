@@ -5,7 +5,7 @@ import { createStore, listStores } from "./controller/StoreController"
 import { createProduct, listProducts } from "./controller/ProductController"
 import { signIn } from "./controller/SessionController"
 import { authMiddlewhare } from "./middlewares/AuthMiddleware"
-import { createSale, listSales } from "./controller/SaleController"
+import { createSale, listSales, listSalesByBuyer, listSalesBySeller } from "./controller/SaleController"
 
 export const router = Router()
 
@@ -26,8 +26,10 @@ router.get("/store/list", authMiddlewhare(["adm", "gerente"]), listStores)
 router.post("/product/:storeId", authMiddlewhare(["adm", "gerente", "logistica"]), createProduct)
 router.get("/product/list", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), listProducts)
 
-router.post("/sale", authMiddlewhare(["adm", "vendedor"]), createSale)
-router.get("/sale/list", authMiddlewhare(["adm", "gerente", "vendedor"]), listSales)
+router.post("/sale", authMiddlewhare(["adm", "vendedor", "comprador"]), createSale)
+router.get("/sale/list", authMiddlewhare(["adm", "gerente"]), listSales)
+router.get("/sale/list-buyer", authMiddlewhare(["adm", "gerente", "comprador"]), listSalesByBuyer)
+router.get("/sale/list-seller", authMiddlewhare(["adm", "gerente", "vendedor"]), listSalesBySeller)
 
 
 // router.post("/user", createUser)
