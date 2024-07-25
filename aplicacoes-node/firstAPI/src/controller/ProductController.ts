@@ -19,13 +19,47 @@ export const createProduct = async (req: Request, res: Response) => {
                     },
                 },
             })
-            return res.json(product)
+            return res.status(200).json(product)
         } catch (error) {
             console.log(error)
             return res.status(500).send(error)
         }
     } else {
         return res.status(400).json({ message: "loja inválida" })
+    }
+}
+
+export const updateProduct = async (req: Request, res: Response) => {
+    const { name, price, amount } = req.body
+    const { productId } = req.params
+    const { id } = req.user
+
+    try {
+        const isProduct = await prisma.product.findUnique({
+            where: { id: productId },
+            include: { Store: true },
+        })
+
+        if (!isProduct) {
+            return res.status(404).json({ message: "produto não encontrado" })
+        }
+
+        if (id !== isProduct?.Store?.userId) {
+            return res.status(404).json({ message: "este produto não pertence a este usuário" })
+        }
+
+        const product = await prisma.product.update({
+            where: { id: productId },
+            data: {
+                name,
+                price,
+                amount,
+            },
+        })
+        return res.status(200).json(product)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send(error)
     }
 }
 

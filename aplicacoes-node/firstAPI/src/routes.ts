@@ -2,7 +2,7 @@ import { Router } from "express";
 import { createUser, deleteAllUsers, getUser, listUsers } from "./controller/UserController"
 import { createAccess, listAccess } from "./controller/AccessController"
 import { createStore, listStores } from "./controller/StoreController"
-import { createProduct, listProducts } from "./controller/ProductController"
+import { createProduct, listProducts, updateProduct } from "./controller/ProductController"
 import { signIn } from "./controller/SessionController"
 import { authMiddlewhare } from "./middlewares/AuthMiddleware"
 import { createSale, listSales, listSalesByBuyer, listSalesBySeller } from "./controller/SaleController"
@@ -24,6 +24,7 @@ router.post("/store", authMiddlewhare(["adm"]), createStore)
 router.get("/store/list", authMiddlewhare(["adm", "gerente"]), listStores)
 
 router.post("/product/:storeId", authMiddlewhare(["adm", "gerente", "logistica"]), createProduct)
+router.patch("/product/:productId", authMiddlewhare(["adm", "gerente", "logistica"]), updateProduct)
 router.get("/product/list", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), listProducts)
 
 router.post("/sale", authMiddlewhare(["adm", "vendedor", "comprador"]), createSale)
