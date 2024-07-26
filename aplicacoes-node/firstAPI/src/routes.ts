@@ -2,7 +2,7 @@ import { Router } from "express";
 import { createUser, deleteAllUsers, getUser, listUsers } from "./controller/UserController"
 import { createAccess, listAccess } from "./controller/AccessController"
 import { createStore, listStores } from "./controller/StoreController"
-import { createProduct, getProduct, listProducts, updateProduct } from "./controller/ProductController"
+import { createProduct, deleteProduct, getProduct, listProducts, updateProduct } from "./controller/ProductController"
 import { signIn } from "./controller/SessionController"
 import { authMiddlewhare } from "./middlewares/AuthMiddleware"
 import { createSale, listSales, listSalesByBuyer, listSalesBySeller } from "./controller/SaleController"
@@ -26,6 +26,8 @@ router.post("/product/:storeId", authMiddlewhare(["adm", "gerente", "logistica"]
 router.patch("/product/:productId", authMiddlewhare(["adm", "gerente", "logistica"]), updateProduct)
 router.get("/product/list", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), listProducts)
 router.get("/product/:productId", authMiddlewhare(["adm", "gerente", "logistica", "vendedor", "comprador"]), getProduct)
+router.delete("/product/:productId", authMiddlewhare(["adm", "gerente", "logistica"]), deleteProduct)
+
 
 router.post("/sale", authMiddlewhare(["adm", "vendedor", "comprador"]), createSale)
 router.get("/sale/list", authMiddlewhare(["adm", "gerente"]), listSales)

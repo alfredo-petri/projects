@@ -117,3 +117,35 @@ export const getProduct = async (req: Request, res: Response) => {
         return res.status(400).send(error)
     }
 }
+
+export const deleteProduct = async (req: Request, res: Response) => {
+    const { productId } = req.params
+    const { id } = req.user
+
+    try {
+        const isProduct = await prisma.product.findUnique({
+            where: {
+                id: productId,
+            },
+            include: {
+                Store: true,
+            },
+        })
+
+        if (!isProduct) {
+            return res.status(204).json({ message: "produto nao encontrado" })
+        }
+
+        if (id !== isProduct.Store?.userId) return res.status(400).json({ message: "este produtonão é seu, impossível deletar" })
+
+        await prisma.product.delete({
+            where: {
+                id: productId,
+            },
+        })
+
+        return res.status(200).json({ message: "produto deletado com sucesso" })
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
