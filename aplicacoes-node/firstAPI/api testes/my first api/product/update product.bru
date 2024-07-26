@@ -1,0 +1,23 @@
+meta {
+  name: update product
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseURL}}/product/568dea1a-a716-43af-bbf0-c47f65e3aa95
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxOTAzOTQyLCJleHAiOjE3MjE5MDc1NDJ9.GLE-l6YgJZwL4QjZoHIwjDD-ejFx8DeQTBoSmwvJX_I
+}
+
+body:json {
+  {
+    "name": "calça",
+    "price": 129.9,
+    "amount": 11
+  }
+}

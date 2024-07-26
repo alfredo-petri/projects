@@ -7,13 +7,17 @@ meta {
 post {
   url: http://localhost:3333/product/71f9feb0-a311-4038-9c23-4fec9ca75d42
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxOTAyOTAyLCJleHAiOjE3MjE5MDY1MDJ9.Crlx22BQXkXeBPGY2oPO5hxcIXzwJrUj5Bmdtnv7Ygk
 }
 
 body:json {
   {
-    "name": "agasalho",
-    "price": "129.9",
-    "amount": 11
+    "name": "relogio",
+    "price": 499,
+    "amount": 4
   }
 }

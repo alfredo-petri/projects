@@ -1,0 +1,15 @@
+meta {
+  name: get product
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3333/product/list
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDQzNzQ1MC0xNjA5LTQ3ZWEtYTg0YS04NGY4ZDQ3MjQ5NTYiLCJyb2xlcyI6WyJhZG0iXSwiaWF0IjoxNzIxOTg3NzQwLCJleHAiOjE3MjE5OTEzNDB9.c-UCPx7wPJovBzC46XMDfED9akx_kvsdA88KDLRL6Bc
+}
