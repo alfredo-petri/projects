@@ -70,7 +70,11 @@ export const listProducts = async (req: Request, res: Response) => {
             amount: true,
             price: true,
             id: true,
-            Store: true,
+            Store: {
+                select: {
+                    name: true,
+                },
+            },
         },
     })
 
@@ -83,4 +87,33 @@ export const listProducts = async (req: Request, res: Response) => {
     }))
 
     return res.json(response)
+}
+
+
+export const getProduct = async (req: Request, res: Response) => {
+    const { productId } = req.params
+
+    try {
+        const product = await prisma.product.findUnique({
+            where: { id: productId },
+
+            select: {
+                name: true,
+                amount: true,
+                price: true,
+                Store: {
+                    select: {
+                        name: true,
+                    },
+                },
+            },
+        })
+
+        if (!product) return res.status(404).json({ message: "Produto não encontrado" })
+
+        return res.status(200).json(product)
+    } catch (error) {
+        console.log(error)
+        return res.status(400).send(error)
+    }
 }
