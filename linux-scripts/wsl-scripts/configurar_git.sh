@@ -14,7 +14,7 @@ git config --global user.email "$email"
 
 # Exibe a configuração do branch padrão de inicialização
 echo "Branch padrão de inicialização:"
-git config --global --get init.defaultBranch
+git config --global init.defaultBranch main
 
 # Configura o editor padrão para o Git
 git config --global core.editor "code --wait"
