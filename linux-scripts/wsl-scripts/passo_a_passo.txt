@@ -1,0 +1,32 @@
+passo a passo instalação e configuração linux wsl para desenvolvimento web
+
+1 - Instale e abra o Windows Terminal
+
+2 - execute o comando abaixo no powershell:
+
+wsl --install
+
+3 - configure o usuário e senha no ambiente wsl
+
+4 - reinicie o Windows para ter certeza de que o subsistema foi instalado corretamente
+
+5 - configure o Windows terminal de acordo com as suas preferencias
+
+6 - abra o Windows terminal e execute o terminal do subsistema instalado
+
+7 - copie os seguintes scripts para a pasta /home/usuario do subsistema:
+"criar_wslconfig", "dev_enviroment_instalation" e "configurar_git"
+
+8 - execute os seguintes comandos no terminal em seguencia:
+
+	8.1 - chmod +x criar_wslconfig.sh
+	8.2 - chmod +x dev_enviroment_instalation.sh
+	8.3 - chmod +x configurar_git.sh
+	8.4 - sudo ./criar_wslconfig.sh
+	8.5 - sudo ./dev_enviroment_instalation.sh
+	8.6 - sudo ./configurar_git.sh
+
+
+
+
+
