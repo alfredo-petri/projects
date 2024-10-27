@@ -1,0 +1,546 @@
+@use 'base-mixins'
+    
+    
+// //global colors
+// $black: #020a16
+// $white: #ffffff
+
+    
+    
+// light theme colors
+
+// Cores Primárias
+$primary-color-light: ( 100: #165be6, 200: #124fca, 300: #0e43ae, 400: #093690, 500: #0c2c76, 600: #0c215b, 700: #0b1740)
+
+
+// Cores escala de cinza
+$grayscale-color-light: ( 50: #fcfcfd, 100: #eeeff2, 200: #dbdce1, 300: #c0c5ce, 400: #999ea8, 500: #666b75, 600: #4f535a, 700: #37393d, 800: #2d2f33, 900: #1b1f26, 950: #0b121e )
+
+    
+// // Cores de categorias
+
+// $categories-color-light: ( news: (100: #006db8, 200: #003c66 ), games: ( 100: #129fed, 200: #0d73ab ), ps-plus: ( 100: #f9bf00, 200: #705600 ), promotions: ( 100: #00aea0, 200: #007a71 ), reviews: ( 100: #6333ce, 200: #3b1e7b ), especials: ( 100: #ff0020, 200: #cc001a ), launchs: ( 100: #f11e73, 200: #9c0a45 ), playstories: ( 100: #6e9ece, 200: #366ba0 ), partner-offers: ( 100: #e042a2, 200: #a21b6d ))
+
+
+
+
+// dark theme colors
+
+// Cores Primárias
+$primary-color-dark: ( 100: #17439c, 200: #1b4aab, 300: #1e52bb, 400: #2159ca, 500: #2561db, 600: #2969ec, 700: #5182f5 )
+
+
+// Cores escala de cinza
+$grayscale-color-dark: ( 50: #0b121e, 100: #1b1f26, 200: #2d2f33, 300: #37393d, 400: #4f535a, 500: #666b75, 600: #999ea8, 700: #c0c5ce, 800: #dbdce1, 900: #eeeff2, 950: #fcfcfd )
+    
+// // Cores de categorias
+// $categories-color-dark: (news: (100: #006db8, 200: #008beb ), games: ( 100: #129fed, 200: #43b3f1 ), ps-plus: ( 100: #f9bf00, 200: #e8cf7d ), promotions: ( 100: #00aea0, 200: #00ccbc ), reviews: ( 100: #6e42d2, 200: #9277cf ), especials: ( 100: #fb233e, 200: #fc556a ), launchs: ( 100: #ed3b83, 200: #f16aa0 ), playstories: ( 100: #6e9ece, 200: #95b8db ), partner-offers: ( 100: #e042a2, 200: #e666b4 ))
+
+
+// @include base-mixins.generate-theme('light', $primary-color-light, $grayscale-color-light, $categories-color-light)
+// @include base-mixins.generate-theme('dark', $primary-color-dark, $grayscale-color-dark, $categories-color-dark)
+    
+
+
+// //definindo css custom protperties
+// :root 
+
+//     //light theme
+
+//     //primary-color      
+
+//     --primary-color-light-100: #{$primary-color-light[100]} 
+//     --primary-color-light-200: #{$primary-color-light[200]}
+//     --primary-color-light-300: #{$primary-color-light[300]}
+//     --primary-color-light-400: #{$primary-color-light[400]}
+//     --primary-color-light-500: #{$primary-color-light[500]} 
+//     --primary-color-light-600: #{$primary-color-light[600]}
+//     --primary-color-light-700: #{$primary-color-light[700]} 
+
+//     //grayscale
+//     --grayscale-color-light-50: #{$grayscale-color-light[50]}
+//     --grayscale-color-light-100: #{$grayscale-color-light[100]} //cor principal de background
+//     --grayscale-color-light-200: #{$grayscale-color-light[200]}
+//     --grayscale-color-light-300: #{$grayscale-color-light[300]}
+//     --grayscale-color-light-400: #{$grayscale-color-light[400]}
+//     --grayscale-color-light-500: #{$grayscale-color-light[500]}
+//     --grayscale-color-light-600: #{$grayscale-color-light[600]}
+//     --grayscale-color-light-700: #{$grayscale-color-light[700]}
+//     --grayscale-color-light-800: #{$grayscale-color-light[800]}
+//     --grayscale-color-light-900: #{$grayscale-color-light[900]}
+//     --grayscale-color-light-950: #{$grayscale-color-light[950]}
+    
+//     // //news 
+//     // --news-color-light-100: #{$news-color-light[100]} //base
+//     // --news-color-light-200: #{$news-color-light[200]}
+
+//     // //games
+//     // --games-color-light-100: #{$games-color-light[100]} //base
+//     // --games-color-light-200: #{$games-color-light[200]}
+
+//     // //PsPlus
+//     // --psPlus-color-light-100: #{$psPlus-color-light[100]} //base
+//     // --psPlus-color-light-200: #{$psPlus-color-light[200]}
+
+//     // //promotions
+//     // --promotions-color-light-100: #{$promotions-color-light[100]} //base
+//     // --promotions-color-light-200: #{$promotions-color-light[200]}
+
+//     // //reviews
+//     // --reviews-color-light-100: #{$reviews-color-light[100]} //base
+//     // --reviews-color-light-200: #{$reviews-color-light[200]}
+
+//     // //especials
+//     // --especials-color-light-100: #{$especials-color-light[100]} //base
+//     // --especials-color-light-200: #{$especials-color-light[200]}
+
+//     // //launchs
+//     // --launchs-color-light-100: #{$launchs-color-light[100]} //base
+//     // --launchs-color-light-200: #{$launchs-color-light[200]}
+
+//     // //playstories
+//     // --playstories-color-light-100: #{$playstories-color-light[100]} //base
+//     // --playstories-color-light-200: #{$playstories-color-light[200]}
+
+//     // //partner offers
+//     // --partnerOffers-color-light-100: #{$partnerOffers-color-light[100]} //base
+//     // --partnerOffers-color-light-200: #{$partnerOffers-color-light[200]}    
+
+//     //dark theme
+
+//     //primary-color      
+
+//     --primary-color-dark-100: #{$primary-color-dark[100]} 
+//     --primary-color-dark-200: #{$primary-color-dark[200]}
+//     --primary-color-dark-300: #{$primary-color-dark[300]}
+//     --primary-color-dark-400: #{$primary-color-dark[400]} // Base
+//     --primary-color-dark-500: #{$primary-color-dark[500]} 
+//     --primary-color-dark-600: #{$primary-color-dark[600]}
+//     --primary-color-dark-700: #{$primary-color-dark[700]} 
+
+//     //grayscale
+//     --grayscale-color-dark-50: #{$grayscale-color-dark[50]}
+//     --grayscale-color-dark-100: #{$grayscale-color-dark[100]} //cor principal de background
+//     --grayscale-color-dark-200: #{$grayscale-color-dark[200]}
+//     --grayscale-color-dark-300: #{$grayscale-color-dark[300]}
+//     --grayscale-color-dark-400: #{$grayscale-color-dark[400]}
+//     --grayscale-color-dark-500: #{$grayscale-color-dark[500]}
+//     --grayscale-color-dark-600: #{$grayscale-color-dark[600]}
+//     --grayscale-color-dark-700: #{$grayscale-color-dark[700]}
+//     --grayscale-color-dark-800: #{$grayscale-color-dark[800]}
+//     --grayscale-color-dark-900: #{$grayscale-color-dark[900]}
+//     --grayscale-color-dark-950: #{$grayscale-color-dark[950]}
+    
+//     //news 
+//     --news-color-dark-100: #{$news-color-dark[100]} //base
+//     --news-color-dark-200: #{$news-color-dark[200]}
+
+//     //games
+//     --games-color-dark-100: #{$games-color-dark[100]} //base
+//     --games-color-dark-200: #{$games-color-dark[200]}
+
+//     //PsPlus
+//     --psPlus-color-dark-100: #{$psPlus-color-dark[100]} //base
+//     --psPlus-color-dark-200: #{$psPlus-color-dark[200]}
+
+//     //promotions
+//     --promotions-color-dark-100: #{$promotions-color-dark[100]} //base
+//     --promotions-color-dark-200: #{$promotions-color-dark[200]}
+
+//     //reviews
+//     --reviews-color-dark-100: #{$reviews-color-dark[100]} //base
+//     --reviews-color-dark-200: #{$reviews-color-dark[200]}
+
+//     //especials
+//     --especials-color-dark-100: #{$especials-color-dark[100]} //base
+//     --especials-color-dark-200: #{$especials-color-dark[200]}
+
+//     //launchs
+//     --launchs-color-dark-100: #{$launchs-color-dark[100]} //base
+//     --launchs-color-dark-200: #{$launchs-color-dark[200]}
+
+//     //playstories
+//     --playstories-color-dark-100: #{$playstories-color-dark[100]} //base
+//     --playstories-color-dark-200: #{$playstories-color-dark[200]}
+
+//     //partner offers
+//     --partnerOffers-color-dark-100: #{$partnerOffers-color-dark[100]} //base
+//     --partnerOffers-color-dark-200: #{$partnerOffers-color-dark[200]}    
+
+
+
+    
+    
+    
+    
+    
+    
+//     versao 2
+    
+//     //global colors
+// $black: #020a16
+// $white: #ffffff
+
+    
+    
+// // light theme colors
+
+// // Cores Primárias
+// $primary-color-light: 
+//   100: #165be6 
+//   200: #124fca
+//   300: #0e43ae
+//   400: #093690 // Base
+//   500: #0c2c76 
+//   600: #0c215b
+//   700: #0b1740  
+
+
+// // Cores escala de cinza
+// $grayscale-color-light:
+//     50: #fcfcfd
+//     100: #eeeff2 //cor principal de background
+//     200: #dbdce1
+//     300: #c0c5ce
+//     400: #999ea8
+//     500: #666b75
+//     600: #4f535a
+//     700: #37393d
+//     800: #2d2f33
+//     900: #1b1f26
+//     950: #0b121e
+
+    
+// // Cores de categorias
+// $news-color-light: 
+//     100: #006db8 //base
+//     200: #003c66
+
+// $games-color-light: 
+//     100: #129fed //base
+//     200: #0d73ab
+
+// $psPlus-color-light: 
+//     100: #f9bf00 //base
+//     200: #705600
+
+// $promotions-color-light: 
+//     100: #00aea0 //base
+//     200: #007a71
+
+// $reviews-color-light: 
+//     100: #6333ce //base
+//     200: #3b1e7b
+
+// $especials-color-light: 
+//     100: #ff0020 //base
+//     200: #cc001a
+
+// $launchs-color-light: 
+//     100: #f11e73 //base
+//     200: #9c0a45
+
+// $playstories-color-light: 
+//     100: #6e9ece //base
+//     200: #366ba0
+
+// $partnerOffers-color-light: 
+//     100: #e042a2 //base
+//     200: #a21b6d    
+
+
+
+
+
+
+// // dark theme colors
+
+// // Cores Primárias
+// $primary-color-dark: 
+//   100: #17439c
+//   200: #1b4aab
+//   300: #1e52bb
+//   400: #2159ca // Base
+//   500: #2561db 
+//   600: #2969ec
+//   700: #5182f5  
+
+
+// // Cores escala de cinza
+// $grayscale-color-dark:
+//     50: #0b121e
+//     100: #1b1f26 //cor principal de background
+//     200: #2d2f33
+//     300: #37393d
+//     400: #4f535a
+//     500: #666b75
+//     600: #999ea8
+//     700: #c0c5ce
+//     800: #dbdce1
+//     900: #eeeff2
+//     950: #fcfcfd
+
+    
+// // Cores de categorias
+// $news-color-dark:
+//     100: #006db8 //base
+//     200: #008beb
+
+// $games-color-dark: 
+//     100: #129fed //base
+//     200: #43b3f1
+
+// $psPlus-color-dark: 
+//     100: #f9bf00 //base
+//     200: #e8cf7d
+
+// $promotions-color-dark: 
+//     100: #00aea0 //base
+//     200: #00ccbc
+
+// $reviews-color-dark: 
+//     100: #6e42d2 //base
+//     200: #9277cf
+
+// $especials-color-dark: 
+//     100: #fb233e //base
+//     200: #fc556a
+
+// $launchs-color-dark: 
+//     100: #ed3b83 //base
+//     200: #f16aa0
+
+// $playstories-color-dark: 
+//     100: #6e9ece //base
+//     200: #95b8db
+
+// $partnerOffers-color-dark: 
+//     100: #e042a2 //base
+//     200: #e666b4    
+
+
+
+
+    
+// versao 2 
+
+//definindo css custom protperties
+:root 
+
+    //light theme
+
+    //primary-color      
+
+    --primary-color-light-100: #{$primary-color-light[100]} 
+    --primary-color-light-200: #{$primary-color-light[200]}
+    --primary-color-light-300: #{$primary-color-light[300]}
+    --primary-color-light-400: #{$primary-color-light[400]} // Base
+    --primary-color-light-500: #{$primary-color-light[500]} 
+    --primary-color-light-600: #{$primary-color-light[600]}
+    --primary-color-light-700: #{$primary-color-light[700]} 
+
+    //grayscale
+    --grayscale-color-light-50: #{$grayscale-color-light[50]}
+    --grayscale-color-light-100: #{$grayscale-color-light[100]} //cor principal de background
+    --grayscale-color-light-200: #{$grayscale-color-light[200]}
+    --grayscale-color-light-300: #{$grayscale-color-light[300]}
+    --grayscale-color-light-400: #{$grayscale-color-light[400]}
+    --grayscale-color-light-500: #{$grayscale-color-light[500]}
+    --grayscale-color-light-600: #{$grayscale-color-light[600]}
+    --grayscale-color-light-700: #{$grayscale-color-light[700]}
+    --grayscale-color-light-800: #{$grayscale-color-light[800]}
+    --grayscale-color-light-900: #{$grayscale-color-light[900]}
+    --grayscale-color-light-950: #{$grayscale-color-light[950]}
+    
+//     //news 
+//     --news-color-light-100: #{$news-color-light[100]} //base
+//     --news-color-light-200: #{$news-color-light[200]}
+
+//     //games
+//     --games-color-light-100: #{$games-color-light[100]} //base
+//     --games-color-light-200: #{$games-color-light[200]}
+
+//     //PsPlus
+//     --psPlus-color-light-100: #{$psPlus-color-light[100]} //base
+//     --psPlus-color-light-200: #{$psPlus-color-light[200]}
+
+//     //promotions
+//     --promotions-color-light-100: #{$promotions-color-light[100]} //base
+//     --promotions-color-light-200: #{$promotions-color-light[200]}
+
+//     //reviews
+//     --reviews-color-light-100: #{$reviews-color-light[100]} //base
+//     --reviews-color-light-200: #{$reviews-color-light[200]}
+
+//     //especials
+//     --especials-color-light-100: #{$especials-color-light[100]} //base
+//     --especials-color-light-200: #{$especials-color-light[200]}
+
+//     //launchs
+//     --launchs-color-light-100: #{$launchs-color-light[100]} //base
+//     --launchs-color-light-200: #{$launchs-color-light[200]}
+
+//     //playstories
+//     --playstories-color-light-100: #{$playstories-color-light[100]} //base
+//     --playstories-color-light-200: #{$playstories-color-light[200]}
+
+//     //partner offers
+//     --partnerOffers-color-light-100: #{$partnerOffers-color-light[100]} //base
+//     --partnerOffers-color-light-200: #{$partnerOffers-color-light[200]}    
+
+    //dark theme
+
+    //primary-color      
+
+    --primary-color-dark-100: #{$primary-color-dark[100]} 
+    --primary-color-dark-200: #{$primary-color-dark[200]}
+    --primary-color-dark-300: #{$primary-color-dark[300]}
+    --primary-color-dark-400: #{$primary-color-dark[400]} // Base
+    --primary-color-dark-500: #{$primary-color-dark[500]} 
+    --primary-color-dark-600: #{$primary-color-dark[600]}
+    --primary-color-dark-700: #{$primary-color-dark[700]} 
+
+    //grayscale
+    --grayscale-color-dark-50: #{$grayscale-color-dark[50]}
+    --grayscale-color-dark-100: #{$grayscale-color-dark[100]} //cor principal de background
+    --grayscale-color-dark-200: #{$grayscale-color-dark[200]}
+    --grayscale-color-dark-300: #{$grayscale-color-dark[300]}
+    --grayscale-color-dark-400: #{$grayscale-color-dark[400]}
+    --grayscale-color-dark-500: #{$grayscale-color-dark[500]}
+    --grayscale-color-dark-600: #{$grayscale-color-dark[600]}
+    --grayscale-color-dark-700: #{$grayscale-color-dark[700]}
+    --grayscale-color-dark-800: #{$grayscale-color-dark[800]}
+    --grayscale-color-dark-900: #{$grayscale-color-dark[900]}
+    --grayscale-color-dark-950: #{$grayscale-color-dark[950]}
+    
+//     //news 
+//     --news-color-dark-100: #{$news-color-dark[100]} //base
+//     --news-color-dark-200: #{$news-color-dark[200]}
+
+//     //games
+//     --games-color-dark-100: #{$games-color-dark[100]} //base
+//     --games-color-dark-200: #{$games-color-dark[200]}
+
+//     //PsPlus
+//     --psPlus-color-dark-100: #{$psPlus-color-dark[100]} //base
+//     --psPlus-color-dark-200: #{$psPlus-color-dark[200]}
+
+//     //promotions
+//     --promotions-color-dark-100: #{$promotions-color-dark[100]} //base
+//     --promotions-color-dark-200: #{$promotions-color-dark[200]}
+
+//     //reviews
+//     --reviews-color-dark-100: #{$reviews-color-dark[100]} //base
+//     --reviews-color-dark-200: #{$reviews-color-dark[200]}
+
+//     //especials
+//     --especials-color-dark-100: #{$especials-color-dark[100]} //base
+//     --especials-color-dark-200: #{$especials-color-dark[200]}
+
+//     //launchs
+//     --launchs-color-dark-100: #{$launchs-color-dark[100]} //base
+//     --launchs-color-dark-200: #{$launchs-color-dark[200]}
+
+//     //playstories
+//     --playstories-color-dark-100: #{$playstories-color-dark[100]} //base
+//     --playstories-color-dark-200: #{$playstories-color-dark[200]}
+
+//     //partner offers
+//     --partnerOffers-color-dark-100: #{$partnerOffers-color-dark[100]} //base
+//     --partnerOffers-color-dark-200: #{$partnerOffers-color-dark[200]}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//versao 1
+
+    //     //primary-color      
+    // --primary-color-light-100: #165be6 
+    // --primary-color-light-200: #124fca
+    // --primary-color-light-300: #0e43ae
+    // --primary-color-light-400: #093690 // Base
+    // --primary-color-light-500: #0c2c76 
+    // --primary-color-light-600: #0c215b
+    // --primary-color-light-700: #0b1740 
+
+    // //grayscale
+    // --grayscale-color-light-50: #fcfcfd
+    // --grayscale-color-light-100: #eeeff2 //cor principal de background
+    // --grayscale-color-light-200: #dbdce1
+    // --grayscale-color-light-300: #c0c5ce
+    // --grayscale-color-light-400: #999ea8
+    // --grayscale-color-light-500: #666b75
+    // --grayscale-color-light-600: #4f535a
+    // --grayscale-color-light-700: #37393d
+    // --grayscale-color-light-800: #2d2f33
+    // --grayscale-color-light-900: #1b1f26
+    // --grayscale-color-light-950: #0b121e
+    
+    // //news 
+    // --news-color-light-100: #006db8 //base
+    // --news-color-light-200: #003c66
+
+    // //games
+    // --games-color-light-100: #129fed //base
+    // --games-color-light-200: #0d73ab
+
+    // //PsPlus
+    // --psPlus-color-light-100: #f9bf00 //base
+    // --psPlus-color-light-200: #705600
+
+    // //promotions
+    // --promotions-color-light-100: #00aea0 //base
+    // --promotions-color-light-200: #007a71
+
+    // //reviews
+    // --reviews-color-light-100: #6333ce //base
+    // --reviews-color-light-200: #3b1e7b
+
+    // //especials
+    // --especials-color-light-100: #ff0020 //base
+    // --especials-color-light-200: #cc001a
+
+    // //launchs
+    // --launchs-color-light-100: #f11e73 //base
+    // --launchs-color-light-200: #9c0a45
+
+    // //playstories
+    // --playstories-color-light-100: #6e9ece //base
+    // --playstories-color-light-200: #366ba0
+
+    // //partner offers
+    // --partnerOffers-color-light-100: #e042a2 //base
+    // --partnerOffers-color-light-200: #a21b6d    
+
+
+    // //darktheme
+
+    // //grayscale    
+    // --grayscale-color-dark-50: #0b121e
+    // --grayscale-color-dark-100: #1b1f26 //cor principal de background
+    // --grayscale-color-dark-200: #2d2f33
+    // --grayscale-color-dark-300: #37393d
+    // --grayscale-color-dark-400: #4f535a
+    // --grayscale-color-dark-500: #666b75
+    // --grayscale-color-dark-600: #999ea8
+    // --grayscale-color-dark-700: #c0c5ce
+    // --grayscale-color-dark-800: #dbdce1
+    // --grayscale-color-dark-900: #eeeff2
+    // --grayscale-color-dark-950: #fcfcfd
+
+
+
+

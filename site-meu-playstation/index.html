@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Meu Playstation</title>
+    
+    <!-- fontes do projeto -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Nunito+Sans:wght@400;700&family=Space+Mono:wght@700&family=Sora:wght@600&display=swap" rel="stylesheet">
+
+    <!-- icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css do projeto -->
+     <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="div-1" style="width: 100px; height: 20px; border: 1px solid black; margin: 15px"></div>
+    <div class="div-2" style="width: 100px; height: 20px; border: 1px solid black; margin: 15px"></div>
+    <div class="div-3" style="width: 100px; height: 20px; border: 1px solid black; margin: 15px"></div>
+
+    <button id="theme-toggle">Toggle Theme</button>
+
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+          const html = document.documentElement;
+          const currentTheme = html.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          html.setAttribute('data-theme', newTheme);
+        });
+      </script>
+</body>
+</html>
+
+
+
+
+<!-- <div class="header">
+    <div class="header-top">
+        <div class="header-top-container">
+            <p>O maior site de PlayStation da América Latina</p>
+            <div class="social-bar">
+                <div class="social-bar-brands">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-twitch"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="theme-mode">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-main">
+        <div class="header-main-navbar">
+            <div class="navbar-menu">
+                <button>
+                    <i class="fa-solid fa-bars"></i>
+                    <p>menu</p>
+                </button>
+            </div>
+            <div class="navbar-logo">
+            <div class="navbar-categories">
+                <button>Ps Plus</button>
+                <button>Promoções</button>
+                <button>Reviews</button>
+                <button>Jogos</button>
+                <button>Mais +</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="header-main-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p>Pesquisar</p>
+    </div>
+</div>
+<div class="header-bottom">
+        <div class="header-bottom-highlights">
+            <button>God of War Ragnarok</button>
+            <button>Playstation Stars</button>
+            <button>Stray (jogo do gatinho)</button>
+            <button>Ubisoft Assassin's Creed</button>
+            <button>The Last of Us Part 1</button>
+        </div>
+        
+    </div>
+</div> -->

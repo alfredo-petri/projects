@@ -1,0 +1,26 @@
+:root{    
+    --grayscale-color-light-50: #fcfcfd;
+    --grayscale-color-light-100: #eeeff2;
+    --grayscale-color-light-200: #dbdce1;
+    --grayscale-color-light-300: #c0c5ce;
+    --grayscale-color-light-400: #999ea8;
+    --grayscale-color-light-500: #666b75;
+    --grayscale-color-light-600: #4f535a;
+    --grayscale-color-light-700: #37393d;
+    --grayscale-color-light-800: #2d2f33;
+    --grayscale-color-light-900: #1b1f26;
+    --grayscale-color-light-950: #0b121e;
+
+    
+    --grayscale-color-dark-50: #0b121e;
+    --grayscale-color-dark-100: #1b1f26;
+    --grayscale-color-dark-200: #2d2f33;
+    --grayscale-color-dark-300: #37393d;
+    --grayscale-color-dark-400: #4f535a;
+    --grayscale-color-dark-500: #666b75;
+    --grayscale-color-dark-600: #999ea8;
+    --grayscale-color-dark-700: #c0c5ce;
+    --grayscale-color-dark-800: #dbdce1;
+    --grayscale-color-dark-900: #eeeff2;
+    --grayscale-color-dark-950: #fcfcfd;
+}

@@ -1,0 +1,41 @@
+// // Mixin para gerar variáveis CSS para um tema
+// @mixin generate-theme($theme-name, $primary-colors, $grayscale-colors, $category-colors) 
+//     :root[data-theme="#{$theme-name}"] 
+//         @each $key, $value in $primary-colors 
+//             --primary-color-#{$key}: #{$value}
+        
+//         @each $key, $value in $grayscale-colors 
+//             --grayscale-color-#{$key}: #{$value}
+    
+//         @each $category, $colors in $category-colors 
+//             @each $key, $value in $colors 
+//                 --#{$category}-color-#{$key}: #{$value}
+            
+        
+
+// @mixin generate-theme($theme-name, $primary-colors, $grayscale-colors, $category-colors)
+//   :root[data-theme="#{$theme-name}"]
+//     @each $key, $value in $primary-colors
+//       --primary-color-#{$key}: $value
+
+//     @each $key, $value in $grayscale-colors
+//       --grayscale-color-#{$key}: $value
+
+//     @each $category, $colors in $category-colors
+//       @each $key, $value in $colors
+//         --#{$category}-color-#{$key}: $value        
+    
+
+
+// =generate-theme($theme-name, $primary-colors, $grayscale-colors, $category-colors)
+//   :root[data-theme="#{$theme-name}"]
+    
+//     @each $key, $value in $primary-colors
+//       --primary-color-#{$key}: #{$value}
+
+//     @each $key, $value in $grayscale-colors
+//       --grayscale-color-#{$key}: #{$value}
+
+//     @each $category, $colors in $category-colors
+//       @each $key, $value in $colors
+//         --#{$category}-color-#{$key}: #{$value}

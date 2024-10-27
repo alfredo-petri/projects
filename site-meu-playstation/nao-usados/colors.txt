@@ -1,0 +1,131 @@
+// light theme colors
+
+// Cores Primárias
+
+
+
+
+
+
+
+
+
+
+
+
+// // Cores escala de cinza
+// $grayscale-color-light=  
+//     50: #fcfcfd
+//     100: #eeeff2
+//     200: #dbdce1
+//     300: #c0c5ce
+//     400: #999ea8
+//     500: #666b75
+//     600: #4f535a
+//     700: #37393d
+//     800: #2d2f33
+//     900: #1b1f26
+//     950: #0b121e 
+
+
+
+// // dark theme colors
+
+// // Cores Primárias
+// $primary-color-dark=  
+//     100: #17439c
+//     200: #1b4aab
+//     300: #1e52bb
+//     400: #2159ca
+//     500: #2561db
+//     600: #2969ec
+//     700: #5182f5 
+
+
+
+
+// // Cores escala de cinza
+// $grayscale-color-dark=  
+//     50: #0b121e
+//     100: #1b1f26
+//     200: #2d2f33
+//     300: #37393d
+//     400: #4f535a
+//     500: #666b75
+//     600: #999ea8
+//     700: #c0c5ce
+//     800: #dbdce1
+//     900: #eeeff2
+//     950: #fcfcfd 
+
+
+
+// //definindo css custom protperties
+//     //light theme
+//     //primary-color
+
+
+
+//     //grayscale
+//     --grayscale-color-light-50: #{$grayscale-color-light[50]}
+//     --grayscale-color-light-100: #{$grayscale-color-light[100]} //cor principal de background
+//     --grayscale-color-light-200: #{$grayscale-color-light[200]}
+//     --grayscale-color-light-300: #{$grayscale-color-light[300]}
+//     --grayscale-color-light-400: #{$grayscale-color-light[400]}
+//     --grayscale-color-light-500: #{$grayscale-color-light[500]}
+//     --grayscale-color-light-600: #{$grayscale-color-light[600]}
+//     --grayscale-color-light-700: #{$grayscale-color-light[700]}
+//     --grayscale-color-light-800: #{$grayscale-color-light[800]}
+//     --grayscale-color-light-900: #{$grayscale-color-light[900]}
+//     --grayscale-color-light-950: #{$grayscale-color-light[950]}
+
+//     //dark theme
+
+//     //primary-color      
+
+//     --primary-color-dark-100: #{$primary-color-dark[100]} 
+//     --primary-color-dark-200: #{$primary-color-dark[200]}
+//     --primary-color-dark-300: #{$primary-color-dark[300]}
+//     --primary-color-dark-400: #{$primary-color-dark[400]} // Base
+//     --primary-color-dark-500: #{$primary-color-dark[500]} 
+//     --primary-color-dark-600: #{$primary-color-dark[600]}
+//     --primary-color-dark-700: #{$primary-color-dark[700]} 
+
+//     //grayscale
+//     --grayscale-color-dark-50: #{$grayscale-color-dark[50]}
+//     --grayscale-color-dark-100: #{$grayscale-color-dark[100]} //cor principal de background
+//     --grayscale-color-dark-200: #{$grayscale-color-dark[200]}
+//     --grayscale-color-dark-300: #{$grayscale-color-dark[300]}
+//     --grayscale-color-dark-400: #{$grayscale-color-dark[400]}
+//     --grayscale-color-dark-500: #{$grayscale-color-dark[500]}
+//     --grayscale-color-dark-600: #{$grayscale-color-dark[600]}
+//     --grayscale-color-dark-700: #{$grayscale-color-dark[700]}
+//     --grayscale-color-dark-800: #{$grayscale-color-dark[800]}
+//     --grayscale-color-dark-900: #{$grayscale-color-dark[900]}
+//     --grayscale-color-dark-950: #{$grayscale-color-dark[950]}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // h1
+//     color: orange
+//     // font-family: 'Nunito Sans', sans-serif 
+//     font-family: 'Space Mono', monospace
+//     // font-family: 'Sora', sans-serif
+//     // font-family: 'Space Grotesk', sans-serif
+//     font-weight: 700
